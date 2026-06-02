@@ -15,6 +15,11 @@ func _on_mouse_entered() -> void:
         if Input.is_action_just_pressed("mouse_interact"):
             interacted.emit()
 
+
 func _on_mouse_exited() -> void:
     if $Draggable.state == $Draggable.DRAGGABLE_STATE.IDLE:
         self.scale = def_size
+
+
+func _on_draggable_drag_ended(_area: Area2D, _drop_spot: SnappingSpot) -> void:
+    self.scale = def_size
