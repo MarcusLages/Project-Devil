@@ -1,21 +1,18 @@
-[gd_scene load_steps=8 format=3 uid="uid://dk3qoog6vawv5"]
+[gd_scene load_steps=6 format=3 uid="uid://dk3qoog6vawv5"]
 
 [ext_resource type="Script" uid="uid://dy18lqgmcq6ye" path="res://scripts/interactable.gd" id="1_56v82"]
 [ext_resource type="Script" uid="uid://crmnw3ldr3xev" path="res://addons/drag_and_drop/scripts/draggable.gd" id="2_8o6w2"]
-[ext_resource type="Script" uid="uid://djdmnemxrx7bg" path="res://addons/drag_and_drop/resources/draggable_types/draggable_type.gd" id="3_w4xns"]
 
 [sub_resource type="Gradient" id="Gradient_8o6w2"]
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_w4xns"]
 gradient = SubResource("Gradient_8o6w2")
-width = 20
-height = 20
+width = 50
+height = 50
 fill_from = Vector2(0.2991453, 0.8418803)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ij5l6"]
-
-[sub_resource type="Resource" id="Resource_o0ci7"]
-script = ExtResource("3_w4xns")
+size = Vector2(50, 50)
 
 [node name="Interactable" type="Area2D"]
 script = ExtResource("1_56v82")
@@ -30,8 +27,6 @@ shape = SubResource("RectangleShape2D_ij5l6")
 [node name="Draggable" type="Node" parent="."]
 script = ExtResource("2_8o6w2")
 dragging_speed = 8.0
-relative_dragging = true
-type = SubResource("Resource_o0ci7")
 metadata/_custom_type_script = "uid://crmnw3ldr3xev"
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
