@@ -16,11 +16,11 @@ func _ready() -> void:
     if get_parent() is Area2D:
         a = get_parent() as Area2D
     else:
-        var candidate := $"../Area2D"
+        var candidate := get_node_or_null("../Area2D")
         if candidate:
             a = candidate
 
-    drag = $"../Draggable"
+    drag = get_node_or_null("../Draggable")
     a2d = a
 
     assert(a != null, "Interactable node '%s' must be linked to an Area2D (brother, or parent)" % name)
@@ -33,6 +33,13 @@ func _ready() -> void:
         drag.drag_ended.connect(_on_draggable_drag_ended)
 
 func _on_mouse_entered() -> void:
+    if drag == null:
+        a2d.scale = hover_zoom_scale
+
+        if Input.is_action_just_pressed("mouse_interact"):
+            interacted.emit()
+        return
+
     if drag.state == drag.DRAGGABLE_STATE.IDLE:
         a2d.scale = hover_zoom_scale
 
@@ -41,6 +48,10 @@ func _on_mouse_entered() -> void:
 
 
 func _on_mouse_exited() -> void:
+    if drag == null:
+        a2d.scale = std_a2d_scale
+        return
+
     if drag.state == drag.DRAGGABLE_STATE.IDLE:
         a2d.scale = std_a2d_scale
 
