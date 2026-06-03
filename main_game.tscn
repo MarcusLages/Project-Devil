@@ -1,0 +1,366 @@
+[gd_scene format=3 uid="uid://wm682bmxplgb"]
+
+[ext_resource type="Texture2D" uid="uid://qeuqikfimjsc" path="res://icon.svg" id="1_1oj5k"]
+[ext_resource type="Script" uid="uid://54rhltybmpdp" path="res://items.gd" id="2_ykeeq"]
+[ext_resource type="Script" uid="uid://dt01ksqablshq" path="res://back.gd" id="2_yx7mw"]
+
+[node name="MainGame" type="Control" unique_id=962978887]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="Background" type="Control" parent="." unique_id=511709851]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+metadata/_edit_lock_ = true
+
+[node name="Panel" type="Panel" parent="Background" unique_id=382082844]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 407.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+metadata/_edit_lock_ = true
+
+[node name="Panel2" type="Panel" parent="Background" unique_id=887286352]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+metadata/_edit_lock_ = true
+
+[node name="Table" type="Control" parent="." unique_id=948496699]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+metadata/_edit_lock_ = true
+
+[node name="Books" type="Control" parent="Table" unique_id=728143568]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Book1" type="TextureButton" parent="Table/Books" unique_id=77690631]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 173.0
+offset_right = 157.0
+offset_bottom = 438.0
+mouse_filter = 1
+texture_normal = ExtResource("1_1oj5k")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Book2" type="TextureButton" parent="Table/Books" unique_id=744471221]
+layout_mode = 0
+offset_left = 158.0
+offset_top = 173.0
+offset_right = 215.0
+offset_bottom = 438.0
+mouse_filter = 1
+texture_normal = ExtResource("1_1oj5k")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Book3" type="TextureButton" parent="Table/Books" unique_id=763757739]
+layout_mode = 0
+offset_left = 216.0
+offset_top = 173.0
+offset_right = 273.0
+offset_bottom = 438.0
+mouse_filter = 1
+texture_normal = ExtResource("1_1oj5k")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Book4" type="TextureButton" parent="Table/Books" unique_id=1224728397]
+layout_mode = 0
+offset_left = 274.0
+offset_top = 173.0
+offset_right = 331.0
+offset_bottom = 438.0
+mouse_filter = 1
+texture_normal = ExtResource("1_1oj5k")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Book5" type="TextureButton" parent="Table/Books" unique_id=1856937371]
+layout_mode = 0
+offset_left = 333.0
+offset_top = 173.0
+offset_right = 390.0
+offset_bottom = 438.0
+mouse_filter = 1
+texture_normal = ExtResource("1_1oj5k")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Files" type="Control" parent="Table" unique_id=1165778333]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_lock_ = true
+
+[node name="File1" type="TextureButton" parent="Table/Files" unique_id=1554522153]
+layout_mode = 0
+offset_left = 410.0
+offset_top = 532.0
+offset_right = 734.0
+offset_bottom = 685.0
+mouse_filter = 1
+texture_normal = ExtResource("1_1oj5k")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="File2" type="TextureButton" parent="Table/Files" unique_id=191048219]
+layout_mode = 0
+offset_left = 433.0
+offset_top = 515.0
+offset_right = 757.0
+offset_bottom = 668.0
+mouse_filter = 1
+texture_normal = ExtResource("1_1oj5k")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="File3" type="TextureButton" parent="Table/Files" unique_id=1007047593]
+layout_mode = 0
+offset_left = 410.0
+offset_top = 498.0
+offset_right = 734.0
+offset_bottom = 651.0
+mouse_filter = 1
+texture_normal = ExtResource("1_1oj5k")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="File4" type="TextureButton" parent="Table/Files" unique_id=747233768]
+layout_mode = 0
+offset_left = 433.0
+offset_top = 481.0
+offset_right = 757.0
+offset_bottom = 634.0
+mouse_filter = 1
+texture_normal = ExtResource("1_1oj5k")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="File5" type="TextureButton" parent="Table/Files" unique_id=1385829155]
+layout_mode = 0
+offset_left = 410.0
+offset_top = 462.0
+offset_right = 734.0
+offset_bottom = 615.0
+mouse_filter = 1
+texture_normal = ExtResource("1_1oj5k")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Phones" type="HBoxContainer" parent="Table" unique_id=1561612836]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 438.0
+offset_top = 55.0
+offset_right = -58.0
+offset_bottom = -465.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+alignment = 1
+
+[node name="Phone1" type="TextureButton" parent="Table/Phones" unique_id=613655552]
+modulate = Color(1, 0.62352943, 1, 1)
+layout_mode = 2
+texture_normal = ExtResource("1_1oj5k")
+
+[node name="Phone2" type="TextureButton" parent="Table/Phones" unique_id=2018083248]
+modulate = Color(1, 0.62352943, 1, 1)
+layout_mode = 2
+texture_normal = ExtResource("1_1oj5k")
+
+[node name="Phone3" type="TextureButton" parent="Table/Phones" unique_id=1813811164]
+modulate = Color(1, 0.62352943, 1, 1)
+layout_mode = 2
+texture_normal = ExtResource("1_1oj5k")
+
+[node name="Phone4" type="TextureButton" parent="Table/Phones" unique_id=786587477]
+modulate = Color(1, 0.62352943, 1, 1)
+layout_mode = 2
+texture_normal = ExtResource("1_1oj5k")
+
+[node name="Phone5" type="TextureButton" parent="Table/Phones" unique_id=1758658858]
+modulate = Color(1, 0.62352943, 1, 1)
+layout_mode = 2
+texture_normal = ExtResource("1_1oj5k")
+
+[node name="Items" type="Control" parent="Table" unique_id=1479903888]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("2_ykeeq")
+
+[node name="Coffee" type="TextureButton" parent="Table/Items" unique_id=684492370]
+modulate = Color(0.33, 0.22902001, 0.15179999, 1)
+layout_mode = 0
+offset_left = 60.0
+offset_top = 452.0
+offset_right = 188.0
+offset_bottom = 580.0
+mouse_filter = 1
+texture_normal = ExtResource("1_1oj5k")
+
+[node name="Lamp" type="TextureButton" parent="Table/Items" unique_id=1689849456]
+modulate = Color(1, 1, 0.36078432, 1)
+layout_mode = 0
+offset_left = 1098.0
+offset_top = 353.0
+offset_right = 1226.0
+offset_bottom = 481.0
+mouse_filter = 1
+texture_normal = ExtResource("1_1oj5k")
+
+[node name="Phone" type="TextureButton" parent="Table/Items" unique_id=1095166417]
+modulate = Color(0.37, 0.37, 0.37, 1)
+layout_mode = 0
+offset_left = 1142.0
+offset_top = 508.0
+offset_right = 1241.9015
+offset_bottom = 679.744
+rotation = 0.7941248
+mouse_filter = 1
+texture_normal = ExtResource("1_1oj5k")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Foreground" type="Control" parent="." unique_id=813475099]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+metadata/_edit_lock_ = true
+
+[node name="Jumpscare" type="Control" parent="Foreground" unique_id=401762770]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+metadata/_edit_lock_ = true
+
+[node name="TextureRect" type="TextureRect" parent="Foreground" unique_id=258719163]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Files" type="Control" parent="Foreground" unique_id=2046352093]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 1
+metadata/_edit_lock_ = true
+
+[node name="Books" type="Control" parent="Foreground" unique_id=1824280826]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 1
+metadata/_edit_lock_ = true
+
+[node name="Items" type="MarginContainer" parent="Foreground" unique_id=565164089]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+metadata/_edit_lock_ = true
+
+[node name="Coffee" type="TextureRect" parent="Foreground/Items" unique_id=1671282654]
+modulate = Color(0.33, 0.22902001, 0.15179999, 1)
+layout_mode = 2
+texture = ExtResource("1_1oj5k")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Lamp" type="TextureRect" parent="Foreground/Items" unique_id=1594075381]
+modulate = Color(1, 1, 0.36078432, 1)
+layout_mode = 2
+texture = ExtResource("1_1oj5k")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Phone" type="TextureRect" parent="Foreground/Items" unique_id=1581608469]
+modulate = Color(0.37, 0.37, 0.37, 1)
+layout_mode = 2
+texture = ExtResource("1_1oj5k")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Overlay" type="Control" parent="." unique_id=284670771]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_lock_ = true
+
+[node name="Back" type="Button" parent="Overlay" unique_id=528350625]
+layout_mode = 0
+offset_left = 77.0
+offset_top = 617.0
+offset_right = 251.0
+offset_bottom = 687.0
+mouse_filter = 1
+theme_override_font_sizes/font_size = 30
+text = "< BACK"
+script = ExtResource("2_yx7mw")
+
+[connection signal="pressed" from="Table/Items/Coffee" to="Table/Items" method="_on_coffee_pressed"]
+[connection signal="pressed" from="Table/Items/Lamp" to="Table/Items" method="_on_lamp_pressed"]
+[connection signal="pressed" from="Table/Items/Phone" to="Table/Items" method="_on_phone_pressed"]
+[connection signal="pressed" from="Overlay/Back" to="Overlay/Back" method="_on_pressed"]
