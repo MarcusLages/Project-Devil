@@ -1,9 +1,16 @@
 extends Node
 
-signal interacted
+signal interacted(from: Area2D)
+signal hover_entered(from: Area2D)
+signal hover_exited(from: Area2D)
 
 ## Value for scale for when the item is hovered
 @export var hover_zoom_scale := Vector2(1.25, 1.25)
+
+## Disable hovering and interacting with item.
+## IMPORTANT: if disabled through code while before mouse exit, doesn't 
+## guarantee that the item will return to the same size
+@export var disabled: bool = false
 
 var std_a2d_scale: Vector2 = Vector2(1, 1) # Reevaluated at ready()
 
@@ -33,26 +40,36 @@ func _ready() -> void:
         drag.drag_ended.connect(_on_draggable_drag_ended)
 
 func _on_mouse_entered() -> void:
+    if disabled:
+        return
+
     if drag == null:
         a2d.scale = hover_zoom_scale
 
+        hover_entered.emit(a2d)
         if Input.is_action_just_pressed("mouse_interact"):
-            interacted.emit()
+            interacted.emit(a2d)
         return
 
     if drag.state == drag.DRAGGABLE_STATE.IDLE:
         a2d.scale = hover_zoom_scale
 
+        hover_entered.emit(a2d)
         if Input.is_action_just_pressed("mouse_interact"):
-            interacted.emit()
+            interacted.emit(a2d)
 
 
 func _on_mouse_exited() -> void:
+    if disabled:
+        return
+
     if drag == null:
         a2d.scale = std_a2d_scale
+        hover_exited.emit(a2d)
         return
 
     if drag.state == drag.DRAGGABLE_STATE.IDLE:
+        hover_exited.emit(a2d)
         a2d.scale = std_a2d_scale
 
 
