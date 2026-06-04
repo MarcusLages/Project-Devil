@@ -1,5 +1,7 @@
 extends Node
 
+class_name Interactable
+
 signal interacted(from: Area2D)
 signal hover_entered(from: Area2D)
 signal hover_exited(from: Area2D)
@@ -41,27 +43,26 @@ func _ready() -> void:
         drag.drag_ended.connect(_on_draggable_drag_ended)
 
 func _on_mouse_entered() -> void:
+    is_hovered = true
+
     if disabled:
         return
         
-    is_hovered = true
     a2d.scale = hover_zoom_scale
-
     hover_entered.emit(a2d)
     if Input.is_action_just_pressed("mouse_interact"):
         interacted.emit(a2d)
 
 
 func _on_mouse_exited() -> void:
+    is_hovered = false
+
     if disabled:
         return
 
-    is_hovered = false
     hover_exited.emit(a2d)
-
     if drag == null or drag.state == drag.DRAGGABLE_STATE.IDLE:
         a2d.scale = std_a2d_scale
-        return
 
 
 func _on_draggable_drag_ended(_area: Area2D, _drop_spot: SnappingSpot) -> void:
