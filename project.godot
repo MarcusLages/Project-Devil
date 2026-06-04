@@ -15,6 +15,10 @@ run/main_scene="uid://bcjbw6cnck4le"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GameManager="*res://scripts/game_manager.gd"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/drag_and_drop/plugin.cfg")

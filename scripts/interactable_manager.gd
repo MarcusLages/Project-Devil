@@ -1,5 +1,7 @@
 extends Node
 
+class_name InteractableManager
+
 # TODO: Wrongfully used "get_node" instead of "find_node", change only if have time
 
 ## List of managed interactable items.
