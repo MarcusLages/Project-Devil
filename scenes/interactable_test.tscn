@@ -1,37 +1,35 @@
-[gd_scene load_steps=8 format=3 uid="uid://dn0b2u6an2gmy"]
+[gd_scene load_steps=6 format=3 uid="uid://d4ifeiikysdr6"]
 
 [ext_resource type="PackedScene" uid="uid://d33y1bfr1gojc" path="res://scenes/components/interactable.tscn" id="1_cj05l"]
 [ext_resource type="Script" uid="uid://crmnw3ldr3xev" path="res://addons/drag_and_drop/scripts/draggable.gd" id="2_816fa"]
-[ext_resource type="Script" uid="uid://djdmnemxrx7bg" path="res://addons/drag_and_drop/resources/draggable_types/draggable_type.gd" id="3_kifig"]
 
-[sub_resource type="Gradient" id="Gradient_3aalw"]
+[sub_resource type="Gradient" id="Gradient_r4px6"]
+interpolation_mode = 2
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_56v82"]
-gradient = SubResource("Gradient_3aalw")
-width = 90
-height = 90
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_cj05l"]
+gradient = SubResource("Gradient_r4px6")
+width = 10
+height = 10
+fill_from = Vector2(0, 1)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ij5l6"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_816fa"]
 size = Vector2(90, 90)
-
-[sub_resource type="Resource" id="Resource_btid7"]
-script = ExtResource("3_kifig")
 
 [node name="Interactable_test" type="Area2D"]
 
 [node name="Content" type="Node2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="Content"]
-texture = SubResource("GradientTexture2D_56v82")
+scale = Vector2(9, 9)
+texture = SubResource("GradientTexture2D_cj05l")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_ij5l6")
+shape = SubResource("RectangleShape2D_816fa")
 
 [node name="Interactable" parent="." instance=ExtResource("1_cj05l")]
 
 [node name="Draggable" type="Node" parent="."]
 script = ExtResource("2_816fa")
-dragging_speed = 8.0
-relative_dragging = true
-type = SubResource("Resource_btid7")
+dragging_speed = 12.0
+drag_z_index = 100
 metadata/_custom_type_script = "uid://crmnw3ldr3xev"

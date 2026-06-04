@@ -12,10 +12,11 @@ signal hover_exited(from: Area2D)
 ## guarantee that the item will return to the same size
 @export var disabled: bool = false
 
-var std_a2d_scale: Vector2 = Vector2(1, 1) # Reevaluated at ready()
+var std_a2d_scale: Vector2 = Vector2(1, 1) # Constant-like reevaluated at ready()
 
 var a2d: Area2D = null
 var drag: Draggable = null
+var is_hovered: bool = false
 
 func _ready() -> void:
     # Find A2D
@@ -42,36 +43,27 @@ func _ready() -> void:
 func _on_mouse_entered() -> void:
     if disabled:
         return
+        
+    is_hovered = true
+    a2d.scale = hover_zoom_scale
 
-    if drag == null:
-        a2d.scale = hover_zoom_scale
-
-        hover_entered.emit(a2d)
-        if Input.is_action_just_pressed("mouse_interact"):
-            interacted.emit(a2d)
-        return
-
-    if drag.state == drag.DRAGGABLE_STATE.IDLE:
-        a2d.scale = hover_zoom_scale
-
-        hover_entered.emit(a2d)
-        if Input.is_action_just_pressed("mouse_interact"):
-            interacted.emit(a2d)
+    hover_entered.emit(a2d)
+    if Input.is_action_just_pressed("mouse_interact"):
+        interacted.emit(a2d)
 
 
 func _on_mouse_exited() -> void:
     if disabled:
         return
 
-    if drag == null:
-        a2d.scale = std_a2d_scale
-        hover_exited.emit(a2d)
-        return
+    is_hovered = false
+    hover_exited.emit(a2d)
 
-    if drag.state == drag.DRAGGABLE_STATE.IDLE:
-        hover_exited.emit(a2d)
+    if drag == null or drag.state == drag.DRAGGABLE_STATE.IDLE:
         a2d.scale = std_a2d_scale
+        return
 
 
 func _on_draggable_drag_ended(_area: Area2D, _drop_spot: SnappingSpot) -> void:
-    a2d.scale = std_a2d_scale
+    if not is_hovered:
+        a2d.scale = std_a2d_scale

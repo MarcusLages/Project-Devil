@@ -26,7 +26,7 @@ enum DRAGGABLE_STATE {IDLE, DRAGGING, DROPPING, RETURNING, AUTO_MOVING}
 @export var drag_layer_parent: Node = null
 
 ## Disables the transitioning to a DRAGGABLE_STATE.DRAGGING state.
-@export var disable: bool = false
+@export var disabled: bool = false
 
 @export_group("Behavior")
 ## Controls the speed at which the draggable node moves towards the cursor or towards the drop zone when dropped or returning.
@@ -138,7 +138,7 @@ func _move_toward(from: Vector2, to: Vector2, delta: float) -> Vector2:
 func _on_input_event(_viewport, event, _shape_idx):
 	if (event.is_action_pressed(drag_input_name) 
 			and state == DRAGGABLE_STATE.IDLE
-			and not disable
+			and not disabled
 	):
 		previous_position = a.global_position
 		previous_parent = a.get_parent()
