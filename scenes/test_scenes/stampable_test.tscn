@@ -10,7 +10,7 @@
 [sub_resource type="Gradient" id="Gradient_r4px6"]
 interpolation_mode = 2
 offsets = PackedFloat32Array(0.54435486)
-colors = PackedColorArray(0.99907297, 0.16416368, 0.7634798, 1)
+colors = PackedColorArray(1.92523e-06, 0.6585397, 0.8358246, 1)
 metadata/_snap_count = 8
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_ho401"]

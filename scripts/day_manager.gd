@@ -44,11 +44,12 @@ func clean_scene():
 
 
 func load_record(rec_idx: int) -> Error:
+    clean_scene()
+    
     if rec_idx >= record_managers.size():
         return ERR_DOES_NOT_EXIST
 
     _curr_record = rec_idx
-    clean_scene()
     items_container.add_child(record_managers[rec_idx])
 
     return OK
