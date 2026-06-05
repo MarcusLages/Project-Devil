@@ -13,9 +13,12 @@ signal stamped(correct: bool)
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
     if not drop_zone:
+        drop_zone = get_node_or_null("DropZone")
+
+    if not drop_zone:
         drop_zone = get_node_or_null("../DropZone")
 
-    assert(drop_zone != null, "Must have a DropZone associated or as a brother node to the SceneManager.")
+    assert(drop_zone != null, "Must have a DropZone associated or as a brother/child node to Stampable.")
     drop_zone.drop_applied.connect(_on_drop_zone_drop_applied)
 
 
