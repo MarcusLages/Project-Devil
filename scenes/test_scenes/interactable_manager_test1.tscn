@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://b7umlc8oql2bm"]
+
+[ext_resource type="Script" uid="uid://b6kihpl0g4hgo" path="res://scripts/interactable_manager.gd" id="1_ewqwc"]
+[ext_resource type="PackedScene" uid="uid://d4ifeiikysdr6" path="res://scenes/test_scenes/interactable_test.tscn" id="2_qv8of"]
+[ext_resource type="PackedScene" uid="uid://lfobgcdrmmk4" path="res://scenes/test_scenes/stampable_test.tscn" id="3_n2wvr"]
+
+[node name="InteractableManagerTest1" type="Node"]
+script = ExtResource("1_ewqwc")
+
+[node name="Interactable_test4" parent="." instance=ExtResource("2_qv8of")]
+position = Vector2(838, 286)
+
+[node name="StampableTest" parent="." instance=ExtResource("3_n2wvr")]
+position = Vector2(841, 129)

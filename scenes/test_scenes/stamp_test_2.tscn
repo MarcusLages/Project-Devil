@@ -1,0 +1,36 @@
+[gd_scene load_steps=8 format=3 uid="uid://cqiofb4l4segj"]
+
+[ext_resource type="Script" uid="uid://b6r3y4w7ikk0g" path="res://scripts/stamp.gd" id="1_m6s8j"]
+[ext_resource type="Texture2D" uid="uid://dfohsgymssdcy" path="res://assets/img/stamp_test_2.png" id="2_m6s8j"]
+[ext_resource type="PackedScene" uid="uid://d33y1bfr1gojc" path="res://scenes/components/interactable.tscn" id="3_n1mbc"]
+[ext_resource type="Script" uid="uid://crmnw3ldr3xev" path="res://addons/drag_and_drop/scripts/draggable.gd" id="4_l0svb"]
+[ext_resource type="Script" uid="uid://djdmnemxrx7bg" path="res://addons/drag_and_drop/resources/draggable_types/draggable_type.gd" id="5_ta8l2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ode6b"]
+size = Vector2(90, 90)
+
+[sub_resource type="Resource" id="Resource_24rnu"]
+script = ExtResource("5_ta8l2")
+id = "stamp"
+
+[node name="StampTest2" type="Area2D"]
+script = ExtResource("1_m6s8j")
+stamp_name = "stamp_test_2"
+
+[node name="Content" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Content"]
+texture = ExtResource("2_m6s8j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ode6b")
+
+[node name="Interactable" parent="." instance=ExtResource("3_n1mbc")]
+
+[node name="Draggable" type="Node" parent="."]
+script = ExtResource("4_l0svb")
+dragging_speed = 12.0
+drag_z_index = 100
+relative_dragging = true
+type = SubResource("Resource_24rnu")
+metadata/_custom_type_script = "uid://crmnw3ldr3xev"

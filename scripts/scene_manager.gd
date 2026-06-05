@@ -13,6 +13,9 @@ func _ready() -> void:
 
     assert(day_manager != null, "Must have a DayManager associated or as a brother node to the SceneManager.")
 
+    # TODO: Delete this, just for testing
+    day_manager.load_record(0)
+
 func _on_node_added(node: Node):
     if node is Stampable:
         (node as Stampable).stamped.connect(_on_stampable_stamped)

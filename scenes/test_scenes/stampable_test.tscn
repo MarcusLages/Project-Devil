@@ -1,0 +1,63 @@
+[gd_scene load_steps=12 format=3 uid="uid://lfobgcdrmmk4"]
+
+[ext_resource type="Script" uid="uid://ct73rsdxv2xas" path="res://scripts/stampable.gd" id="1_vwd21"]
+[ext_resource type="PackedScene" uid="uid://d33y1bfr1gojc" path="res://scenes/components/interactable.tscn" id="2_tser0"]
+[ext_resource type="Script" uid="uid://crmnw3ldr3xev" path="res://addons/drag_and_drop/scripts/draggable.gd" id="3_naa7f"]
+[ext_resource type="Script" uid="uid://nj1hdjl1vob2" path="res://addons/drag_and_drop/scripts/drop_zone.gd" id="4_xks73"]
+[ext_resource type="Script" uid="uid://b5wqxyc42r5u" path="res://addons/drag_and_drop/resources/drop_behaviors/drop_behavior_reject.gd" id="5_2mdjd"]
+[ext_resource type="Script" uid="uid://djdmnemxrx7bg" path="res://addons/drag_and_drop/resources/draggable_types/draggable_type.gd" id="6_naa7f"]
+
+[sub_resource type="Gradient" id="Gradient_r4px6"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0.54435486)
+colors = PackedColorArray(0.99907297, 0.16416368, 0.7634798, 1)
+metadata/_snap_count = 8
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ho401"]
+gradient = SubResource("Gradient_r4px6")
+width = 10
+height = 10
+fill_from = Vector2(0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a4r3n"]
+size = Vector2(90, 90)
+
+[sub_resource type="Resource" id="Resource_uifsb"]
+script = ExtResource("5_2mdjd")
+
+[sub_resource type="Resource" id="Resource_xks73"]
+script = ExtResource("6_naa7f")
+id = "stamp"
+metadata/_custom_type_script = "uid://djdmnemxrx7bg"
+
+[node name="StampableTest" type="Area2D"]
+script = ExtResource("1_vwd21")
+correct_stamp = "stamp_test_1"
+
+[node name="Content" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Content"]
+scale = Vector2(9, 9)
+texture = SubResource("GradientTexture2D_ho401")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_a4r3n")
+
+[node name="Interactable" parent="." instance=ExtResource("2_tser0")]
+
+[node name="Draggable" type="Node" parent="."]
+script = ExtResource("3_naa7f")
+dragging_speed = 12.0
+drag_z_index = 100
+relative_dragging = true
+metadata/_custom_type_script = "uid://crmnw3ldr3xev"
+
+[node name="DropZone" type="Node2D" parent="." node_paths=PackedStringArray("attach_spot")]
+script = ExtResource("4_xks73")
+attach_spot = NodePath("..")
+drop_behavior = SubResource("Resource_uifsb")
+accepted_draggable_types = Array[ExtResource("6_naa7f")]([SubResource("Resource_xks73")])
+metadata/_custom_type_script = "uid://nj1hdjl1vob2"
+
+[node name="Marker2D" type="Marker2D" parent="DropZone"]
+position = Vector2(0, -45)

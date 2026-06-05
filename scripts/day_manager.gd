@@ -47,8 +47,7 @@ func load_record(rec_idx: int) -> Error:
 
     _curr_record = rec_idx
     clean_scene()
-    for rec in record_managers:
-        items_container.add_child(rec)
+    items_container.add_child(record_managers[rec_idx])
 
     return OK
 
