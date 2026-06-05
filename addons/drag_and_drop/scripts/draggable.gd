@@ -145,8 +145,10 @@ func _on_input_event(_viewport, event, _shape_idx):
 		if drag_layer_parent:
 			assert(not a.is_ancestor_of(drag_layer_parent), "Drag Layer Parent cannot be a descendant of the draggable's Area2D, this would create a reparenting loop.")
 			a.reparent(drag_layer_parent)
-		else:
-			a.reparent(get_tree().root)
+		# I don't know why, but it used to reparent to root after a succesful drag.
+		# YOU SHOULD TURN THAT OFF, NOW!
+		# else:
+		# 	a.reparent(get_tree().root)
 		
 		if relative_dragging:
 			drag_offset = a.global_position - event.position

@@ -24,7 +24,14 @@ enum SNAP_STYLE {
 	set(value):
 		area_reference = value
 		update_configuration_warnings()
-## The node under which draggables will be reparented
+
+## If true, the Attach Spot will be used to attach the draggable to it after
+## an accepting drop.
+@export var reparenting_attachment: bool = false
+
+## The node under which draggables will be reparented, Reparenting Attachment
+## is enabled.
+## If null, the detected Area2D will be used.
 @export var attach_spot: Node2D
 
 @export_group("Behavior")
@@ -137,10 +144,11 @@ func _apply_plan(plan: DropPlan, dropped_area: Area2D) -> void:
 			_make_ephemeral_spot(dropped_area)
 	
 func _attach(area: Area2D):
-	if area.get_parent():
-		area.reparent(attach_spot)
-	else:
-		attach_spot.add_child(area)
+	if reparenting_attachment:
+		if area.get_parent():
+			area.reparent(attach_spot)
+		else:
+			attach_spot.add_child(area)
 	
 	var draggable = area.get_meta("draggable")
 	if draggable:
@@ -148,6 +156,8 @@ func _attach(area: Area2D):
 			draggable.drag_started.connect(_on_draggable_drag_started)
 		if not draggable.drag_ended.is_connected(_on_draggable_drag_ended):
 			draggable.drag_ended.connect(_on_draggable_drag_ended)
+
+			
 func _detach(area: Area2D):
 	DropUtils.clear_occupant_reference(self, area)
 	
