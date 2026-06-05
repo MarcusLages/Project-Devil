@@ -1,5 +1,7 @@
 extends Node
 
+class_name DayManager
+
 ## InteractableManager representing items that will be staying between 
 ## different record folders.
 @export var fixed_items_scene: PackedScene = null
@@ -49,3 +51,8 @@ func load_record(rec_idx: int) -> Error:
         items_container.add_child(rec)
 
     return OK
+
+
+func next_record() -> Error:
+    _curr_record += 1
+    return load_record(_curr_record)
