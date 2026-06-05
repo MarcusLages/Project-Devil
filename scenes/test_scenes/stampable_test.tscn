@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://lfobgcdrmmk4"]
+[gd_scene load_steps=13 format=3 uid="uid://lfobgcdrmmk4"]
 
 [ext_resource type="Script" uid="uid://ct73rsdxv2xas" path="res://scripts/stampable.gd" id="1_vwd21"]
 [ext_resource type="PackedScene" uid="uid://d33y1bfr1gojc" path="res://scenes/components/interactable.tscn" id="2_tser0"]
@@ -21,6 +21,11 @@ fill_from = Vector2(0, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a4r3n"]
 size = Vector2(90, 90)
+
+[sub_resource type="Resource" id="Resource_naa7f"]
+script = ExtResource("6_naa7f")
+id = "item"
+metadata/_custom_type_script = "uid://djdmnemxrx7bg"
 
 [sub_resource type="Resource" id="Resource_uifsb"]
 script = ExtResource("5_2mdjd")
@@ -50,6 +55,7 @@ script = ExtResource("3_naa7f")
 dragging_speed = 12.0
 drag_z_index = 100
 relative_dragging = true
+type = SubResource("Resource_naa7f")
 metadata/_custom_type_script = "uid://crmnw3ldr3xev"
 
 [node name="DropZone" type="Node2D" parent="." node_paths=PackedStringArray("attach_spot")]

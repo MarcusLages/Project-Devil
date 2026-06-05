@@ -22,7 +22,6 @@ func _ready() -> void:
                 interactable_items.append(child)
 
         for child in interactable_items:
-
             var i_component: Interactable = child.get_node_or_null("Interactable")
             if i_component:
                 i_component.hover_entered.connect(_on_child_hover_entered)
@@ -67,3 +66,14 @@ func _on_child_drag_ended(child: Area2D, _drop_spot: SnappingSpot):
 
             i_component.disabled = false
             d_component.disabled = false
+
+
+## Changes state of all the children interactables
+func change_state(disable_interact: bool, disable_drag: bool):
+    for item in interactable_items:
+        var i_component: Interactable = item.get_node("Interactable")
+        var d_component: Draggable = item.get_node_or_null("Draggable")
+
+        i_component.disabled = disable_interact
+        if d_component:
+            d_component.disabled = disable_drag

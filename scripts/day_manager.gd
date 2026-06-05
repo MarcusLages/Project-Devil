@@ -40,6 +40,8 @@ func clean_scene():
         if item != fixed_items_manager:
             item.queue_free()
 
+    fixed_items_manager.change_state(false, false)
+
 
 func load_record(rec_idx: int) -> Error:
     if rec_idx >= record_managers.size():
