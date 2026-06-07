@@ -3,7 +3,7 @@ extends Node
 enum SFX {
     CLOCK_UP,
     CLOCK_DOWN,
-    ALARM,
+    CLOCK_ALARM,
 }
 
 enum MUSIC {
@@ -13,6 +13,7 @@ enum MUSIC {
 var _sfx_streams := {
     SFX.CLOCK_UP: preload("res://assets/sfx/ClockUp.wav"),
     SFX.CLOCK_DOWN: preload("res://assets/sfx/ClockDown.wav"),
+    SFX.CLOCK_ALARM: preload("res://assets/sfx/ClockAlarm.mp3"),
 }
 
 var _music_streams := {
@@ -35,13 +36,17 @@ func _ready():
         sfx_pool.append(sfx_player)
 
 
-func play_sfx(sfx: SFX):
+## ! IMPORTANT: only loops if sfx is MP3 or OGG
+func play_sfx(sfx: SFX, loop: bool = false):
     if sfx not in _sfx_streams:
         push_error("SFX not found: %s" % sfx)
         return
     
+    var stream: AudioStream = _sfx_streams[sfx]
+    if loop and (stream is AudioStreamMP3 or stream is AudioStreamOggVorbis):
+        stream.loop = true
+
     var sfx_player: AudioStreamPlayer = _get_sfx_player()
-    sfx_player.stream = _sfx_streams[sfx]
     sfx_player.play()
 
 
@@ -56,6 +61,7 @@ func play_music(music: MUSIC):
     
     music_player.stream = song
     music_player.play()
+
 
 func _get_sfx_player() -> AudioStreamPlayer:
     for sfx_player in sfx_pool:
