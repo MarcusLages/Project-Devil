@@ -10,6 +10,9 @@ enum MUSIC {
     DEFAULT
 }
 
+const SFX_ID_META := "sfx_id"
+const MUSIC_ID_META := "music_id"
+
 var _sfx_streams := {
     SFX.CLOCK_UP: preload("res://assets/sfx/ClockUp.wav"),
     SFX.CLOCK_DOWN: preload("res://assets/sfx/ClockDown.wav"),
@@ -42,11 +45,13 @@ func play_sfx(sfx: SFX, loop: bool = false):
         push_error("SFX not found: %s" % sfx)
         return
     
-    var stream: AudioStream = _sfx_streams[sfx]
-    if loop and (stream is AudioStreamMP3 or stream is AudioStreamOggVorbis):
-        stream.loop = true
+    var sound: AudioStream = _sfx_streams[sfx]
+    if loop and (sound is AudioStreamMP3 or sound is AudioStreamOggVorbis):
+        sound.loop = true
 
     var sfx_player: AudioStreamPlayer = _get_sfx_player()
+    sfx_player.stream = sound
+    sfx_player.set_meta(SFX_ID_META, sfx)
     sfx_player.play()
 
 
@@ -60,7 +65,20 @@ func play_music(music: MUSIC):
         (song as AudioStreamMP3).loop = true
     
     music_player.stream = song
+    music_player.set_meta(MUSIC_ID_META, music)
     music_player.play()
+
+
+func stop_music():
+    music_player.stop()
+    music_player.remove_meta(MUSIC_ID_META)
+
+
+func stop_sfx(sfx: SFX):
+    for player in sfx_pool:
+        if player.playing and player.get_meta(SFX_ID_META, -1) == sfx:
+            player.stop()
+            return
 
 
 func _get_sfx_player() -> AudioStreamPlayer:
