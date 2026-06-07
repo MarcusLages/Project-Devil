@@ -6,8 +6,12 @@ extends Area2D
 
 @export var clicking_interval_in_seconds: float = 1.
 
+
+var _rng = RandomNumberGenerator.new()
+var _click: int = 0
+
+
 var ringing: bool = false
-var rng = RandomNumberGenerator.new()
 
 
 # Called when the node enters the scene tree for the first time.
@@ -19,19 +23,22 @@ func _ready() -> void:
 func _on_interactable_interacted(_from: Area2D) -> void:
     if ringing:
         _start_alarm_timer()
+        SoundManager.stop_sfx(SoundManager.SFX.ALARM)
         ringing = false
 
 
 func _on_alarm_timer_timeout() -> void:
     ringing = true
-    # TODO: play alarm sound
+    SoundManager.play_sfx(SoundManager.SFX.ALARM, true)
 
 
 func _on_click_timer_timeout() -> void:
-    # TODO: play click sound
-    pass # Replace with function body.
+    var sfx: SoundManager.SFX = (SoundManager.SFX.CLOCK_UP 
+        if _click % 2 == 0 
+        else SoundManager.SFX.CLOCK_DOWN)
+    SoundManager.play_sfx(sfx)
 
 
 func _start_alarm_timer():
-    var sec: float = rng.randf_range(min_ringing_time_in_seconds, max_ringing_time_in_seconds)
+    var sec: float = _rng.randf_range(min_ringing_time_in_seconds, max_ringing_time_in_seconds)
     $AlarmTimer.start(sec)
