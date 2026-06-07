@@ -42,6 +42,17 @@ func _ready() -> void:
     if drag:
         drag.drag_ended.connect(_on_draggable_drag_ended)
 
+
+func _process(_delta: float) -> void:
+    if (
+        is_hovered 
+        and not disabled
+        and Input.is_action_just_pressed("mouse_interact")
+    ):
+        print("interacted")
+        interacted.emit(a2d)
+
+
 func _on_mouse_entered() -> void:
     is_hovered = true
 
@@ -50,8 +61,6 @@ func _on_mouse_entered() -> void:
         
     a2d.scale = hover_zoom_scale
     hover_entered.emit(a2d)
-    if Input.is_action_just_pressed("mouse_interact"):
-        interacted.emit(a2d)
 
 
 func _on_mouse_exited() -> void:
