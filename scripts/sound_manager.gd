@@ -3,7 +3,7 @@ extends Node
 enum SFX {
     CLOCK_UP,
     CLOCK_DOWN,
-    CLOCK_ALARM,
+    ALARM,
 }
 
 enum MUSIC {
@@ -16,7 +16,7 @@ const MUSIC_ID_META := "music_id"
 var _sfx_streams := {
     SFX.CLOCK_UP: preload("res://assets/sfx/ClockUp.wav"),
     SFX.CLOCK_DOWN: preload("res://assets/sfx/ClockDown.wav"),
-    SFX.CLOCK_ALARM: preload("res://assets/sfx/ClockAlarm.mp3"),
+    SFX.ALARM: preload("res://assets/sfx/Alarm.mp3"),
 }
 
 var _music_streams := {
@@ -55,6 +55,15 @@ func play_sfx(sfx: SFX, loop: bool = false):
     sfx_player.play()
 
 
+func stop_sfx(sfx: SFX):
+    for player in sfx_pool:
+        if player.playing and player.get_meta(SFX_ID_META, -1) == sfx:
+            player.stop()
+            player.stream = null
+            player.remove_meta(SFX_ID_META)
+            return
+
+
 func play_music(music: MUSIC):
     if music not in _music_streams:
         push_error("Song not found: %s" % music)
@@ -71,14 +80,8 @@ func play_music(music: MUSIC):
 
 func stop_music():
     music_player.stop()
+    music_player.stream = null
     music_player.remove_meta(MUSIC_ID_META)
-
-
-func stop_sfx(sfx: SFX):
-    for player in sfx_pool:
-        if player.playing and player.get_meta(SFX_ID_META, -1) == sfx:
-            player.stop()
-            return
 
 
 func _get_sfx_player() -> AudioStreamPlayer:
