@@ -1,9 +1,8 @@
 extends Node
 
 var days: int = 3
-# var day_managers: Array[DayManager] = null
-
 var _lives: int = 3
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
