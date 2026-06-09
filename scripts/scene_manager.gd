@@ -70,6 +70,7 @@ func load_day(day: int) -> Error:
     # TODO: load next record for testing too
     day_managers[day].next_record()
     _curr_day = day
+    print("Day %d" % (_curr_day + 1))
     return OK
 
 
@@ -97,4 +98,6 @@ func _on_stampable_stamped(correct: bool): # TODO: handle stamp being correct or
     if day_managers[_curr_day].next_record() == OK: # TODO: handle last record
         print("Next record")
     else:
-        print("Last record already")
+        print("Last record of the day")
+        day_managers[_curr_day].clean_record_scene(true)
+        next_day()

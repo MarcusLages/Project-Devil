@@ -59,6 +59,7 @@ func load_record(rec_idx: int) -> Error:
     _curr_record = rec_idx
     items_container.add_child(record_managers[rec_idx])
 
+    print("Record %d" % (_curr_record + 1))
     return OK
 
 
