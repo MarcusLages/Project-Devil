@@ -63,5 +63,25 @@ func load_record(rec_idx: int) -> Error:
 
 
 func next_record() -> Error:
-    _curr_record += 1
-    return load_record(_curr_record)
+    return load_record(_curr_record + 1)
+
+
+## Returns old container if everything was correct
+func change_items_container(new: Node) -> Node:
+    if not new:
+        return null
+
+    var old: Node = items_container
+
+    if fixed_items_manager:
+        old.remove_child(fixed_items_manager)
+        new.add_child(fixed_items_manager)
+    
+    if _curr_record < 0 or _curr_record >= record_managers.size():
+        old.remove_child(record_managers[_curr_record])
+        new.add_child(record_managers[_curr_record])
+
+    items_container = new
+    return old
+
+    
