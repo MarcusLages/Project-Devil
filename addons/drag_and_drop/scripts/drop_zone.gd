@@ -179,7 +179,7 @@ func _on_draggable_drag_started(area: Area2D):
     if snap_style == SNAP_STYLE.NO_SNAP:
         _remove_ephemeral_spots_for(area)
 
-func _on_draggable_drag_ended(area: Area2D, drop_spot: SnappingSpot):
+func _on_draggable_drag_ended(area: Area2D, _dropzone: DropZone, drop_spot: SnappingSpot):
     # If drop_spot is null, the draggable is returning
     if drop_spot != null:
         if not snapping_points.has(drop_spot):

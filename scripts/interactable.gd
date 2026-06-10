@@ -74,6 +74,6 @@ func _on_mouse_exited() -> void:
         a2d.scale = std_a2d_scale
 
 
-func _on_draggable_drag_ended(_area: Area2D, _drop_spot: SnappingSpot) -> void:
+func _on_draggable_drag_ended(_area: Area2D, _dropzone: DropZone, _drop_spot: SnappingSpot) -> void:
     if not is_hovered:
         a2d.scale = std_a2d_scale

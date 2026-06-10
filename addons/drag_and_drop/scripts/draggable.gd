@@ -57,7 +57,7 @@ var a: Area2D = null
 const CLOSE_ENOUGH_THRESHOLD = .5;
 
 signal drag_started(area: Area2D)
-signal drag_ended(area: Area2D, drop_spot: SnappingSpot)
+signal drag_ended(area: Area2D, dropzone: DropZone, drop_spot: SnappingSpot)
 signal state_changed(area: Area2D, state: DRAGGABLE_STATE)
 
 #region Lifecycle
@@ -166,7 +166,7 @@ func _input(event):
             drop_spot = dropzone.try_dropping(a)
         
         # Emit with the result (null if returning)
-        drag_ended.emit(a, drop_spot)
+        drag_ended.emit(a, dropzone, drop_spot)
         
         if drop_spot:
             move_to(drop_spot.point.global_position, DRAGGABLE_STATE.DROPPING)

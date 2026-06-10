@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bryvltqxkxv4h"]
+
+[ext_resource type="Script" uid="uid://dlebpp38hgf85" path="res://scripts/zoomable.gd" id="1_o0jrd"]
+
+[node name="Zoomable" type="Node"]
+script = ExtResource("1_o0jrd")

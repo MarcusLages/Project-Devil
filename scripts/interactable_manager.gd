@@ -57,7 +57,7 @@ func _on_child_hover_exited(child: Area2D):
             if d_component:
                 d_component.disabled = false
 
-func _on_child_drag_ended(child: Area2D, _drop_spot: SnappingSpot):
+func _on_child_drag_ended(child: Area2D, _dropzone: DropZone, _drop_spot: SnappingSpot):
     var i_component: Interactable = child.get_node("Interactable")
     if not i_component.is_hovered:
         for item in interactable_items:
