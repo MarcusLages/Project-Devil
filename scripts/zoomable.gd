@@ -2,6 +2,7 @@ extends Node
 
 class_name Zoomable
 
+# TODO: might have to add reference to Area2D
 signal zoomed()
 signal unzoomed()
 

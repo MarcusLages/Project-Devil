@@ -1,0 +1,70 @@
+[gd_scene load_steps=11 format=3 uid="uid://cmroivq6op8fc"]
+
+[ext_resource type="PackedScene" uid="uid://d33y1bfr1gojc" path="res://scenes/components/interactable.tscn" id="1_aab02"]
+[ext_resource type="Script" uid="uid://crmnw3ldr3xev" path="res://addons/drag_and_drop/scripts/draggable.gd" id="2_07wf7"]
+[ext_resource type="Script" uid="uid://djdmnemxrx7bg" path="res://addons/drag_and_drop/resources/draggable_types/draggable_type.gd" id="3_hkpdc"]
+[ext_resource type="PackedScene" uid="uid://bomogvejsct0w" path="res://scenes/components/zoomable.tscn" id="4_tj8bj"]
+
+[sub_resource type="Gradient" id="Gradient_aes07"]
+interpolation_mode = 2
+colors = PackedColorArray(0.8447673, 0.8447673, 0, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_mdnfl"]
+gradient = SubResource("Gradient_aes07")
+width = 10
+height = 10
+fill_from = Vector2(0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ln8xd"]
+size = Vector2(90, 90)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aab02"]
+size = Vector2(118, 142)
+
+[sub_resource type="Resource" id="Resource_07wf7"]
+script = ExtResource("3_hkpdc")
+id = "item"
+metadata/_custom_type_script = "uid://djdmnemxrx7bg"
+
+[sub_resource type="Resource" id="Resource_aab02"]
+script = ExtResource("3_hkpdc")
+id = "zoom_zone"
+metadata/_custom_type_script = "uid://djdmnemxrx7bg"
+
+[node name="ZoomableTest" type="Area2D"]
+
+[node name="Content" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Content"]
+scale = Vector2(9, 9)
+texture = SubResource("GradientTexture2D_mdnfl")
+
+[node name="ZoomedContent" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="ZoomedContent"]
+scale = Vector2(11.800001, 14.3)
+texture = SubResource("GradientTexture2D_mdnfl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ln8xd")
+
+[node name="ZoomedCollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_aab02")
+
+[node name="Interactable" parent="." instance=ExtResource("1_aab02")]
+
+[node name="Draggable" type="Node" parent="."]
+script = ExtResource("2_07wf7")
+dragging_speed = 12.0
+drag_z_index = 100
+relative_dragging = true
+type = SubResource("Resource_07wf7")
+metadata/_custom_type_script = "uid://crmnw3ldr3xev"
+
+[node name="Zoomable" parent="." node_paths=PackedStringArray("draggable", "display_container", "zoomed_display_container", "collision_object", "zoomed_collision_object") instance=ExtResource("4_tj8bj")]
+draggable = NodePath("../Draggable")
+zoom_tag = SubResource("Resource_aab02")
+display_container = NodePath("../Content")
+zoomed_display_container = NodePath("../ZoomedContent")
+collision_object = NodePath("../CollisionShape2D")
+zoomed_collision_object = NodePath("../ZoomedCollisionShape2D")

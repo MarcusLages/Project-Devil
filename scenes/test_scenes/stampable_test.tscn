@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://lfobgcdrmmk4"]
+[gd_scene load_steps=14 format=3 uid="uid://lfobgcdrmmk4"]
 
 [ext_resource type="Script" uid="uid://ct73rsdxv2xas" path="res://scripts/stampable.gd" id="1_vwd21"]
 [ext_resource type="PackedScene" uid="uid://d33y1bfr1gojc" path="res://scenes/components/interactable.tscn" id="2_tser0"]
@@ -35,6 +35,11 @@ script = ExtResource("6_naa7f")
 id = "stamp"
 metadata/_custom_type_script = "uid://djdmnemxrx7bg"
 
+[sub_resource type="Resource" id="Resource_2mdjd"]
+script = ExtResource("6_naa7f")
+id = "item"
+metadata/_custom_type_script = "uid://djdmnemxrx7bg"
+
 [node name="StampableTest" type="Area2D"]
 script = ExtResource("1_vwd21")
 correct_stamp = "stamp_test_1"
@@ -62,7 +67,8 @@ metadata/_custom_type_script = "uid://crmnw3ldr3xev"
 script = ExtResource("4_xks73")
 attach_spot = NodePath("..")
 drop_behavior = SubResource("Resource_uifsb")
-accepted_draggable_types = Array[ExtResource("6_naa7f")]([SubResource("Resource_xks73")])
+snap_style = 0
+accepted_draggable_types = Array[ExtResource("6_naa7f")]([SubResource("Resource_xks73"), SubResource("Resource_2mdjd")])
 metadata/_custom_type_script = "uid://nj1hdjl1vob2"
 
 [node name="Marker2D" type="Marker2D" parent="DropZone"]

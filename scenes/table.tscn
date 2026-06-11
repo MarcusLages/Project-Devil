@@ -7,7 +7,7 @@
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_x8522"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_olh0b"]
-size = Vector2(1152, 346.5)
+size = Vector2(754, 346.5)
 
 [sub_resource type="Resource" id="Resource_x8522"]
 script = ExtResource("2_olh0b")
@@ -26,7 +26,7 @@ metadata/_custom_type_script = "uid://djdmnemxrx7bg"
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(1152, 389)
+scale = Vector2(754, 389)
 texture = SubResource("PlaceholderTexture2D_x8522")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
