@@ -1,26 +1,24 @@
-[gd_scene load_steps=10 format=3 uid="uid://daorxf41jrgcl"]
+[gd_scene load_steps=7 format=3 uid="uid://daorxf41jrgcl"]
 
 [ext_resource type="PackedScene" uid="uid://d33y1bfr1gojc" path="res://scenes/components/interactable.tscn" id="1_aaca0"]
 [ext_resource type="Script" uid="uid://25ndynbcbnti" path="res://scripts/items/lamp.gd" id="1_ojcuo"]
 [ext_resource type="Texture2D" uid="uid://coqx4vad4x0i8" path="res://assets/img/lamp.png" id="1_tq8gd"]
-[ext_resource type="Script" uid="uid://crmnw3ldr3xev" path="res://addons/drag_and_drop/scripts/draggable.gd" id="2_tq8gd"]
-[ext_resource type="Script" uid="uid://djdmnemxrx7bg" path="res://addons/drag_and_drop/resources/draggable_types/draggable_type.gd" id="3_x8j62"]
 [ext_resource type="Shader" uid="uid://v58u220katdh" path="res://scripts/shaders/lamp.gdshader" id="5_x8j62"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x8j62"]
 radius = 14.0
 height = 64.0
 
-[sub_resource type="Resource" id="Resource_ojcuo"]
-script = ExtResource("3_x8j62")
-id = "item"
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ojcuo"]
 shader = ExtResource("5_x8j62")
+shader_parameter/light_marker = Vector2(0.5, 0.5)
+shader_parameter/light_radius = 0.3
+shader_parameter/darkness_alpha = 0.65
+shader_parameter/light_intensity = 1.0
+shader_parameter/circular_light = false
 
 [node name="Lamp" type="Area2D"]
 script = ExtResource("1_ojcuo")
-metadata/_edit_group_ = true
 
 [node name="Content" type="Node2D" parent="."]
 
@@ -31,17 +29,12 @@ texture = ExtResource("1_tq8gd")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_x8j62")
 
+[node name="LightMarker" type="Marker2D" parent="."]
+position = Vector2(-2, -14)
+
 [node name="Interactable" parent="." instance=ExtResource("1_aaca0")]
 
-[node name="Draggable" type="Node" parent="."]
-script = ExtResource("2_tq8gd")
-dragging_speed = 12.0
-relative_dragging = true
-type = SubResource("Resource_ojcuo")
-metadata/_custom_type_script = "uid://crmnw3ldr3xev"
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-layer = 2
 follow_viewport_enabled = true
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
@@ -51,4 +44,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 color = Color(0, 0, 0, 1)
+
+[connection signal="interacted" from="Interactable" to="." method="_on_interactable_interacted"]
