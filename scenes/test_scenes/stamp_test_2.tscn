@@ -9,9 +9,10 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ode6b"]
 size = Vector2(90, 90)
 
-[sub_resource type="Resource" id="Resource_24rnu"]
+[sub_resource type="Resource" id="Resource_m6s8j"]
 script = ExtResource("5_ta8l2")
-id = "stamp"
+id = "item"
+metadata/_custom_type_script = "uid://djdmnemxrx7bg"
 
 [node name="StampTest2" type="Area2D"]
 script = ExtResource("1_m6s8j")
@@ -32,5 +33,5 @@ script = ExtResource("4_l0svb")
 dragging_speed = 12.0
 drag_z_index = 100
 relative_dragging = true
-type = SubResource("Resource_24rnu")
+type = SubResource("Resource_m6s8j")
 metadata/_custom_type_script = "uid://crmnw3ldr3xev"

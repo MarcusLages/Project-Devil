@@ -63,6 +63,10 @@ func _on_draggable_drag_ended(_area: Area2D, dropzone: DropZone, _drop_spot: Sna
         and zoomed_display_container
         and dropzone
     ):
+        # ! Workaround to deal with how Stampable was programmed
+        if dropzone.a is Stampable:
+            return
+            
         if _check_dropzone_drag_types(dropzone):
             if not is_zoomed:
                 display_container.hide()
