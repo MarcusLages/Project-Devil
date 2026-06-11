@@ -29,8 +29,8 @@ extends Area2D
 @export var max_dark_time_sec: float = 120.
 
 @onready var shader: ShaderMaterial = $"CanvasLayer/ColorRect".material
+@onready var darkness_timer: Timer = $DarknessTimer
 
-# TODO: add timer
 var _rng = RandomNumberGenerator.new()
 
 func _ready() -> void:
@@ -39,7 +39,9 @@ func _ready() -> void:
 
     assert(light_marker != null, "Must have a LightMarker (Marker2D) as a child node of Lamp")
     
-    _change_shaders(lights_on)
+    if lights_on:
+        _start_darkness_timer()
+    _change_shaders()
 
 
 func _process(_delta: float) -> void:
@@ -54,11 +56,14 @@ func change_state(turn_on: bool):
     
     lights_on = turn_on
     SoundManager.play_sfx(SoundManager.SFX.LAMP_SWITCH)
-    _change_shaders(lights_on)
+    _change_shaders()
+
+    if lights_on:
+        _start_darkness_timer()
 
 
-func _change_shaders(are_lights_on: bool):
-    if are_lights_on:
+func _change_shaders():
+    if lights_on:
         shader.set_shader_parameter("light_radius", light_radius_on)
         shader.set_shader_parameter("darkness_alpha", darkness_alpha_on)
         shader.set_shader_parameter("circular_light", circular_light_on)
@@ -70,7 +75,18 @@ func _change_shaders(are_lights_on: bool):
         shader.set_shader_parameter("light_intensity", light_intensity_off)
 
 
+func _start_darkness_timer():
+    var sec: float = _rng.randf_range(min_dark_time_sec, max_dark_time_sec)
+    darkness_timer.start(sec)
+
+
 func _on_interactable_interacted(_from: Area2D):
     if disabled:
         return
     change_state(not lights_on)
+
+
+func _on_darkness_timer_timeout() -> void:
+    if not lights_on:
+        return
+    change_state(false)

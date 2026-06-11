@@ -47,4 +47,8 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
+[node name="DarknessTimer" type="Timer" parent="."]
+one_shot = true
+
 [connection signal="interacted" from="Interactable" to="." method="_on_interactable_interacted"]
+[connection signal="timeout" from="DarknessTimer" to="." method="_on_darkness_timer_timeout"]
