@@ -30,6 +30,7 @@ extends Area2D
 
 @onready var shader: ShaderMaterial = $"CanvasLayer/ColorRect".material
 
+# TODO: add timer
 var _rng = RandomNumberGenerator.new()
 
 func _ready() -> void:
@@ -47,16 +48,13 @@ func _process(_delta: float) -> void:
     shader.set_shader_parameter("light_marker", normalized_pos)
 
 
-func turn_on():
-    if not disabled:
-        lights_on = true
-        _change_shaders(lights_on)
-
-
-func turn_off():
-    if not disabled:
-        lights_on = false
-        _change_shaders(lights_on)
+func change_state(turn_on: bool):
+    if disabled:
+        return
+    
+    lights_on = turn_on
+    SoundManager.play_sfx(SoundManager.SFX.LAMP_SWITCH)
+    _change_shaders(lights_on)
 
 
 func _change_shaders(are_lights_on: bool):
@@ -75,9 +73,4 @@ func _change_shaders(are_lights_on: bool):
 func _on_interactable_interacted(_from: Area2D):
     if disabled:
         return
-    
-    print("lights_on", lights_on)
-    if lights_on:
-        turn_off()
-    else:
-        turn_on()
+    change_state(not lights_on)
