@@ -41,7 +41,6 @@ shape = SubResource("RectangleShape2D_816fa")
 [node name="Draggable" type="Node" parent="."]
 script = ExtResource("2_n20cq")
 dragging_speed = 12.0
-drag_z_index = 100
 relative_dragging = true
 type = SubResource("Resource_gg67v")
 metadata/_custom_type_script = "uid://crmnw3ldr3xev"
