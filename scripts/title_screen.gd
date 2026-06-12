@@ -1,8 +1,15 @@
 extends Control
 
+@export_category("Text Settings")
 @export_multiline var opening_line: String
+@export var title_font: Font = preload("res://assets/font/ELEGANT TYPEWRITER Regular.ttf")
+@export var font_size: int = 20
+
+@export_category("Transition Settings")
 @export var fade_in_duration_sec: float = 1.
 @export var line_wait_sec: float = 2.
+
+@export_category("Extra Settings")
 @export var change_to_scene: PackedScene
 
 @onready var container = $VBoxContainer
@@ -20,6 +27,8 @@ func animate_lines():
         label.text = line
         label.modulate.a = 0
         label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+        label.add_theme_font_override("font", title_font)
+        label.add_theme_font_size_override("font_size", font_size)
         container.add_child(label)
 
         tween = create_tween()

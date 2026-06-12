@@ -23,9 +23,7 @@ var _sfx_streams := {
     SFX.COFFEE_SIP: preload("res://assets/sfx/CoffeeSip.wav"),
 }
 
-var _music_streams := {
-
-}
+var _music_streams := {}
 
 @onready var music_player := AudioStreamPlayer.new()
 @onready var sfx_pool: Array[AudioStreamPlayer] = []
