@@ -1,0 +1,38 @@
+[gd_scene load_steps=2 format=3 uid="uid://cul23fdhs84tk"]
+
+[ext_resource type="Script" uid="uid://db73ofh0wsxan" path="res://scripts/ending_scene.gd" id="1_ldsnl"]
+
+[node name="EndingScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ldsnl")
+chosen_one = "godmother"
+endings = {
+"ancient": "ANIMA MUNDI\\\\nWE ARE ALL\\\\nTOGETHER",
+"board": "Providence thanks you for your diligent work, contractor.\\\\nUnfortunately, due to changing priorities regarding our assets, we will not be able to compensate you until we see improvements to your standing with our company.\\\\nWe hope to see your next week.",
+"godmother": "Child we will have SO MUCH fun!!!\\\\nand the fun will never\\\\nnever\\\\ndie out die out die out die out die out die out dieoutdieout",
+"king": "Dear subject, I am glad thou have chosen me as thy King.\\\\nAs long as thou are useful, thou shall have a place under my rule.\\\\nWe grow in light and shadow.",
+"source": "No… no… you were supposed to take control of the narrative.\\\\nDon’t you see? Don’t you… understand?\\\\nThere’s no hope for any of you, is there?\\\\nWhatever. I’m pulling the plug."
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.35
+anchor_right = 1.0
+anchor_bottom = 0.65
+grow_horizontal = 2
+grow_vertical = 2

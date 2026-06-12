@@ -20,7 +20,8 @@ class_name TextScreen
 var lines: PackedStringArray
 
 func _ready() -> void:
-    lines = opening_line.split("\\")
+    if not lines:
+        lines = opening_line.split("\\")
     animate_lines()
 
 func animate_lines():
