@@ -1,5 +1,8 @@
 extends Control
 
+class_name TextScreen
+
+
 @export_category("Text Settings")
 @export_multiline var opening_line: String
 @export var title_font: Font = preload("res://assets/font/ELEGANT TYPEWRITER Regular.ttf")
