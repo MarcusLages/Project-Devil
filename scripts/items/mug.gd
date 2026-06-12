@@ -31,7 +31,6 @@ var blur_tween: Tween = null
 
 var _rng = RandomNumberGenerator.new()
 
-# TODO: missing actually adding the timer
 
 func _ready() -> void:
     shader_material.set_shader_parameter("gaussian_blur_center", gaussian_blur_center)
@@ -39,6 +38,8 @@ func _ready() -> void:
     shader_material.set_shader_parameter("gaussian_blur_corner", gaussian_blur_corner)
     if is_sleepy:
         enable_sleepiness()
+    else:
+        _start_sleep_timer()
 
 func _process(_delta: float) -> void:
     shader_material.set_shader_parameter("blur_intensity", curr_blur)
@@ -51,7 +52,7 @@ func _start_sleep_timer():
 
 func _on_interactable_interacted(_from: Area2D):
     if is_sleepy:
-      disable_sleepiness()  
+      disable_sleepiness()
 
 
 func _on_sleep_timer_timeout():
@@ -62,12 +63,12 @@ func _on_sleep_timer_timeout():
 func enable_sleepiness():
     if disabled:
         return
-        
+    
+    is_sleepy = true
     color_rect.visible = true
 
     if blur_tween:
         blur_tween.kill()
-    
     blur_tween = create_tween()
     blur_tween.set_trans(Tween.TRANS_QUAD)
     blur_tween.set_ease(Tween.EASE_IN)
@@ -82,10 +83,11 @@ func enable_sleepiness():
 func disable_sleepiness():
     if disabled:
         return
-        
+    
+    is_sleepy = false
+    
     if blur_tween:
         blur_tween.kill()
-    
     blur_tween = create_tween()
     blur_tween.set_trans(Tween.TRANS_QUAD)
     blur_tween.set_ease(Tween.EASE_OUT)
