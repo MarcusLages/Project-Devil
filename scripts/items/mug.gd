@@ -6,9 +6,14 @@ extends Area2D
 @export var is_sleepy: bool = false
 ## Disables changing state
 @export var disabled: bool = false
+
+@export_category("Blur Settings")
 ## Percentage of the screen considered during the blur
-@export var blur_intensity: float = 0.
+@export var blur_intensity: float = 0.275
 @export var blur_transition_speed_sec: float = 1.
+@export var gaussian_blur_center: float = 0.25
+@export var gaussian_blur_edge: float = 0.125
+@export var gaussian_blur_corner: float = 0.0625
 
 @export_category("Timers")
 @export var min_sleep_time_sec: float = 50.
@@ -29,9 +34,11 @@ var _rng = RandomNumberGenerator.new()
 # TODO: missing actually adding the timer
 
 func _ready() -> void:
+    shader_material.set_shader_parameter("gaussian_blur_center", gaussian_blur_center)
+    shader_material.set_shader_parameter("gaussian_blur_edge", gaussian_blur_edge)
+    shader_material.set_shader_parameter("gaussian_blur_corner", gaussian_blur_corner)
     if is_sleepy:
         enable_sleepiness()
-
 
 func _process(_delta: float) -> void:
     shader_material.set_shader_parameter("blur_intensity", curr_blur)
@@ -43,21 +50,17 @@ func _start_sleep_timer():
 
 
 func _on_interactable_interacted(_from: Area2D):
-    if disabled:
-        return
     if is_sleepy:
       disable_sleepiness()  
 
 
 func _on_sleep_timer_timeout():
-    if disabled:
-        return
     if not is_sleepy:
       enable_sleepiness()
 
 
 func enable_sleepiness():
-    if is_sleepy:
+    if disabled:
         return
         
     color_rect.visible = true
@@ -77,7 +80,7 @@ func enable_sleepiness():
 
 
 func disable_sleepiness():
-    if not is_sleepy:
+    if disabled:
         return
         
     if blur_tween:

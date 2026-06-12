@@ -69,8 +69,6 @@ func _start_darkness_timer():
 
 
 func _on_interactable_interacted(_from: Area2D):
-    if disabled:
-        return
     change_state(not lights_on)
 
 

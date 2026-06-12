@@ -1,8 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://biewfu4myp8h1"]
+[gd_scene load_steps=3 format=3 uid="uid://biewfu4myp8h1"]
 
 [ext_resource type="PackedScene" uid="uid://bywfqn28706i7" path="res://scenes/items/mug.tscn" id="1_yud5b"]
+[ext_resource type="PackedScene" uid="uid://daorxf41jrgcl" path="res://scenes/items/lamp.tscn" id="2_bsuwx"]
 
 [node name="TestScene" type="Node2D"]
 
 [node name="Mug" parent="." instance=ExtResource("1_yud5b")]
 position = Vector2(601, 382)
+blur_intensity = 0.275
+
+[node name="Lamp" parent="." instance=ExtResource("2_bsuwx")]
+position = Vector2(420, 278)
