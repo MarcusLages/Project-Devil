@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://bywfqn28706i7"]
+
+[ext_resource type="Script" uid="uid://ci43rbdbuh1yc" path="res://scripts/interactable.gd" id="1_be8lu"]
+[ext_resource type="Script" uid="uid://b8iwwfgs8e5nf" path="res://scripts/items/mug.gd" id="1_cj1p2"]
+[ext_resource type="Texture2D" uid="uid://dtskikbf4qlol" path="res://assets/img/mug.png" id="1_kvfju"]
+[ext_resource type="Shader" uid="uid://dmgdn4ij4tfdb" path="res://scripts/shaders/mug.gdshader" id="3_54i30"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_54i30"]
+radius = 64.0
+height = 170.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cj1p2"]
+shader = ExtResource("3_54i30")
+shader_parameter/blur_intensity = 0.0
+
+[node name="Mug" type="Area2D"]
+script = ExtResource("1_cj1p2")
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D"]
+texture = ExtResource("1_kvfju")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3, 0)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_54i30")
+
+[node name="Interactable" type="Node" parent="."]
+script = ExtResource("1_be8lu")
+metadata/_custom_type_script = "uid://ci43rbdbuh1yc"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_cj1p2")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 1, 1, 0)
+
+[node name="SleepTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="interacted" from="Interactable" to="." method="_on_interactable_interacted"]
+[connection signal="timeout" from="SleepTimer" to="." method="_on_sleep_timer_timeout"]

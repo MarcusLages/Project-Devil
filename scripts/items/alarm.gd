@@ -1,12 +1,8 @@
 extends Area2D
 
-
 @export var min_ringing_time_sec: float = 50.
-
 @export var max_ringing_time_sec: float = 120.
-
 @export var clicking_interval_sec: float = 1.
-
 
 var _rng = RandomNumberGenerator.new()
 var _click: int = 0

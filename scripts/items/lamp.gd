@@ -28,7 +28,7 @@ extends Area2D
 @export var min_dark_time_sec: float = 50.
 @export var max_dark_time_sec: float = 120.
 
-@onready var shader: ShaderMaterial = $"CanvasLayer/ColorRect".material
+@onready var shader_material: ShaderMaterial = $"CanvasLayer/ColorRect".material
 @onready var darkness_timer: Timer = $DarknessTimer
 
 var _rng = RandomNumberGenerator.new()
@@ -47,32 +47,20 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
     var light_screen_pos = get_viewport().get_canvas_transform() * light_marker.global_position
     var normalized_pos = light_screen_pos / get_viewport_rect().size
-    shader.set_shader_parameter("light_marker", normalized_pos)
-
-
-func change_state(turn_on: bool):
-    if disabled:
-        return
-    
-    lights_on = turn_on
-    SoundManager.play_sfx(SoundManager.SFX.LAMP_SWITCH)
-    _change_shaders()
-
-    if lights_on:
-        _start_darkness_timer()
+    shader_material.set_shader_parameter("light_marker", normalized_pos)
 
 
 func _change_shaders():
     if lights_on:
-        shader.set_shader_parameter("light_radius", light_radius_on)
-        shader.set_shader_parameter("darkness_alpha", darkness_alpha_on)
-        shader.set_shader_parameter("circular_light", circular_light_on)
-        shader.set_shader_parameter("light_intensity", light_intensity_on)
+        shader_material.set_shader_parameter("light_radius", light_radius_on)
+        shader_material.set_shader_parameter("darkness_alpha", darkness_alpha_on)
+        shader_material.set_shader_parameter("circular_light", circular_light_on)
+        shader_material.set_shader_parameter("light_intensity", light_intensity_on)
     else:
-        shader.set_shader_parameter("light_radius", light_radius_off)
-        shader.set_shader_parameter("darkness_alpha", darkness_alpha_off)
-        shader.set_shader_parameter("circular_light", circular_light_off)
-        shader.set_shader_parameter("light_intensity", light_intensity_off)
+        shader_material.set_shader_parameter("light_radius", light_radius_off)
+        shader_material.set_shader_parameter("darkness_alpha", darkness_alpha_off)
+        shader_material.set_shader_parameter("circular_light", circular_light_off)
+        shader_material.set_shader_parameter("light_intensity", light_intensity_off)
 
 
 func _start_darkness_timer():
@@ -90,3 +78,15 @@ func _on_darkness_timer_timeout() -> void:
     if not lights_on:
         return
     change_state(false)
+
+
+func change_state(turn_on: bool):
+    if disabled:
+        return
+    
+    lights_on = turn_on
+    SoundManager.play_sfx(SoundManager.SFX.LAMP_SWITCH)
+    _change_shaders()
+
+    if lights_on:
+        _start_darkness_timer()
