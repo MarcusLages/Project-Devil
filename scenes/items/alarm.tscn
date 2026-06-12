@@ -1,21 +1,14 @@
-[gd_scene load_steps=9 format=3 uid="uid://c3teswcgfhijm"]
+[gd_scene load_steps=8 format=3 uid="uid://c3teswcgfhijm"]
 
 [ext_resource type="Script" uid="uid://b7tj5mxit8ddi" path="res://scripts/items/alarm.gd" id="1_n20cq"]
 [ext_resource type="PackedScene" uid="uid://d33y1bfr1gojc" path="res://scenes/components/interactable.tscn" id="1_wrbec"]
+[ext_resource type="Texture2D" uid="uid://diq1f8y7q7lup" path="res://assets/img/cellphone.png" id="2_jjlt2"]
 [ext_resource type="Script" uid="uid://crmnw3ldr3xev" path="res://addons/drag_and_drop/scripts/draggable.gd" id="2_n20cq"]
 [ext_resource type="Script" uid="uid://djdmnemxrx7bg" path="res://addons/drag_and_drop/resources/draggable_types/draggable_type.gd" id="3_jjlt2"]
 
-[sub_resource type="Gradient" id="Gradient_aes07"]
-interpolation_mode = 2
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_cj05l"]
-gradient = SubResource("Gradient_aes07")
-width = 10
-height = 10
-fill_from = Vector2(0, 1)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_816fa"]
-size = Vector2(90, 90)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jjlt2"]
+radius = 53.163372
+height = 221.44441
 
 [sub_resource type="Resource" id="Resource_gg67v"]
 script = ExtResource("3_jjlt2")
@@ -24,17 +17,16 @@ metadata/_custom_type_script = "uid://djdmnemxrx7bg"
 
 [node name="Alarm" type="Area2D"]
 script = ExtResource("1_n20cq")
-min_ringing_time_in_seconds = 3.0
-max_ringing_time_in_seconds = 5.0
 
 [node name="Content" type="Node2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="Content"]
-scale = Vector2(9, 9)
-texture = SubResource("GradientTexture2D_cj05l")
+texture = ExtResource("2_jjlt2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_816fa")
+position = Vector2(-6.000001, 7.9999995)
+rotation = -1.2845623
+shape = SubResource("CapsuleShape2D_jjlt2")
 
 [node name="Interactable" parent="." instance=ExtResource("1_wrbec")]
 

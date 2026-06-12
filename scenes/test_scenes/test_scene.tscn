@@ -1,13 +1,23 @@
-[gd_scene load_steps=3 format=3 uid="uid://biewfu4myp8h1"]
+[gd_scene load_steps=4 format=3 uid="uid://biewfu4myp8h1"]
 
 [ext_resource type="PackedScene" uid="uid://bywfqn28706i7" path="res://scenes/items/mug.tscn" id="1_yud5b"]
-[ext_resource type="PackedScene" uid="uid://daorxf41jrgcl" path="res://scenes/items/lamp.tscn" id="2_bsuwx"]
+[ext_resource type="PackedScene" uid="uid://c3teswcgfhijm" path="res://scenes/items/alarm.tscn" id="2_bsuwx"]
+[ext_resource type="PackedScene" uid="uid://daorxf41jrgcl" path="res://scenes/items/lamp.tscn" id="3_wcuwy"]
 
 [node name="TestScene" type="Node2D"]
 
 [node name="Mug" parent="." instance=ExtResource("1_yud5b")]
-position = Vector2(601, 382)
-blur_intensity = 0.275
+position = Vector2(780, 323)
+min_sleep_time_sec = 5.0
+max_sleep_time_sec = 10.0
 
-[node name="Lamp" parent="." instance=ExtResource("2_bsuwx")]
-position = Vector2(420, 278)
+[node name="Alarm" parent="." instance=ExtResource("2_bsuwx")]
+position = Vector2(153, 489)
+min_ringing_time_sec = 2.0
+max_ringing_time_sec = 8.0
+
+[node name="Lamp" parent="." instance=ExtResource("3_wcuwy")]
+position = Vector2(596, 259)
+light_radius_on = 1.0
+min_dark_time_sec = 10.0
+max_dark_time_sec = 15.0
