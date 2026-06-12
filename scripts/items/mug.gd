@@ -85,6 +85,7 @@ func disable_sleepiness():
         return
     
     is_sleepy = false
+    SoundManager.play_sfx(SoundManager.SFX.COFFEE_SIP)
     
     if blur_tween:
         blur_tween.kill()

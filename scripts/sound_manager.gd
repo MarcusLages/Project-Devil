@@ -4,7 +4,8 @@ enum SFX {
     CLOCK_UP,
     CLOCK_DOWN,
     ALARM,
-    LAMP_SWITCH
+    LAMP_SWITCH,
+    COFFEE_SIP,
 }
 
 enum MUSIC {
@@ -19,6 +20,7 @@ var _sfx_streams := {
     SFX.CLOCK_DOWN: preload("res://assets/sfx/ClockDown.wav"),
     SFX.ALARM: preload("res://assets/sfx/Alarm.mp3"),
     SFX.LAMP_SWITCH: preload("res://assets/sfx/LampSwitch.ogg"),
+    SFX.COFFEE_SIP: preload("res://assets/sfx/CoffeeSip.wav"),
 }
 
 var _music_streams := {
