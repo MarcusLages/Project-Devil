@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://b7umlc8oql2bm"]
+[gd_scene load_steps=5 format=3 uid="uid://b7umlc8oql2bm"]
 
 [ext_resource type="Script" uid="uid://b6kihpl0g4hgo" path="res://scripts/interactable_manager.gd" id="1_ewqwc"]
 [ext_resource type="PackedScene" uid="uid://d4ifeiikysdr6" path="res://scenes/test_scenes/interactable_test.tscn" id="2_qv8of"]
 [ext_resource type="PackedScene" uid="uid://lfobgcdrmmk4" path="res://scenes/test_scenes/stampable_test.tscn" id="3_n2wvr"]
 [ext_resource type="PackedScene" uid="uid://cmroivq6op8fc" path="res://scenes/test_scenes/zoomable_test.tscn" id="4_gl85w"]
-[ext_resource type="PackedScene" uid="uid://ccgiljgxttx26" path="res://scenes/test_scenes/interactable_test2.tscn" id="5_yo0tu"]
 
 [node name="InteractableManagerTest1" type="Node"]
 script = ExtResource("1_ewqwc")
@@ -17,6 +16,3 @@ position = Vector2(942, 360)
 
 [node name="ZoomableTest" parent="." instance=ExtResource("4_gl85w")]
 position = Vector2(933, 119)
-
-[node name="Interactable_test" parent="." instance=ExtResource("5_yo0tu")]
-position = Vector2(731, 163)
