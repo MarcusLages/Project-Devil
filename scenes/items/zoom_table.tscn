@@ -27,6 +27,7 @@ id = "item"
 metadata/_custom_type_script = "uid://djdmnemxrx7bg"
 
 [node name="ZoomTable" type="Area2D"]
+z_index = -100
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(6.2187505, 6.0781245)

@@ -8,10 +8,10 @@
 [node name="InteractableManagerTest3" type="Node"]
 script = ExtResource("1_ds1jn")
 
-[node name="StampTest1" parent="." instance=ExtResource("2_pgiro")]
+[node name="StampTestRed" parent="." instance=ExtResource("2_pgiro")]
 position = Vector2(416, 463)
 
-[node name="StampTest2" parent="." instance=ExtResource("3_h20m5")]
+[node name="StampTestYelllow" parent="." instance=ExtResource("3_h20m5")]
 position = Vector2(769, 458)
 
 [node name="BoardBook" parent="." instance=ExtResource("4_h20m5")]
