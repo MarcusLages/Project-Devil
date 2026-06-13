@@ -2,7 +2,7 @@ extends Area2D
 
 class_name Stampable
 
-signal stamped(correct: bool)
+signal stamped(correct: bool, tag_stamped: String, correct_stamp: String)
 
 ## DropZone responsible to take care of the stamp logic
 @export var drop_zone: DropZone = null
@@ -27,5 +27,5 @@ func _on_drop_zone_drop_applied(_zone: DropZone, stamp_area: Area2D, _plan: Drop
 		return
 
 	var stamp := stamp_area as Stamp
-	stamped.emit(stamp.stamp_name == correct_stamp)
+	stamped.emit(stamp.stamp_name == correct_stamp, stamp.stamp_name, correct_stamp)
 	SoundManager.play_sfx(SoundManager.SFX.STAMP, false, 10.0)

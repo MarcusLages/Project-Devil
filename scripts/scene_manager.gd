@@ -82,11 +82,15 @@ func load_day(day: int) -> Error:
 
 
 func next_day() -> Error:
-    fade("Day %d" % (_curr_day + 2))
-    return load_day(_curr_day + 1)
+    var res: Error = load_day(_curr_day + 1)
+    if res == OK: 
+        fade("Day %d" % (_curr_day + 1))
+    else:
+        fade("Day %d" % (_curr_day + 1), true)
+    return res
 
 
-func fade(text: String = ""):
+func fade(text: String = "", stay_dark: bool = false):
     var fade_rect = $CanvasLayer/ColorRect
     var text_label = $CanvasLayer/Label
     text_label.text = text
@@ -97,9 +101,11 @@ func fade(text: String = ""):
     tween.tween_callback(func(): text_label.visible = true)
     tween.tween_callback(func(): await get_tree().create_timer(2.0).timeout)
         
-    tween.tween_property(fade_rect, "modulate:a", 0.0, 1.0)
     tween.tween_callback(func(): text_label.visible = false)
 
+    if not stay_dark:
+        tween.tween_property(fade_rect, "modulate:a", 0.0, 1.0)
+        
 
 func _get_lamp():
     # Workaround to get the lamp
@@ -121,7 +127,7 @@ func _on_node_removed(node: Node):
         (node as Stampable).stamped.disconnect(_on_stampable_stamped)
 
 
-func _on_stampable_stamped(correct: bool):
+func _on_stampable_stamped(correct: bool, tag_stamped: String, _correct_stamp: String):
     if lamp: lamp.change_state(false, false)
     await get_tree().create_timer(0.05).timeout
 
@@ -142,6 +148,10 @@ func _on_stampable_stamped(correct: bool):
 
             get_tree().change_scene_to_packed(game_over_scene)
             return
+    
+    # Uncomment for testing ending scene
+    # GameManager.final_stamp = tag_stamped
+    # get_tree().change_scene_to_packed(ending_scene)
 
     if day_managers[_curr_day].next_record() == OK:
         if lamp: lamp.change_state(true, false)
@@ -149,7 +159,10 @@ func _on_stampable_stamped(correct: bool):
     else:
         print("Last record of the day")
         day_managers[_curr_day].clean_record_scene(true)
-        next_day()
 
-        await get_tree().create_timer(0.5).timeout
-        if lamp: lamp.change_state(true, false)
+        if next_day() == OK:
+            await get_tree().create_timer(0.5).timeout
+            if lamp: lamp.change_state(true, false)
+        else:
+            GameManager.final_stamp = tag_stamped
+            get_tree().change_scene_to_packed(ending_scene)
