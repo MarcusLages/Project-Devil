@@ -1,12 +1,25 @@
-[gd_scene load_steps=3 format=3 uid="uid://ci8r2pysx011g"]
+[gd_scene load_steps=4 format=3 uid="uid://ci8r2pysx011g"]
 
 [ext_resource type="PackedScene" uid="uid://bqt842joqbmsr" path="res://scenes/books/book.tscn" id="1_vet2w"]
+[ext_resource type="Texture2D" uid="uid://cm00q3s7y3tsd" path="res://assets/img/book_board_open.png" id="2_4qose"]
 [ext_resource type="Texture2D" uid="uid://csgk7v74fbneb" path="res://assets/img/book_board.png" id="2_i4itc"]
 
 [node name="BookBoard" instance=ExtResource("1_vet2w")]
 
+[node name="TextureRect" parent="ZoomedContent/1" index="0"]
+texture = ExtResource("2_4qose")
+
+[node name="TextureRect" parent="ZoomedContent/2" index="0"]
+texture = ExtResource("2_4qose")
+
+[node name="TextureRect" parent="ZoomedContent/3" index="0"]
+texture = ExtResource("2_4qose")
+
 [node name="BookBoard" type="Sprite2D" parent="Content" index="0"]
 texture = ExtResource("2_i4itc")
+
+[node name="ZoomedCollisionShape2D" parent="." index="2"]
+position = Vector2(-1, -0.5)
 
 [editable path="ZoomedContent/1"]
 [editable path="ZoomedContent/2"]

@@ -1,11 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://6166iel22ead"]
+[gd_scene load_steps=4 format=3 uid="uid://6166iel22ead"]
 
 [ext_resource type="PackedScene" uid="uid://bqt842joqbmsr" path="res://scenes/books/book.tscn" id="1_fb8m7"]
+[ext_resource type="Texture2D" uid="uid://oghrceeogavy" path="res://assets/img/book_source_open.png" id="2_ia1vg"]
 [ext_resource type="Texture2D" uid="uid://di4xl5ggtufjm" path="res://assets/img/book_source.png" id="2_klhvm"]
 
 [node name="BookSource" instance=ExtResource("1_fb8m7")]
 
-[node name="BookBoard" type="Sprite2D" parent="Content" index="0"]
+[node name="TextureRect" parent="ZoomedContent/1" index="0"]
+texture = ExtResource("2_ia1vg")
+
+[node name="TextureRect" parent="ZoomedContent/2" index="0"]
+texture = ExtResource("2_ia1vg")
+
+[node name="TextureRect" parent="ZoomedContent/3" index="0"]
+texture = ExtResource("2_ia1vg")
+
+[node name="BookSource" type="Sprite2D" parent="Content" index="0"]
 texture = ExtResource("2_klhvm")
 
 [editable path="ZoomedContent/1"]

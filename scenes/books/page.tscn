@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://e0lxhfs5ep2m"]
+[gd_scene load_steps=2 format=3 uid="uid://e0lxhfs5ep2m"]
 
 [ext_resource type="Script" uid="uid://hacwo7x1t64v" path="res://scripts/items/page.gd" id="1_ijqg6"]
-[ext_resource type="Texture2D" uid="uid://bw2a38t4lxeon" path="res://assets/img/page.png" id="2_2iovc"]
 
 [node name="Page" type="Node2D"]
 script = ExtResource("1_ijqg6")
@@ -18,7 +17,6 @@ offset_right = 175.0
 offset_bottom = 164.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_2iovc")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 anchors_preset = 8

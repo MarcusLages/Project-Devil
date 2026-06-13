@@ -1,21 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://b608v1bt38v64"]
+[gd_scene load_steps=4 format=3 uid="uid://b608v1bt38v64"]
 
 [ext_resource type="PackedScene" uid="uid://bqt842joqbmsr" path="res://scenes/books/book.tscn" id="1_7rxs3"]
 [ext_resource type="Texture2D" uid="uid://hftkoghmnh0i" path="res://assets/img/book_king.png" id="2_7rxs3"]
+[ext_resource type="Texture2D" uid="uid://bgjndsvsg0nxx" path="res://assets/img/book_king_open.png" id="2_mxac0"]
 
 [node name="BookKing" instance=ExtResource("1_7rxs3")]
 
-[node name="Content" parent="." index="1"]
-visible = true
+[node name="TextureRect" parent="ZoomedContent/1" index="0"]
+texture = ExtResource("2_mxac0")
 
-[node name="BookBoard" type="Sprite2D" parent="Content" index="0"]
+[node name="TextureRect" parent="ZoomedContent/2" index="0"]
+texture = ExtResource("2_mxac0")
+
+[node name="TextureRect" parent="ZoomedContent/3" index="0"]
+texture = ExtResource("2_mxac0")
+
+[node name="BookKing" type="Sprite2D" parent="Content" index="0"]
 texture = ExtResource("2_7rxs3")
-
-[node name="ZoomedCollisionShape2D" parent="." index="2"]
-visible = true
-
-[node name="CollisionShape2D" parent="." index="3"]
-visible = true
 
 [editable path="ZoomedContent/1"]
 [editable path="ZoomedContent/2"]
