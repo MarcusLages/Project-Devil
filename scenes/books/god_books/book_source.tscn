@@ -8,9 +8,6 @@
 
 [node name="BookSource" instance=ExtResource("1_fb8m7")]
 
-[node name="1" parent="ZoomedContent" index="0"]
-visible = false
-
 [node name="TextureRect" parent="ZoomedContent/1" index="0"]
 texture = ExtResource("2_ia1vg")
 
@@ -50,7 +47,6 @@ offset_bottom = 155.0
 text = "<"
 
 [node name="2" parent="ZoomedContent" index="1" instance=ExtResource("4_rpeps")]
-visible = false
 
 [node name="TextureRect" parent="ZoomedContent/2" index="0"]
 texture = ExtResource("2_ia1vg")
@@ -91,7 +87,6 @@ offset_bottom = 155.0
 text = "<"
 
 [node name="3" parent="ZoomedContent" index="2" instance=ExtResource("4_rpeps")]
-visible = false
 
 [node name="TextureRect" parent="ZoomedContent/3" index="0"]
 texture = ExtResource("2_ia1vg")
@@ -131,7 +126,6 @@ offset_bottom = 155.0
 text = "<"
 
 [node name="4" parent="ZoomedContent" index="3" instance=ExtResource("4_rpeps")]
-visible = false
 
 [node name="TextureRect" parent="ZoomedContent/4" index="0"]
 texture = ExtResource("2_ia1vg")
@@ -171,7 +165,6 @@ offset_bottom = 155.0
 text = "<"
 
 [node name="5" parent="ZoomedContent" index="4" instance=ExtResource("4_rpeps")]
-visible = false
 
 [node name="TextureRect" parent="ZoomedContent/5" index="0"]
 texture = ExtResource("2_ia1vg")
@@ -211,7 +204,6 @@ offset_bottom = 155.0
 text = "<"
 
 [node name="6" parent="ZoomedContent" index="5" instance=ExtResource("4_rpeps")]
-visible = false
 
 [node name="TextureRect" parent="ZoomedContent/6" index="0"]
 texture = ExtResource("2_ia1vg")
@@ -251,7 +243,6 @@ offset_bottom = 155.0
 text = "<"
 
 [node name="7" parent="ZoomedContent" index="6" instance=ExtResource("4_rpeps")]
-visible = false
 
 [node name="TextureRect" parent="ZoomedContent/7" index="0"]
 texture = ExtResource("2_ia1vg")
@@ -291,7 +282,6 @@ offset_bottom = 155.0
 text = "<"
 
 [node name="8" parent="ZoomedContent" index="7" instance=ExtResource("4_rpeps")]
-visible = false
 
 [node name="TextureRect" parent="ZoomedContent/8" index="0"]
 texture = ExtResource("2_ia1vg")
@@ -331,7 +321,6 @@ offset_bottom = 155.0
 text = "<"
 
 [node name="9" parent="ZoomedContent" index="8" instance=ExtResource("4_rpeps")]
-visible = false
 
 [node name="TextureRect" parent="ZoomedContent/9" index="0"]
 texture = ExtResource("2_ia1vg")
@@ -372,7 +361,6 @@ offset_bottom = 155.0
 text = "<"
 
 [node name="10" parent="ZoomedContent" index="9" instance=ExtResource("4_rpeps")]
-visible = false
 
 [node name="TextureRect" parent="ZoomedContent/10" index="0"]
 texture = ExtResource("2_ia1vg")
@@ -455,17 +443,8 @@ offset_right = -144.0
 offset_bottom = 155.0
 text = "<"
 
-[node name="Content" parent="." index="1"]
-visible = false
-
 [node name="BookSource" type="Sprite2D" parent="Content" index="0"]
 texture = ExtResource("2_klhvm")
-
-[node name="ZoomedCollisionShape2D" parent="." index="2"]
-visible = false
-
-[node name="CollisionShape2D" parent="." index="3"]
-visible = false
 
 [editable path="ZoomedContent/1"]
 [editable path="ZoomedContent/2"]
