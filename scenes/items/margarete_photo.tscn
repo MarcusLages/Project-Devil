@@ -1,5 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://ct4j3gloo7mdq"]
+[gd_scene load_steps=4 format=3 uid="uid://ct4j3gloo7mdq"]
 
 [ext_resource type="PackedScene" uid="uid://bg7s3bw6y0485" path="res://scenes/items/item.tscn" id="1_1espi"]
+[ext_resource type="Texture2D" uid="uid://c5a6sxihuan5j" path="res://assets/img/object3-margarete.png" id="2_ysc4l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ysc4l"]
+size = Vector2(24.315722, 22.533417)
 
 [node name="MargaretePhoto" instance=ExtResource("1_1espi")]
+position = Vector2(577, 549)
+
+[node name="Sprite2D" type="Sprite2D" parent="Content" index="0"]
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("2_ysc4l")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_ysc4l")

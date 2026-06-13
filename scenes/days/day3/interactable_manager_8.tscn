@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bluh35gjg45ut"]
+[gd_scene load_steps=4 format=3 uid="uid://bluh35gjg45ut"]
 
 [ext_resource type="Script" uid="uid://b6kihpl0g4hgo" path="res://scripts/interactable_manager.gd" id="1_5sqcq"]
 [ext_resource type="PackedScene" uid="uid://ccda14fbpfr7t" path="res://scenes/books/sheets/day3_profile8.tscn" id="2_6igvg"]
+[ext_resource type="PackedScene" uid="uid://cm0g5ij4t17p1" path="res://scenes/items/supervisor_icarus.tscn" id="3_n25jy"]
 
 [node name="InteractableManager8" type="Node"]
 script = ExtResource("1_5sqcq")
@@ -9,3 +10,5 @@ metadata/_custom_type_script = "uid://b6kihpl0g4hgo"
 
 [node name="CharacterSheet" parent="." instance=ExtResource("2_6igvg")]
 position = Vector2(133, 407)
+
+[node name="Icarus" parent="." instance=ExtResource("3_n25jy")]

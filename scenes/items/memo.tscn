@@ -6,6 +6,7 @@
 [ext_resource type="FontFile" uid="uid://ogmrm1t4aybl" path="res://assets/font/ELEGANT TYPEWRITER Regular.ttf" id="4_7cf7g"]
 
 [node name="Memo" instance=ExtResource("1_io1fx")]
+position = Vector2(249, 380)
 
 [node name="Background" type="Sprite2D" parent="ZoomedContent" index="0"]
 texture = ExtResource("2_0s0ne")

@@ -9,7 +9,7 @@ script = ExtResource("1_cpig8")
 metadata/_custom_type_script = "uid://b6kihpl0g4hgo"
 
 [node name="Doll" parent="." instance=ExtResource("2_hb8md")]
-position = Vector2(322, 485)
+position = Vector2(369, 451)
 
 [node name="CharacterSheet" parent="." instance=ExtResource("3_cpig8")]
 position = Vector2(133, 407)

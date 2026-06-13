@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://d1gjnc6rvcxev"]
+
+[ext_resource type="PackedScene" uid="uid://bg7s3bw6y0485" path="res://scenes/items/item.tscn" id="1_cc6om"]
+[ext_resource type="Texture2D" uid="uid://bfbroemsdv27" path="res://assets/img/object8-yellowpetal.png" id="2_cc6om"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i38yh"]
+size = Vector2(8.147675, 7.638446)
+
+[node name="Petal" instance=ExtResource("1_cc6om")]
+position = Vector2(479, 510)
+
+[node name="Sprite2D" type="Sprite2D" parent="Content" index="0"]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_cc6om")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(1, -2)
+shape = SubResource("RectangleShape2D_i38yh")

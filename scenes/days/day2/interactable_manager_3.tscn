@@ -8,8 +8,8 @@
 script = ExtResource("1_ah5vw")
 metadata/_custom_type_script = "uid://b6kihpl0g4hgo"
 
-[node name="MargaretePhoto" parent="." instance=ExtResource("2_jkeok")]
-position = Vector2(240, 436)
-
 [node name="CharacterSheet" parent="." instance=ExtResource("3_qu4nw")]
 position = Vector2(133, 407)
+
+[node name="TomasPhoto" parent="." instance=ExtResource("2_jkeok")]
+position = Vector2(458, 472)

@@ -1,5 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://bowpc22unca6f"]
+[gd_scene load_steps=4 format=3 uid="uid://bowpc22unca6f"]
 
 [ext_resource type="PackedScene" uid="uid://bg7s3bw6y0485" path="res://scenes/items/item.tscn" id="1_7nuo0"]
+[ext_resource type="Texture2D" uid="uid://cd11lxf4wobak" path="res://assets/img/object1-nicholas.png" id="2_iucwc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iucwc"]
+size = Vector2(28.77148, 27.49841)
 
 [node name="NickLetter" instance=ExtResource("1_7nuo0")]
+position = Vector2(537, 522)
+
+[node name="Sprite2D" type="Sprite2D" parent="Content" index="0"]
+scale = Vector2(0.18, 0.18)
+texture = ExtResource("2_iucwc")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(1, -1)
+shape = SubResource("RectangleShape2D_iucwc")
+metadata/_edit_lock_ = true

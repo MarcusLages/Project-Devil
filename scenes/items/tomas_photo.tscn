@@ -1,5 +1,20 @@
-[gd_scene load_steps=2 format=3 uid="uid://cthdukjkbm24d"]
+[gd_scene load_steps=4 format=3 uid="uid://cthdukjkbm24d"]
 
 [ext_resource type="PackedScene" uid="uid://bg7s3bw6y0485" path="res://scenes/items/item.tscn" id="1_3i2p2"]
+[ext_resource type="Texture2D" uid="uid://bk771np6gv4hw" path="res://assets/img/tomas_photo.jpg" id="2_avo5k"]
 
-[node name="MargaretePhoto" instance=ExtResource("1_3i2p2")]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_avo5k"]
+size = Vector2(30.935709, 22.66072)
+
+[node name="TomasPhoto" instance=ExtResource("1_3i2p2")]
+position = Vector2(556, 542)
+
+[node name="Sprite2D" type="Sprite2D" parent="Content" index="0"]
+position = Vector2(2.0000057, 2)
+scale = Vector2(0.2597222, 0.25972223)
+texture = ExtResource("2_avo5k")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(0.5, 1)
+shape = SubResource("RectangleShape2D_avo5k")
+metadata/_edit_lock_ = true
