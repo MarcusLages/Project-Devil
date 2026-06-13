@@ -1,8 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://b5j40lwctylst"]
+[gd_scene load_steps=4 format=3 uid="uid://c3yjwpf3vkxmr"]
 
 [ext_resource type="PackedScene" uid="uid://coebt3hr31ag1" path="res://scenes/days/interactable_manager_fixed.tscn" id="1_2lmec"]
 [ext_resource type="PackedScene" uid="uid://cjr6q5ptddbx5" path="res://scenes/items/stamp_ancient.tscn" id="2_n66nc"]
-[ext_resource type="PackedScene" uid="uid://dj56qrkqssj7k" path="res://scenes/items/stamp_source.tscn" id="3_h2nbl"]
+[ext_resource type="PackedScene" path="res://scenes/items/stamp_source.tscn" id="3_h2nbl"]
 
 [node name="InteractableManager3" instance=ExtResource("1_2lmec")]
 

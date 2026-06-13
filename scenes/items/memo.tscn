@@ -1,12 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://b2ivadhw4oqcw"]
+[gd_scene load_steps=5 format=3 uid="uid://d7twn3n0u7au"]
 
-[ext_resource type="PackedScene" uid="uid://bqt842joqbmsr" path="res://scenes/books/book.tscn" id="1_0edoc"]
+[ext_resource type="PackedScene" uid="uid://ch3hyfugepnca" path="res://scenes/items/paper.tscn" id="1_io1fx"]
 [ext_resource type="Texture2D" uid="uid://5ufkrtg08pbh" path="res://assets/img/Sheet.png" id="2_0s0ne"]
 [ext_resource type="Texture2D" uid="uid://dst6x5wwtnnhb" path="res://assets/img/ProvidenceIcon.png" id="3_grttb"]
 [ext_resource type="FontFile" uid="uid://ogmrm1t4aybl" path="res://assets/font/ELEGANT TYPEWRITER Regular.ttf" id="4_7cf7g"]
 
-[node name="Instructions" instance=ExtResource("1_0edoc")]
-position = Vector2(928, 353)
+[node name="Memo" instance=ExtResource("1_io1fx")]
 
 [node name="Background" type="Sprite2D" parent="ZoomedContent" index="0"]
 texture = ExtResource("2_0s0ne")

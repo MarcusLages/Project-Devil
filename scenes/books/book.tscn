@@ -32,22 +32,6 @@ script = ExtResource("1_uk727")
 [node name="RichTextLabel2" parent="ZoomedContent/1" index="2"]
 text = "Page 2"
 
-[node name="2" parent="ZoomedContent" instance=ExtResource("2_uk727")]
-
-[node name="RichTextLabel" parent="ZoomedContent/2" index="1"]
-text = "Page 3"
-
-[node name="RichTextLabel2" parent="ZoomedContent/2" index="2"]
-text = "Page 4"
-
-[node name="3" parent="ZoomedContent" instance=ExtResource("2_uk727")]
-
-[node name="RichTextLabel" parent="ZoomedContent/3" index="1"]
-text = "Page 5"
-
-[node name="RichTextLabel2" parent="ZoomedContent/3" index="2"]
-text = "Page 6"
-
 [node name="Content" type="Node2D" parent="."]
 
 [node name="ZoomedCollisionShape2D" type="CollisionShape2D" parent="."]
@@ -82,5 +66,3 @@ metadata/_custom_type_script = "uid://cs1jmnuy31gbp"
 [connection signal="zoomed" from="Zoomable" to="." method="_on_zoomable_zoomed"]
 
 [editable path="ZoomedContent/1"]
-[editable path="ZoomedContent/2"]
-[editable path="ZoomedContent/3"]
