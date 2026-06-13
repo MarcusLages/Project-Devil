@@ -7,8 +7,8 @@ signal prev_page
 
 
 func _on_next_button_pressed() -> void:
-    next_page.emit()
+	next_page.emit()
 
 
 func _on_prev_button_pressed() -> void:
-    prev_page.emit()
+	prev_page.emit()

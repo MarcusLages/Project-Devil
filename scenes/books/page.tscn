@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://e0lxhfs5ep2m"]
+[gd_scene load_steps=4 format=3 uid="uid://e0lxhfs5ep2m"]
 
 [ext_resource type="Script" uid="uid://hacwo7x1t64v" path="res://scripts/items/page.gd" id="1_ijqg6"]
+[ext_resource type="Texture2D" uid="uid://buutgbe5kvg58" path="res://assets/img/Arrow.png" id="2_2iovc"]
+[ext_resource type="Script" uid="uid://bkrwiw8bjkwjy" path="res://scenes/books/page_button.gd" id="2_civdd"]
 
 [node name="Page" type="Node2D"]
 script = ExtResource("1_ijqg6")
@@ -55,22 +57,45 @@ text = "Page 1"
 scroll_active = false
 
 [node name="NextButton" type="Button" parent="."]
-modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0)
 offset_left = 134.0
 offset_top = 125.0
 offset_right = 171.0
 offset_bottom = 162.0
 action_mode = 0
 flat = true
+script = ExtResource("2_civdd")
+
+[node name="TextureRect" type="TextureRect" parent="NextButton"]
+modulate = Color(1, 1, 1, 0.58431375)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_2iovc")
+expand_mode = 2
 
 [node name="PrevButton" type="Button" parent="."]
-modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0)
 offset_left = -171.0
 offset_top = 125.0
 offset_right = -134.0
 offset_bottom = 162.0
 action_mode = 0
 flat = true
+script = ExtResource("2_civdd")
 
+[node name="TextureRect" type="TextureRect" parent="PrevButton"]
+modulate = Color(1, 1, 1, 0.58431375)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_2iovc")
+expand_mode = 2
+flip_h = true
+
+[connection signal="mouse_entered" from="NextButton" to="NextButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="NextButton" to="NextButton" method="_on_mouse_exited"]
 [connection signal="pressed" from="NextButton" to="." method="_on_next_button_pressed"]
+[connection signal="mouse_entered" from="PrevButton" to="PrevButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="PrevButton" to="PrevButton" method="_on_mouse_exited"]
 [connection signal="pressed" from="PrevButton" to="." method="_on_prev_button_pressed"]
