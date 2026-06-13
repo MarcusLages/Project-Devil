@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://c3teswcgfhijm"]
+[gd_scene load_steps=9 format=3 uid="uid://c3teswcgfhijm"]
 
 [ext_resource type="Script" uid="uid://b7tj5mxit8ddi" path="res://scripts/items/alarm.gd" id="1_n20cq"]
 [ext_resource type="PackedScene" uid="uid://d33y1bfr1gojc" path="res://scenes/components/interactable.tscn" id="1_wrbec"]
 [ext_resource type="Texture2D" uid="uid://c1rsxc2odbp28" path="res://assets/img/celular_off.png" id="2_jjlt2"]
 [ext_resource type="Script" uid="uid://crmnw3ldr3xev" path="res://addons/drag_and_drop/scripts/draggable.gd" id="2_n20cq"]
+[ext_resource type="Texture2D" uid="uid://1aqki6lw5y71" path="res://assets/img/celular_alarm.png" id="2_tcwt8"]
 [ext_resource type="Script" uid="uid://djdmnemxrx7bg" path="res://addons/drag_and_drop/resources/draggable_types/draggable_type.gd" id="3_jjlt2"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jjlt2"]
@@ -17,6 +18,8 @@ metadata/_custom_type_script = "uid://djdmnemxrx7bg"
 
 [node name="Alarm" type="Area2D"]
 script = ExtResource("1_n20cq")
+phone_on = ExtResource("2_tcwt8")
+phone_off = ExtResource("2_jjlt2")
 
 [node name="Content" type="Node2D" parent="."]
 
