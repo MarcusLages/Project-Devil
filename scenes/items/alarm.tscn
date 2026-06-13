@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b7tj5mxit8ddi" path="res://scripts/items/alarm.gd" id="1_n20cq"]
 [ext_resource type="PackedScene" uid="uid://d33y1bfr1gojc" path="res://scenes/components/interactable.tscn" id="1_wrbec"]
-[ext_resource type="Texture2D" uid="uid://diq1f8y7q7lup" path="res://assets/img/cellphone.png" id="2_jjlt2"]
+[ext_resource type="Texture2D" uid="uid://c1rsxc2odbp28" path="res://assets/img/celular_off.png" id="2_jjlt2"]
 [ext_resource type="Script" uid="uid://crmnw3ldr3xev" path="res://addons/drag_and_drop/scripts/draggable.gd" id="2_n20cq"]
 [ext_resource type="Script" uid="uid://djdmnemxrx7bg" path="res://addons/drag_and_drop/resources/draggable_types/draggable_type.gd" id="3_jjlt2"]
 
