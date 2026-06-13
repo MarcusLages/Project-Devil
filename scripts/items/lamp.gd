@@ -1,5 +1,7 @@
 extends Area2D
 
+class_name Lamp
+
 @export_category("Basic Settings")
 ## Just initial state
 @export var lights_on: bool = true
@@ -87,4 +89,73 @@ func change_state(turn_on: bool):
     _change_shaders()
 
     if lights_on:
+        _start_darkness_timer()
+
+
+func scare(final_state: bool = true):
+    print("lamp scaring")
+    lights_on = false
+    _change_shaders()
+    await get_tree().create_timer(0.6).timeout
+
+    lights_on = true
+    _change_shaders()
+    await get_tree().create_timer(0.1).timeout
+
+    lights_on = false
+    _change_shaders()
+    await get_tree().create_timer(0.05).timeout
+
+    lights_on = true
+    _change_shaders()
+    await get_tree().create_timer(0.1).timeout
+
+    lights_on = false
+    _change_shaders()
+    await get_tree().create_timer(0.15).timeout
+
+    lights_on = true
+    _change_shaders()
+    await get_tree().create_timer(0.2).timeout
+
+    lights_on = false
+    _change_shaders()
+    await get_tree().create_timer(0.05).timeout
+
+    lights_on = true
+    _change_shaders()
+    await get_tree().create_timer(0.25).timeout
+    lights_on = false
+    _change_shaders()
+    await get_tree().create_timer(0.05).timeout
+
+    lights_on = true
+    _change_shaders()
+    await get_tree().create_timer(0.1).timeout
+
+    lights_on = false
+    _change_shaders()
+    await get_tree().create_timer(0.15).timeout
+
+    lights_on = true
+    _change_shaders()
+    await get_tree().create_timer(0.2).timeout
+
+    lights_on = false
+    _change_shaders()
+    await get_tree().create_timer(0.05).timeout
+
+    lights_on = true
+    _change_shaders()
+    await get_tree().create_timer(0.25).timeout
+
+    lights_on = false
+    _change_shaders()
+
+    if final_state:
+        await get_tree().create_timer(1).timeout
+
+        lights_on = true
+        SoundManager.play_sfx(SoundManager.SFX.LAMP_SWITCH)
+        _change_shaders()
         _start_darkness_timer()
