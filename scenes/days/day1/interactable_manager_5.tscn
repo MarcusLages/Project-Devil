@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://c50k83lwh5yhe"]
+
+[ext_resource type="Script" uid="uid://b6kihpl0g4hgo" path="res://scripts/interactable_manager.gd" id="1_cpig8"]
+[ext_resource type="PackedScene" uid="uid://d211x1bhjtjei" path="res://scenes/items/doll.tscn" id="2_hb8md"]
+
+[node name="InteractableManager5" type="Node"]
+script = ExtResource("1_cpig8")
+metadata/_custom_type_script = "uid://b6kihpl0g4hgo"
+
+[node name="Doll" parent="." instance=ExtResource("2_hb8md")]

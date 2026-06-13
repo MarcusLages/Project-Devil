@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dkcw0cl8vaf6v"]
+
+[ext_resource type="Script" uid="uid://b6kihpl0g4hgo" path="res://scripts/interactable_manager.gd" id="1_0wkdn"]
+[ext_resource type="PackedScene" uid="uid://bowpc22unca6f" path="res://scenes/items/nick_letter.tscn" id="2_5tqlc"]
+
+[node name="InteractableManager4" type="Node"]
+script = ExtResource("1_0wkdn")
+metadata/_custom_type_script = "uid://b6kihpl0g4hgo"
+
+[node name="NickLetter" parent="." instance=ExtResource("2_5tqlc")]

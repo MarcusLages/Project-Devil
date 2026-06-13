@@ -12,7 +12,7 @@ script = ExtResource("5_3xnsl")
 id = "item"
 metadata/_custom_type_script = "uid://djdmnemxrx7bg"
 
-[node name="Alarm" type="Area2D"]
+[node name="Item" type="Area2D"]
 script = ExtResource("1_u6xce")
 
 [node name="Content" type="Node2D" parent="."]

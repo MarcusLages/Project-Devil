@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://byh834kvcy13t"]
+
+[ext_resource type="Script" uid="uid://b6kihpl0g4hgo" path="res://scripts/interactable_manager.gd" id="1_d0kl3"]
+[ext_resource type="PackedScene" uid="uid://ct4j3gloo7mdq" path="res://scenes/items/margarete_photo.tscn" id="2_w4djb"]
+
+[node name="InteractableManager1" type="Node"]
+script = ExtResource("1_d0kl3")
+metadata/_custom_type_script = "uid://b6kihpl0g4hgo"
+
+[node name="MargaretePhoto" parent="." instance=ExtResource("2_w4djb")]

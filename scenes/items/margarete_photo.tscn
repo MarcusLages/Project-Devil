@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://ct4j3gloo7mdq"]
+
+[ext_resource type="PackedScene" uid="uid://bg7s3bw6y0485" path="res://scenes/items/item.tscn" id="1_1espi"]
+
+[node name="MargaretePhoto" instance=ExtResource("1_1espi")]

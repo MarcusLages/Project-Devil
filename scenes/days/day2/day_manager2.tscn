@@ -1,0 +1,17 @@
+[gd_scene load_steps=10 format=3 uid="uid://dt1t27pxi58fv"]
+
+[ext_resource type="Script" uid="uid://8faoysb3qgci" path="res://scripts/day_manager.gd" id="1_bda0x"]
+[ext_resource type="PackedScene" uid="uid://cduwb0mg7yvbn" path="res://scenes/days/day2/interactable_manager_fixed.tscn" id="2_t228c"]
+[ext_resource type="PackedScene" uid="uid://byh834kvcy13t" path="res://scenes/days/day2/interactable_manager_1.tscn" id="3_c70su"]
+[ext_resource type="PackedScene" uid="uid://c5u572usfpvya" path="res://scenes/days/day2/interactable_manager_2.tscn" id="4_7lwlf"]
+[ext_resource type="PackedScene" uid="uid://86rmfb1jk882" path="res://scenes/days/day2/interactable_manager_3.tscn" id="5_ubl88"]
+[ext_resource type="PackedScene" uid="uid://t7nx266hrs76" path="res://scenes/days/day2/interactable_manager_4.tscn" id="6_5ltw0"]
+[ext_resource type="PackedScene" uid="uid://dr0uu1h43e8o4" path="res://scenes/days/day2/interactable_manager_5.tscn" id="7_8v3qq"]
+[ext_resource type="PackedScene" uid="uid://dmrn4sgib37i4" path="res://scenes/days/day2/interactable_manager_6.tscn" id="8_b7k3j"]
+[ext_resource type="PackedScene" uid="uid://b5ocyjskgflqe" path="res://scenes/days/day2/interactable_manager_7.tscn" id="9_xdjat"]
+
+[node name="DayManager2" type="Node"]
+script = ExtResource("1_bda0x")
+fixed_items_scene = ExtResource("2_t228c")
+record_scenes = Array[PackedScene]([ExtResource("3_c70su"), ExtResource("4_7lwlf"), ExtResource("5_ubl88"), ExtResource("6_5ltw0"), ExtResource("7_8v3qq"), ExtResource("8_b7k3j"), ExtResource("9_xdjat")])
+metadata/_custom_type_script = "uid://8faoysb3qgci"

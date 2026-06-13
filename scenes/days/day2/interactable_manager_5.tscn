@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dr0uu1h43e8o4"]
+
+[ext_resource type="Script" uid="uid://b6kihpl0g4hgo" path="res://scripts/interactable_manager.gd" id="1_swm1e"]
+
+[node name="InteractableManager5" type="Node"]
+script = ExtResource("1_swm1e")
+metadata/_custom_type_script = "uid://b6kihpl0g4hgo"
