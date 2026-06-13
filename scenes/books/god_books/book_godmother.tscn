@@ -8,6 +8,9 @@
 
 [node name="BookGodmother" instance=ExtResource("1_mswk3")]
 
+[node name="ZoomedContent" parent="." index="0"]
+visible = false
+
 [node name="TextureRect" parent="ZoomedContent/1" index="0"]
 texture = ExtResource("2_qjk21")
 
@@ -228,6 +231,9 @@ horizontal_alignment = 2
 
 [node name="BookGodmother" type="Sprite2D" parent="Content" index="0"]
 texture = ExtResource("2_241ij")
+
+[node name="ZoomedCollisionShape2D" parent="." index="2"]
+visible = false
 
 [editable path="ZoomedContent/1"]
 [editable path="ZoomedContent/2"]

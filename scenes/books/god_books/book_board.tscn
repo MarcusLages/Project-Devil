@@ -8,6 +8,9 @@
 
 [node name="BookBoard" instance=ExtResource("1_vet2w")]
 
+[node name="ZoomedContent" parent="." index="0"]
+visible = false
+
 [node name="TextureRect" parent="ZoomedContent/1" index="0"]
 texture = ExtResource("2_4qose")
 
@@ -200,6 +203,7 @@ text = "moment of their Bargain Sacrifice™’s approval, so that their persona
 texture = ExtResource("2_i4itc")
 
 [node name="ZoomedCollisionShape2D" parent="." index="2"]
+visible = false
 position = Vector2(-1, -0.5)
 
 [editable path="ZoomedContent/1"]

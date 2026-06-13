@@ -8,6 +8,9 @@
 
 [node name="BookSource" instance=ExtResource("1_fb8m7")]
 
+[node name="ZoomedContent" parent="." index="0"]
+visible = false
+
 [node name="TextureRect" parent="ZoomedContent/1" index="0"]
 texture = ExtResource("2_ia1vg")
 
@@ -445,6 +448,9 @@ text = "<"
 
 [node name="BookSource" type="Sprite2D" parent="Content" index="0"]
 texture = ExtResource("2_klhvm")
+
+[node name="ZoomedCollisionShape2D" parent="." index="2"]
+visible = false
 
 [editable path="ZoomedContent/1"]
 [editable path="ZoomedContent/2"]

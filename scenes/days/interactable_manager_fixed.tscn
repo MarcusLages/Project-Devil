@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://coebt3hr31ag1"]
+[gd_scene load_steps=12 format=3 uid="uid://coebt3hr31ag1"]
 
 [ext_resource type="Script" uid="uid://b6kihpl0g4hgo" path="res://scripts/interactable_manager.gd" id="1_1l7k0"]
 [ext_resource type="PackedScene" uid="uid://c3teswcgfhijm" path="res://scenes/items/alarm.tscn" id="2_6bjo4"]
@@ -7,25 +7,46 @@
 [ext_resource type="PackedScene" uid="uid://bnjtns7pcomfo" path="res://scenes/items/stamp_godmother.tscn" id="5_c4v5l"]
 [ext_resource type="PackedScene" uid="uid://d3pxiuml0kwpc" path="res://scenes/items/stamp_king.tscn" id="6_udm4l"]
 [ext_resource type="PackedScene" uid="uid://b608v1bt38v64" path="res://scenes/books/god_books/book_king.tscn" id="7_c4v5l"]
+[ext_resource type="PackedScene" uid="uid://ci8r2pysx011g" path="res://scenes/books/god_books/book_board.tscn" id="9_3nfto"]
+[ext_resource type="PackedScene" uid="uid://bt5dgopegufos" path="res://scenes/books/god_books/book_godmother.tscn" id="10_n4f3l"]
+[ext_resource type="PackedScene" uid="uid://vr7crq83x5ux" path="res://scenes/books/god_books/book_ancient.tscn" id="11_qql0p"]
+[ext_resource type="PackedScene" uid="uid://6166iel22ead" path="res://scenes/books/god_books/book_source.tscn" id="12_ed77n"]
 
 [node name="InteractableManagerFixed" type="Node"]
 script = ExtResource("1_1l7k0")
 metadata/_custom_type_script = "uid://b6kihpl0g4hgo"
 
 [node name="Alarm" parent="." instance=ExtResource("2_6bjo4")]
-position = Vector2(150, 551)
+position = Vector2(131.51, 612.31)
 
 [node name="Lamp" parent="." instance=ExtResource("3_5dgt1")]
-position = Vector2(502, 178)
+position = Vector2(666, 276)
 
 [node name="StampBoard" parent="." instance=ExtResource("4_whgmt")]
-position = Vector2(785, 132)
+position = Vector2(840, 316)
 
 [node name="StampGodmother" parent="." instance=ExtResource("5_c4v5l")]
-position = Vector2(919, 130)
+position = Vector2(986, 319)
 
 [node name="StampKing" parent="." instance=ExtResource("6_udm4l")]
-position = Vector2(1061, 132)
+position = Vector2(1134, 319)
 
 [node name="BookKing" parent="." instance=ExtResource("7_c4v5l")]
-position = Vector2(631, 304)
+position = Vector2(193, 236)
+scale = Vector2(0.88, 0.88)
+
+[node name="BookBoard" parent="." instance=ExtResource("9_3nfto")]
+position = Vector2(262, 236)
+scale = Vector2(0.88, 0.88)
+
+[node name="BookGodmother" parent="." instance=ExtResource("10_n4f3l")]
+position = Vector2(341, 236)
+scale = Vector2(0.88, 0.88)
+
+[node name="BookAncient" parent="." instance=ExtResource("11_qql0p")]
+position = Vector2(414, 236)
+scale = Vector2(0.88, 0.88)
+
+[node name="BookSource" parent="." instance=ExtResource("12_ed77n")]
+position = Vector2(491, 236)
+scale = Vector2(0.88, 0.88)

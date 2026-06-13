@@ -28,7 +28,7 @@ func _ready() -> void:
                 interactable_items.append(child)
 
     for child in interactable_items:
-        z_idx_stack.push_back(child)
+        z_idx_stack.push_front(child)
 
         var i_component: Interactable = child.get_node_or_null("Interactable")
         if i_component:

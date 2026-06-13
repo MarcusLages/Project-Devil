@@ -8,6 +8,9 @@
 
 [node name="BookKing" instance=ExtResource("1_7rxs3")]
 
+[node name="ZoomedContent" parent="." index="0"]
+visible = false
+
 [node name="TextureRect" parent="ZoomedContent/1" index="0"]
 texture = ExtResource("2_mxac0")
 
@@ -190,6 +193,9 @@ text = ""
 
 [node name="BookKing" type="Sprite2D" parent="Content" index="0"]
 texture = ExtResource("2_7rxs3")
+
+[node name="ZoomedCollisionShape2D" parent="." index="2"]
+visible = false
 
 [editable path="ZoomedContent/1"]
 [editable path="ZoomedContent/2"]

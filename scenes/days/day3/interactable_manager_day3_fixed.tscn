@@ -7,7 +7,7 @@
 [node name="InteractableManager3" instance=ExtResource("1_2lmec")]
 
 [node name="StampAncient" parent="." index="5" instance=ExtResource("2_n66nc")]
-position = Vector2(849, 205)
+position = Vector2(1068, 342)
 
 [node name="StampSource" parent="." index="6" instance=ExtResource("3_h2nbl")]
-position = Vector2(653, 132)
+position = Vector2(912, 341)
