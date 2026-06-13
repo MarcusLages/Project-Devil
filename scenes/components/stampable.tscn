@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://cryxbj558ft8m"]
+[gd_scene load_steps=3 format=3 uid="uid://cryxbj558ft8m"]
 
 [ext_resource type="Script" uid="uid://ct73rsdxv2xas" path="res://scripts/stampable.gd" id="1_b2j2k"]
+[ext_resource type="AudioStream" uid="uid://0tq15rmplcvq" path="res://assets/sfx/Stamp3.wav" id="2_ss274"]
 
 [node name="Stampable" type="Area2D"]
 script = ExtResource("1_b2j2k")
+
+[node name="SFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_ss274")
