@@ -32,6 +32,7 @@ class_name Lamp
 
 @onready var shader_material: ShaderMaterial = $"CanvasLayer/ColorRect".material
 @onready var darkness_timer: Timer = $DarknessTimer
+@onready var eyes_canvas: CanvasLayer = $CanvasLayerEyes
 
 var _rng = RandomNumberGenerator.new()
 
@@ -92,8 +93,7 @@ func change_state(turn_on: bool):
         _start_darkness_timer()
 
 
-func scare(final_state: bool = true):
-    print("lamp scaring")
+func scare(final_state: bool = true, eyes_on: bool = false):
     lights_on = false
     _change_shaders()
     await get_tree().create_timer(0.6).timeout
@@ -118,6 +118,8 @@ func scare(final_state: bool = true):
     _change_shaders()
     await get_tree().create_timer(0.2).timeout
 
+    if eyes_on:
+        eyes_canvas.visible = true
     lights_on = false
     _change_shaders()
     await get_tree().create_timer(0.05).timeout
@@ -125,6 +127,7 @@ func scare(final_state: bool = true):
     lights_on = true
     _change_shaders()
     await get_tree().create_timer(0.25).timeout
+
     lights_on = false
     _change_shaders()
     await get_tree().create_timer(0.05).timeout
@@ -141,6 +144,9 @@ func scare(final_state: bool = true):
     _change_shaders()
     await get_tree().create_timer(0.2).timeout
 
+    if eyes_on:
+        eyes_canvas.visible = false
+
     lights_on = false
     _change_shaders()
     await get_tree().create_timer(0.05).timeout
@@ -151,6 +157,7 @@ func scare(final_state: bool = true):
 
     lights_on = false
     _change_shaders()
+
 
     if final_state:
         await get_tree().create_timer(1).timeout

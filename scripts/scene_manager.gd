@@ -91,7 +91,7 @@ func _get_lamp():
             lamp = (item as Lamp)
             break
     print(lamp)
-    if lamp: lamp.scare(true)
+    if lamp: lamp.scare(true, true)
 
 func _on_node_added(node: Node):
     if node is Stampable:
@@ -108,7 +108,7 @@ func _on_stampable_stamped(correct: bool): # TODO: handle stamp being correct or
         print("Correct stamp")
     else:
         GameManager.lives -= 1
-        if lamp: lamp.scare(true)
+        if lamp: lamp.scare(true, true)
 
     if day_managers[_curr_day].next_record() == OK: # TODO: handle last record
         print("Next record")

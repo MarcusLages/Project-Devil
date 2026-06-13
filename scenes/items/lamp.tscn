@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://daorxf41jrgcl"]
+[gd_scene load_steps=8 format=3 uid="uid://daorxf41jrgcl"]
 
 [ext_resource type="PackedScene" uid="uid://d33y1bfr1gojc" path="res://scenes/components/interactable.tscn" id="1_aaca0"]
 [ext_resource type="Script" uid="uid://25ndynbcbnti" path="res://scripts/items/lamp.gd" id="1_ojcuo"]
 [ext_resource type="Texture2D" uid="uid://coqx4vad4x0i8" path="res://assets/img/lamp.png" id="1_tq8gd"]
+[ext_resource type="Texture2D" uid="uid://optd34v0btxu" path="res://assets/img/eyes.png" id="4_x8j62"]
 [ext_resource type="Shader" uid="uid://v58u220katdh" path="res://scripts/shaders/lamp.gdshader" id="5_x8j62"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x8j62"]
@@ -37,6 +38,16 @@ shape = SubResource("CapsuleShape2D_x8j62")
 position = Vector2(-1, -57)
 
 [node name="Interactable" parent="." instance=ExtResource("1_aaca0")]
+
+[node name="CanvasLayerEyes" type="CanvasLayer" parent="."]
+layer = 2
+visible = false
+follow_viewport_enabled = true
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayerEyes"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("4_x8j62")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 follow_viewport_enabled = true
