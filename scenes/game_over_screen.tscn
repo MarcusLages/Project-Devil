@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cqhsvnxmsbsce"]
 
 [ext_resource type="Script" uid="uid://dr5sneut0l4lf" path="res://scripts/game_over_screen.gd" id="1_61w2s"]
-[ext_resource type="PackedScene" uid="uid://ctked0kdhot1w" path="res://scenes/title_screen.tscn" id="2_61w2s"]
+[ext_resource type="AudioStream" uid="uid://bu433pnixwpj1" path="res://assets/sfx/DoorKnockFast2.wav" id="2_61w2s"]
 
 [node name="GameOverScreen" type="Control"]
 layout_mode = 3
@@ -14,7 +14,7 @@ script = ExtResource("1_61w2s")
 opening_line = "You have breached several policies of our company’s code of conduct.\\
 As per your contract’s employment period clause, we have the right to terminate you.\\
 We have chosen to exercise that right."
-change_to_scene = ExtResource("2_61w2s")
+wait_for_fade_out = false
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -33,3 +33,8 @@ anchor_right = 1.0
 anchor_bottom = 0.65
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="DoorKnock" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_61w2s")
+volume_db = 10.0
+pitch_scale = 0.65

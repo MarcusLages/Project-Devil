@@ -11,6 +11,7 @@ class_name TextScreen
 @export_category("Transition Settings")
 @export var fade_in_duration_sec: float = 1.
 @export var line_wait_sec: float = 2.
+@export var wait_for_fade_out : bool = true
 
 @export_category("Extra Settings")
 @export var change_to_scene: PackedScene
@@ -24,7 +25,7 @@ func _ready() -> void:
 		lines = opening_line.split("\\")
 	animate_lines()
 
-func animate_lines():
+func animate_lines() -> bool:
 	var tween: Tween
 	for line in lines:
 		var label = Label.new()
@@ -42,7 +43,10 @@ func animate_lines():
 		await get_tree().create_timer(line_wait_sec).timeout
 	
 	# After all lines, fade out
-	tween = create_tween()
-	tween.tween_property(container, "modulate:a", 0., line_wait_sec)
-	await tween.finished
-	get_tree().change_scene_to_packed(change_to_scene)
+	if wait_for_fade_out:
+		tween = create_tween()
+		tween.tween_property(container, "modulate:a", 0., line_wait_sec)
+		await tween.finished
+	if change_to_scene:
+		get_tree().change_scene_to_packed(change_to_scene)
+	return true
