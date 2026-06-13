@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cncq3gtpvqxaj" path="res://scenes/items/stamp_area.tscn" id="5_g6a3g"]
 
 [node name="CharacterSheet" instance=ExtResource("1_ipnha")]
-position = Vector2(184, 459)
+position = Vector2(283, 536)
 
 [node name="ZoomedContent" parent="." index="0"]
 script = ExtResource("2_mv85c")

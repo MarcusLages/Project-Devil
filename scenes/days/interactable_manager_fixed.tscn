@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://coebt3hr31ag1"]
+[gd_scene load_steps=13 format=3 uid="uid://coebt3hr31ag1"]
 
 [ext_resource type="Script" uid="uid://b6kihpl0g4hgo" path="res://scripts/interactable_manager.gd" id="1_1l7k0"]
 [ext_resource type="PackedScene" uid="uid://c3teswcgfhijm" path="res://scenes/items/alarm.tscn" id="2_6bjo4"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bt5dgopegufos" path="res://scenes/books/god_books/book_godmother.tscn" id="10_n4f3l"]
 [ext_resource type="PackedScene" uid="uid://vr7crq83x5ux" path="res://scenes/books/god_books/book_ancient.tscn" id="11_qql0p"]
 [ext_resource type="PackedScene" uid="uid://6166iel22ead" path="res://scenes/books/god_books/book_source.tscn" id="12_ed77n"]
+[ext_resource type="PackedScene" uid="uid://bywfqn28706i7" path="res://scenes/items/mug.tscn" id="12_jp3mj"]
 
 [node name="InteractableManagerFixed" type="Node"]
 script = ExtResource("1_1l7k0")
@@ -23,13 +24,13 @@ position = Vector2(131.51, 612.31)
 position = Vector2(666, 276)
 
 [node name="StampBoard" parent="." instance=ExtResource("4_whgmt")]
-position = Vector2(840, 316)
+position = Vector2(766, 376)
 
 [node name="StampGodmother" parent="." instance=ExtResource("5_c4v5l")]
-position = Vector2(986, 319)
+position = Vector2(767, 512)
 
 [node name="StampKing" parent="." instance=ExtResource("6_udm4l")]
-position = Vector2(1134, 319)
+position = Vector2(766, 644)
 
 [node name="BookKing" parent="." instance=ExtResource("7_c4v5l")]
 position = Vector2(193, 236)
@@ -44,9 +45,14 @@ position = Vector2(341, 236)
 scale = Vector2(0.88, 0.88)
 
 [node name="BookAncient" parent="." instance=ExtResource("11_qql0p")]
+visible = false
 position = Vector2(414, 236)
 scale = Vector2(0.88, 0.88)
 
 [node name="BookSource" parent="." instance=ExtResource("12_ed77n")]
+visible = false
 position = Vector2(491, 236)
 scale = Vector2(0.88, 0.88)
+
+[node name="Mug" parent="." instance=ExtResource("12_jp3mj")]
+position = Vector2(84, 463)
