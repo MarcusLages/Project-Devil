@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://82hlntbfog1e"]
+
+[ext_resource type="PackedScene" uid="uid://bg7s3bw6y0485" path="res://scenes/items/item.tscn" id="1_d2bmn"]
+[ext_resource type="Texture2D" uid="uid://c81gpsqs3id7y" path="res://assets/img/object6-bargainrequest.png" id="2_d2bmn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i38yh"]
+size = Vector2(32.71801, 30.935707)
+
+[node name="Icarus" instance=ExtResource("1_d2bmn")]
+position = Vector2(630, 500)
+
+[node name="Sprite2D" type="Sprite2D" parent="Content" index="0"]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_d2bmn")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(0.5, -0.5)
+shape = SubResource("RectangleShape2D_i38yh")

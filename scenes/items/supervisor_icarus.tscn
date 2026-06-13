@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://cm0g5ij4t17p1"]
+
+[ext_resource type="PackedScene" uid="uid://bg7s3bw6y0485" path="res://scenes/items/item.tscn" id="1_no0wo"]
+[ext_resource type="Texture2D" uid="uid://jtkxopvuys6p" path="res://assets/img/object7-icarus-2.png" id="2_no0wo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i38yh"]
+size = Vector2(32.71801, 30.935707)
+
+[node name="Icarus" instance=ExtResource("1_no0wo")]
+position = Vector2(630, 500)
+
+[node name="Sprite2D" type="Sprite2D" parent="Content" index="0"]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_no0wo")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(0.5, -0.5)
+shape = SubResource("RectangleShape2D_i38yh")

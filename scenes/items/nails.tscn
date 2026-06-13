@@ -1,5 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://l2dt36b62hgy"]
+[gd_scene load_steps=3 format=3 uid="uid://l2dt36b62hgy"]
 
 [ext_resource type="PackedScene" uid="uid://bg7s3bw6y0485" path="res://scenes/items/item.tscn" id="1_8lsfs"]
+[ext_resource type="Texture2D" uid="uid://c2iqpk7xtnd56" path="res://assets/img/object5-yasmin.png" id="2_if4k6"]
 
-[node name="MargaretePhoto" instance=ExtResource("1_8lsfs")]
+[node name="Bloodbag" instance=ExtResource("1_8lsfs")]
+position = Vector2(479, 510)
+
+[node name="Sprite2D" type="Sprite2D" parent="Content" index="0"]
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_if4k6")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(-2, 21)
