@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://daorxf41jrgcl"]
+[gd_scene load_steps=10 format=3 uid="uid://daorxf41jrgcl"]
 
 [ext_resource type="PackedScene" uid="uid://d33y1bfr1gojc" path="res://scenes/components/interactable.tscn" id="1_aaca0"]
 [ext_resource type="Script" uid="uid://25ndynbcbnti" path="res://scripts/items/lamp.gd" id="1_ojcuo"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://buj3x5tq3s356" path="res://assets/img/full_lamp_off.png" id="3_lgu1i"]
 [ext_resource type="Texture2D" uid="uid://optd34v0btxu" path="res://assets/img/eyes.png" id="4_x8j62"]
 [ext_resource type="Shader" uid="uid://v58u220katdh" path="res://scripts/shaders/lamp.gdshader" id="5_x8j62"]
+[ext_resource type="FontFile" uid="uid://n5tet4jfywpj" path="res://assets/font/Fiolex_Mephisto.ttf" id="6_hh4gv"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x8j62"]
 radius = 53.0
@@ -48,9 +49,27 @@ visible = false
 follow_viewport_enabled = true
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayerEyes"]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 874.0
+offset_top = 85.0
+offset_right = 2154.0
+offset_bottom = 806.0
 texture = ExtResource("4_x8j62")
+
+[node name="CanvasLayerWrong" type="CanvasLayer" parent="."]
+layer = 2
+visible = false
+follow_viewport_enabled = true
+
+[node name="Label" type="Label" parent="CanvasLayerWrong"]
+modulate = Color(1, 1, 1, 0.60784316)
+offset_left = 456.0
+offset_top = 287.0
+offset_right = 834.0
+offset_bottom = 436.0
+rotation = -0.002184406
+theme_override_fonts/font = ExtResource("6_hh4gv")
+theme_override_font_sizes/font_size = 100
+text = "WRONG"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 follow_viewport_enabled = true
@@ -64,6 +83,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
 
 [node name="DarknessTimer" type="Timer" parent="."]
 one_shot = true

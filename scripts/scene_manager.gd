@@ -131,7 +131,7 @@ func _on_stampable_stamped(correct: bool):
 		GameManager.lives -= 1
 
 		if GameManager.lives == 2:
-			if lamp: lamp.scare(true, false)
+			if lamp: lamp.scare(true, true)
 		elif GameManager.lives == 1:
 			if lamp: lamp.scare(true, true)
 		else:
