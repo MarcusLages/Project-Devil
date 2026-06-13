@@ -40,132 +40,122 @@ class_name Lamp
 var _rng = RandomNumberGenerator.new()
 
 func _ready() -> void:
-	if not light_marker:
-		light_marker = get_node_or_null("LightMarker")
+    if not light_marker:
+        light_marker = get_node_or_null("LightMarker")
 
-	assert(light_marker != null, "Must have a LightMarker (Marker2D) as a child node of Lamp")
-	
-	if lights_on:
-		_start_darkness_timer()
-	_change_shaders()
+    assert(light_marker != null, "Must have a LightMarker (Marker2D) as a child node of Lamp")
+        
+    if lights_on:
+        _start_darkness_timer()
+    _change_shaders()
 
 
 func _process(_delta: float) -> void:
-	var light_screen_pos = get_viewport().get_canvas_transform() * light_marker.global_position
-	var normalized_pos = light_screen_pos / get_viewport_rect().size
-	shader_material.set_shader_parameter("light_marker", normalized_pos)
+    var light_screen_pos = get_viewport().get_canvas_transform() * light_marker.global_position
+    var normalized_pos = light_screen_pos / get_viewport_rect().size
+    shader_material.set_shader_parameter("light_marker", normalized_pos)
 
 
 func _change_shaders():
-	if lights_on:
-		shader_material.set_shader_parameter("light_radius", light_radius_on)
-		shader_material.set_shader_parameter("darkness_alpha", darkness_alpha_on)
-		shader_material.set_shader_parameter("circular_light", circular_light_on)
-		shader_material.set_shader_parameter("light_intensity", light_intensity_on)
-	else:
-		shader_material.set_shader_parameter("light_radius", light_radius_off)
-		shader_material.set_shader_parameter("darkness_alpha", darkness_alpha_off)
-		shader_material.set_shader_parameter("circular_light", circular_light_off)
-		shader_material.set_shader_parameter("light_intensity", light_intensity_off)
+    if lights_on:
+        shader_material.set_shader_parameter("light_radius", light_radius_on)
+        shader_material.set_shader_parameter("darkness_alpha", darkness_alpha_on)
+        shader_material.set_shader_parameter("circular_light", circular_light_on)
+        shader_material.set_shader_parameter("light_intensity", light_intensity_on)
+    else:
+        shader_material.set_shader_parameter("light_radius", light_radius_off)
+        shader_material.set_shader_parameter("darkness_alpha", darkness_alpha_off)
+        shader_material.set_shader_parameter("circular_light", circular_light_off)
+        shader_material.set_shader_parameter("light_intensity", light_intensity_off)
 
 
 func _start_darkness_timer():
-	var sec: float = _rng.randf_range(min_dark_time_sec, max_dark_time_sec)
-	darkness_timer.start(sec)
+    var sec: float = _rng.randf_range(min_dark_time_sec, max_dark_time_sec)
+    darkness_timer.start(sec)
 
 
 func _on_interactable_interacted(_from: Area2D):
-	change_state(not lights_on)
+    change_state(not lights_on)
 
 
 func _on_darkness_timer_timeout() -> void:
-	if not lights_on:
-		return
-	change_state(false)
+    if not lights_on:
+        return
+    change_state(false)
 
 
-func change_state(turn_on: bool):
-	if disabled:
-		return
-	
-	lights_on = turn_on
-	sprite.texture = lamp_on if lights_on else lamp_off
-	SoundManager.play_sfx(SoundManager.SFX.LAMP_SWITCH)
-	_change_shaders()
+func change_state(turn_on: bool, sound_on: bool = true):
+    if disabled:
+        return
+        
+    lights_on = turn_on
+    sprite.texture = lamp_on if lights_on else lamp_off
+    if sound_on:
+        SoundManager.play_sfx(SoundManager.SFX.LAMP_SWITCH)
 
-	if lights_on:
-		_start_darkness_timer()
+    _change_shaders()
+
+    if lights_on:
+        _start_darkness_timer()
 
 
 func scare(final_state: bool = true, eyes_on: bool = false):
-    lights_on = false
-    _change_shaders()
+    print("scaring")
+    change_state(false, false) 
     await get_tree().create_timer(0.6).timeout
 
-	lights_on = true
-	_change_shaders()
-	await get_tree().create_timer(0.1).timeout
+    change_state(true, false) 
+    await get_tree().create_timer(0.1).timeout
 
-	lights_on = false
-	_change_shaders()
-	await get_tree().create_timer(0.05).timeout
+    change_state(false, false) 
+    await get_tree().create_timer(0.05).timeout
 
-	lights_on = true
-	_change_shaders()
-	await get_tree().create_timer(0.1).timeout
+    change_state(true, false) 
+    await get_tree().create_timer(0.1).timeout
 
-	lights_on = false
-	_change_shaders()
-	await get_tree().create_timer(0.15).timeout
+    change_state(false, false) 
+    await get_tree().create_timer(0.15).timeout
 
-	lights_on = true
-	_change_shaders()
-	await get_tree().create_timer(0.2).timeout
+    change_state(true, false) 
+    await get_tree().create_timer(0.2).timeout
+
 
     if eyes_on:
         eyes_canvas.visible = true
-    lights_on = false
-    _change_shaders()
+
+    change_state(false, false) 
     await get_tree().create_timer(0.05).timeout
 
-    lights_on = true
-    _change_shaders()
+    change_state(true, false) 
     await get_tree().create_timer(0.25).timeout
-    lights_on = false
-    _change_shaders()
+
+    change_state(false, false) 
     await get_tree().create_timer(0.05).timeout
 
-	lights_on = true
-	_change_shaders()
-	await get_tree().create_timer(0.1).timeout
+    change_state(true, false) 
+    await get_tree().create_timer(0.1).timeout
 
-	lights_on = false
-	_change_shaders()
-	await get_tree().create_timer(0.15).timeout
+    change_state(false, false) 
+    await get_tree().create_timer(0.15).timeout
 
-	lights_on = true
-	_change_shaders()
-	await get_tree().create_timer(0.2).timeout
+    change_state(true, false) 
+    await get_tree().create_timer(0.2).timeout
+
 
     if eyes_on:
         eyes_canvas.visible = false
 
-    lights_on = false
-    _change_shaders()
+    change_state(false, false) 
     await get_tree().create_timer(0.05).timeout
 
-	lights_on = true
-	_change_shaders()
-	await get_tree().create_timer(0.25).timeout
+    change_state(true, false) 
+    await get_tree().create_timer(0.25).timeout
+
 
     lights_on = false
     _change_shaders()
 
+    if final_state:
+        await get_tree().create_timer(1).timeout
+        change_state(true)
 
-	if final_state:
-		await get_tree().create_timer(1).timeout
-
-		lights_on = true
-		SoundManager.play_sfx(SoundManager.SFX.LAMP_SWITCH)
-		_change_shaders()
-		_start_darkness_timer()

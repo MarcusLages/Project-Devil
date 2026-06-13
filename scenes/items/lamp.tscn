@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://daorxf41jrgcl"]
+[gd_scene load_steps=9 format=3 uid="uid://daorxf41jrgcl"]
 
 [ext_resource type="PackedScene" uid="uid://d33y1bfr1gojc" path="res://scenes/components/interactable.tscn" id="1_aaca0"]
 [ext_resource type="Script" uid="uid://25ndynbcbnti" path="res://scripts/items/lamp.gd" id="1_ojcuo"]
-[ext_resource type="Texture2D" uid="uid://coqx4vad4x0i8" path="res://assets/img/lamp.png" id="1_tq8gd"]
+[ext_resource type="Texture2D" uid="uid://co8xlxb7xunhb" path="res://assets/img/full_lamp_on.png" id="2_hh4gv"]
+[ext_resource type="Texture2D" uid="uid://buj3x5tq3s356" path="res://assets/img/full_lamp_off.png" id="3_lgu1i"]
 [ext_resource type="Texture2D" uid="uid://optd34v0btxu" path="res://assets/img/eyes.png" id="4_x8j62"]
 [ext_resource type="Shader" uid="uid://v58u220katdh" path="res://scripts/shaders/lamp.gdshader" id="5_x8j62"]
 
@@ -20,15 +21,17 @@ shader_parameter/circular_light = false
 
 [node name="Lamp" type="Area2D"]
 script = ExtResource("1_ojcuo")
+lamp_on = ExtResource("2_hh4gv")
 light_radius_off = 0.19
 darkness_alpha_off = 0.93
 light_intensity_off = 0.245
+lamp_off = ExtResource("3_lgu1i")
 
 [node name="Content" type="Node2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="Content"]
 scale = Vector2(0.5569948, 0.55699486)
-texture = ExtResource("1_tq8gd")
+texture = ExtResource("3_lgu1i")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-6, 0)
