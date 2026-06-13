@@ -1,7 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://cygtn8ixkrgxf"]
+[gd_scene load_steps=3 format=3 uid="uid://cygtn8ixkrgxf"]
 
 [ext_resource type="Script" uid="uid://b6kihpl0g4hgo" path="res://scripts/interactable_manager.gd" id="1_31ux6"]
+[ext_resource type="PackedScene" uid="uid://cl5xddws388ec" path="res://scenes/books/sheets/day3_profile1.tscn" id="2_asrc1"]
 
 [node name="InteractableManager1" type="Node"]
 script = ExtResource("1_31ux6")
 metadata/_custom_type_script = "uid://b6kihpl0g4hgo"
+
+[node name="CharacterSheet" parent="." instance=ExtResource("2_asrc1")]

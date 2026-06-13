@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://8of40cyawa5c"]
+
+[ext_resource type="PackedScene" uid="uid://yodo7kh6jrf" path="res://scenes/books/character_sheet.tscn" id="1_27emp"]
+
+[node name="CharacterSheet" instance=ExtResource("1_27emp")]
+
+[node name="ZoomedContent" parent="." index="0"]
+client_name = "Margarete Rocha"
+client_age = "F"
+client_sex = "80"
+bargain = "A painless death"
+sacrifice = "Body for the worms"
+organ = "N/A"
+astral_sign = "Capricorn"
+death = "Paradoxical result"
+ethics = "Moral nihilism"
+ambition = "N/A"
+nightmare = "Regular life"

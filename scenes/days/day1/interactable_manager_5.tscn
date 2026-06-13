@@ -1,10 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://c50k83lwh5yhe"]
+[gd_scene load_steps=4 format=3 uid="uid://c50k83lwh5yhe"]
 
 [ext_resource type="Script" uid="uid://b6kihpl0g4hgo" path="res://scripts/interactable_manager.gd" id="1_cpig8"]
 [ext_resource type="PackedScene" uid="uid://d211x1bhjtjei" path="res://scenes/items/doll.tscn" id="2_hb8md"]
+[ext_resource type="PackedScene" uid="uid://c66uf6dfwcemv" path="res://scenes/books/sheets/day1_profile5.tscn" id="3_cpig8"]
 
 [node name="InteractableManager5" type="Node"]
 script = ExtResource("1_cpig8")
 metadata/_custom_type_script = "uid://b6kihpl0g4hgo"
 
 [node name="Doll" parent="." instance=ExtResource("2_hb8md")]
+position = Vector2(322, 485)
+
+[node name="CharacterSheet" parent="." instance=ExtResource("3_cpig8")]

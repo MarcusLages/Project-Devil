@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://boqt8nbeh7y56"]
+
+[ext_resource type="PackedScene" uid="uid://yodo7kh6jrf" path="res://scenes/books/character_sheet.tscn" id="1_ix7xa"]
+
+[node name="CharacterSheet" instance=ExtResource("1_ix7xa")]
+
+[node name="ZoomedContent" parent="." index="0"]
+client_name = "Yasmin Karam"
+client_age = "F"
+client_sex = "35"
+bargain = "1 night of affection (specific person)"
+sacrifice = "10 liters of blood, now"
+organ = "Heart"
+astral_sign = "Cancer"
+death = "Fall from 60th floor"
+ethics = "Emotivism"
+ambition = "To feel love once"
+nightmare = "The double homicide"

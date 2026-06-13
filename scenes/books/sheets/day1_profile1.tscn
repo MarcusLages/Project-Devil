@@ -5,6 +5,7 @@
 [node name="CharacterSheet" instance=ExtResource("1_xcc3c")]
 
 [node name="ZoomedContent" parent="." index="0"]
+visible = false
 client_name = "John Goodman"
 client_age = "M"
 client_sex = "31"
