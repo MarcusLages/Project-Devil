@@ -1,0 +1,50 @@
+[gd_scene load_steps=10 format=3 uid="uid://cncq3gtpvqxaj"]
+
+[ext_resource type="Script" uid="uid://nj1hdjl1vob2" path="res://addons/drag_and_drop/scripts/drop_zone.gd" id="1_01jta"]
+[ext_resource type="Script" uid="uid://ct73rsdxv2xas" path="res://scripts/stampable.gd" id="1_nben1"]
+[ext_resource type="Script" uid="uid://b5wqxyc42r5u" path="res://addons/drag_and_drop/resources/drop_behaviors/drop_behavior_reject.gd" id="2_nben1"]
+[ext_resource type="Script" uid="uid://djdmnemxrx7bg" path="res://addons/drag_and_drop/resources/draggable_types/draggable_type.gd" id="3_4k7me"]
+
+[sub_resource type="Gradient" id="Gradient_r4px6"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0.54435486)
+colors = PackedColorArray(0.8856515, 0.44936097, 0.41953713, 1)
+metadata/_snap_count = 8
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_4k7me"]
+gradient = SubResource("Gradient_r4px6")
+width = 10
+height = 10
+fill_from = Vector2(0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_10i6l"]
+size = Vector2(68, 46)
+
+[sub_resource type="Resource" id="Resource_cnx24"]
+script = ExtResource("2_nben1")
+
+[sub_resource type="Resource" id="Resource_01jta"]
+script = ExtResource("3_4k7me")
+id = "item"
+metadata/_custom_type_script = "uid://djdmnemxrx7bg"
+
+[node name="StampableTest" type="Area2D"]
+script = ExtResource("1_nben1")
+correct_stamp = "stamp_test_1"
+
+[node name="Content" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Content"]
+scale = Vector2(6.9000006, 4.6)
+texture = SubResource("GradientTexture2D_4k7me")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_10i6l")
+
+[node name="DropZone" type="Node2D" parent="." node_paths=PackedStringArray("attach_spot")]
+script = ExtResource("1_01jta")
+attach_spot = NodePath("")
+drop_behavior = SubResource("Resource_cnx24")
+snap_style = 0
+accepted_draggable_types = Array[ExtResource("3_4k7me")]([SubResource("Resource_01jta")])
+metadata/_custom_type_script = "uid://nj1hdjl1vob2"

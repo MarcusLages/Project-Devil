@@ -7,14 +7,14 @@
 [ext_resource type="Script" uid="uid://b5wqxyc42r5u" path="res://addons/drag_and_drop/resources/drop_behaviors/drop_behavior_reject.gd" id="5_2mdjd"]
 [ext_resource type="Script" uid="uid://djdmnemxrx7bg" path="res://addons/drag_and_drop/resources/draggable_types/draggable_type.gd" id="6_naa7f"]
 
-[sub_resource type="Gradient" id="Gradient_r4px6"]
+[sub_resource type="Gradient" id="Gradient_naa7f"]
 interpolation_mode = 2
 offsets = PackedFloat32Array(0.54435486)
 colors = PackedColorArray(1.92523e-06, 0.6585397, 0.8358246, 1)
 metadata/_snap_count = 8
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_ho401"]
-gradient = SubResource("Gradient_r4px6")
+gradient = SubResource("Gradient_naa7f")
 width = 10
 height = 10
 fill_from = Vector2(0, 1)
@@ -30,7 +30,7 @@ metadata/_custom_type_script = "uid://djdmnemxrx7bg"
 [sub_resource type="Resource" id="Resource_uifsb"]
 script = ExtResource("5_2mdjd")
 
-[sub_resource type="Resource" id="Resource_2mdjd"]
+[sub_resource type="Resource" id="Resource_xks73"]
 script = ExtResource("6_naa7f")
 id = "item"
 metadata/_custom_type_script = "uid://djdmnemxrx7bg"
@@ -63,7 +63,7 @@ script = ExtResource("4_xks73")
 attach_spot = NodePath("..")
 drop_behavior = SubResource("Resource_uifsb")
 snap_style = 0
-accepted_draggable_types = Array[ExtResource("6_naa7f")]([SubResource("Resource_2mdjd")])
+accepted_draggable_types = Array[ExtResource("6_naa7f")]([SubResource("Resource_xks73")])
 metadata/_custom_type_script = "uid://nj1hdjl1vob2"
 
 [node name="Marker2D" type="Marker2D" parent="DropZone"]
