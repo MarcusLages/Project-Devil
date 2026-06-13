@@ -101,15 +101,3 @@ func _on_stampable_stamped(correct: bool): # TODO: handle stamp being correct or
         print("Last record of the day")
         day_managers[_curr_day].clean_record_scene(true)
         next_day()
-
-
-I. I grant thee the power of preservation. Thy existence is thy only sacred object. Protect it at all costs.
-II. I grant thee the power of freedom. Thy actions are thy own, and thou shall not allow any others to interfere with thy will.
-III. I grant thee the power of responsibility. Thy actions have consequences, around which thou must plot.
-IV. I grant thee the power of influence. To protect thy freedom and avoid thy consequences, thou must always expand thy sphere of influence over others, at any cost.
-V. I grant thee the power of ruthlessness. To maintain thy grip over thy powers, thou must not shy away from any actions thy deem necessary.
-VI. I grant thee the power of courage. To expand thy sphere of influence, thou must learn to take risks when thy tide is in thy favor.
-VII. I grant thee the power of calculus. To ascertain over thy decisions, thou must reason through costs, risks and rewards. No object is sacred outside of continued existence.
-VIII. I grant thee the power of truth. I reveal to thee that these powers are the way of the world, and thy only path to power. Thou must not lend ears to hearsay regarding honor, duty or morality. Thou is only loyal to thyself.
-IX. I grant thee the power of lies. Although thou have power over truth, thy enemies have not. In order to instrumentalize their efforts, thy tongue must speak their language.
-X. I grant thee no further powers, for I command the same powers as thou. In this last act of honesty, I tell thee that my power is absolute, and thy power is mine. We grow in light and shadow, for as long as our dealings are mutually beneficial.
