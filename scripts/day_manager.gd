@@ -2,6 +2,8 @@ extends Node
 
 class_name DayManager
 
+const FIXED_ITEMS_TAG: StringName = "fixed_item"
+
 ## InteractableManager representing items that will be staying between 
 ## different record folders.
 @export var fixed_items_scene: PackedScene = null
@@ -10,44 +12,69 @@ class_name DayManager
 ## IMPORTANT: Order matters.
 @export var record_scenes: Array[PackedScene]
 
-## Scene container which every item folder will be a child of when instantiated.
-## If null, the parent will be checked. If there's no parent, self will be used.
+## Main InteractableManager in which all items will be a child of.
+## If null, a new InteractableManager will be used
+@export var main_manager: InteractableManager
+
+## Scene container which the Main Manager will be reparented to.
+## If null, will use the Main Manager parent. 
+## If MainManager is null, the parent will be checked.
+## If there's no parent, self will be used.
 @export var items_container: Node = null
+
 
 var _curr_record: int = -1
 
 var fixed_items_manager: InteractableManager = null
 var record_managers: Array[InteractableManager] = []
 
+var has_fixed_items: bool = false
+
 
 func _ready() -> void:
     if not items_container:
-        items_container = get_parent()
+        if main_manager:
+            items_container = main_manager.get_parent()
+        else:
+            items_container = get_parent()
         if not items_container:
             items_container = self
+            
+    # ! IMPORTANT: visible items are going to be in items_container > main_manager > items
+    if main_manager:
+        main_manager.reparent(items_container)
+    else:
+        main_manager = InteractableManager.new()
+        items_container.add_child.call_deferred(main_manager)
 
     if fixed_items_scene:
         fixed_items_manager = fixed_items_scene.instantiate() as InteractableManager
-        items_container.add_child(fixed_items_manager)
+        has_fixed_items = true
+        
+        # Just to start the fixed_items_manager and call its _ready()
+        add_child(fixed_items_manager)
+        fixed_items_manager.move_items_to.call_deferred(main_manager, main_manager, FIXED_ITEMS_TAG)
+
+        remove_child.call_deferred(fixed_items_manager)
 
     for rec_scene in record_scenes:
         var rec := rec_scene.instantiate() as InteractableManager
         record_managers.append(rec)
-
+    
 
 func clean_record_scene(clean_fixed: bool = false):
-    if _curr_record < 0 or _curr_record >= record_managers.size():
-        for manager in record_managers:
-            items_container.remove_child(manager)
-    else:
-        items_container.remove_child(record_managers[_curr_record])
+    for item in main_manager.interactable_items:
+        if not item.has_meta(FIXED_ITEMS_TAG) or clean_fixed:
+            if item.get_parent() == main_manager:
+                main_manager.remove_child(item)
     
-    if fixed_items_manager:
-        # This is just used to make sure all items are enabled again
-        fixed_items_manager.change_state(false, false)
+    for item in main_manager.z_idx_stack:
+        if not item.has_meta(FIXED_ITEMS_TAG) or clean_fixed:
+            if item.get_parent() == main_manager:
+                main_manager.remove_child(item)
 
-        if clean_fixed:
-            items_container.remove_child(fixed_items_manager)
+    # This is just used to make sure all items are enabled again
+    main_manager.change_state(false, false)
 
 
 func load_record(rec_idx: int) -> Error:
@@ -57,8 +84,13 @@ func load_record(rec_idx: int) -> Error:
         return ERR_DOES_NOT_EXIST
 
     _curr_record = rec_idx
-    items_container.add_child(record_managers[rec_idx])
+    var new_record: InteractableManager = record_managers[rec_idx]
 
+    # Just to start the fixed_items_manager and call its _ready()
+    add_child(new_record)
+    new_record.move_items_to.call_deferred(main_manager, main_manager)
+
+    remove_child.call_deferred(new_record)
     print("Record %d" % (_curr_record + 1))
     return OK
 
@@ -73,15 +105,7 @@ func change_items_container(new: Node) -> Node:
         return null
 
     var old: Node = items_container
-
-    if fixed_items_manager:
-        old.remove_child(fixed_items_manager)
-        new.add_child(fixed_items_manager)
-    
-    if _curr_record < 0 or _curr_record >= record_managers.size():
-        old.remove_child(record_managers[_curr_record])
-        new.add_child(record_managers[_curr_record])
-
+    main_manager.reparent(new)
     items_container = new
     return old
 

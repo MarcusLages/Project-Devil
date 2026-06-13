@@ -92,7 +92,7 @@ func _on_stampable_stamped(correct: bool): # TODO: handle stamp being correct or
     if correct:
         print("Correct stamp")
     else:
-        GameManager._lives -= 1
+        GameManager.lives -= 1
         print("Wrong stamp")
 
     if day_managers[_curr_day].next_record() == OK: # TODO: handle last record

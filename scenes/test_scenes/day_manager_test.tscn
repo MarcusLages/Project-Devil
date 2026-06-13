@@ -5,8 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://b7umlc8oql2bm" path="res://scenes/test_scenes/interactable_manager_test1.tscn" id="3_wci17"]
 [ext_resource type="PackedScene" uid="uid://dummpyji51xyo" path="res://scenes/test_scenes/interactable_manager_test2.tscn" id="4_sf7kh"]
 
-[node name="DayManagerTest" type="Node" node_paths=PackedStringArray("items_container")]
+[node name="DayManagerTest" type="Node"]
 script = ExtResource("1_2mdck")
 fixed_items_scene = ExtResource("2_77khd")
 record_scenes = Array[PackedScene]([ExtResource("3_wci17"), ExtResource("4_sf7kh")])
-items_container = NodePath("")

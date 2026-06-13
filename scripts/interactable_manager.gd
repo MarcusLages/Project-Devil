@@ -27,18 +27,23 @@ func _ready() -> void:
             ):
                 interactable_items.append(child)
 
-        for child in interactable_items:
-            z_idx_stack.push_back(child)
+    for child in interactable_items:
+        z_idx_stack.push_back(child)
 
-            var i_component: Interactable = child.get_node_or_null("Interactable")
-            if i_component:
-                i_component.hover_entered.connect(_on_child_hover_entered)
-                i_component.hover_exited.connect(_on_child_hover_exited)
+        var i_component: Interactable = child.get_node_or_null("Interactable")
+        if i_component:
+            # ? This is used as a workaround because of deferred InteractableManager._ready()
+            # ? I will not be fixing this (soon, at least)
+            if i_component.hover_entered.is_connected(_on_child_hover_entered):
+                continue
                 
-                var d_component: Draggable = child.get_node_or_null("Draggable")
-                if d_component:
-                    d_component.drag_ended.connect(_on_child_drag_ended)
-                    d_component.state_changed.connect(_on_child_state_changed)
+            i_component.hover_entered.connect(_on_child_hover_entered)
+            i_component.hover_exited.connect(_on_child_hover_exited)
+            
+            var d_component: Draggable = child.get_node_or_null("Draggable")
+            if d_component:
+                d_component.drag_ended.connect(_on_child_drag_ended)
+                d_component.state_changed.connect(_on_child_state_changed)
 
 
 func _on_child_hover_entered(child: Area2D):
@@ -102,3 +107,41 @@ func change_state(disable_interact: bool, disable_drag: bool):
         i_component.disabled = disable_interact
         if d_component:
             d_component.disabled = disable_drag
+
+
+func move_items_to(
+    new_manager: InteractableManager,
+    reparent_to: Node = null,
+    meta_tag: StringName = ""
+) -> Error:
+    if not new_manager:
+        return ERR_DOES_NOT_EXIST
+    
+    new_manager.interactable_items.append_array(self.interactable_items)
+    new_manager.z_idx_stack.append_array(self.z_idx_stack)
+
+    for child in interactable_items:
+        var i_component: Interactable = child.get_node_or_null("Interactable")
+        if i_component:
+            i_component.hover_entered.disconnect(_on_child_hover_entered)
+            i_component.hover_entered.connect(new_manager._on_child_hover_entered)
+
+            i_component.hover_exited.disconnect(_on_child_hover_exited)
+            i_component.hover_exited.connect(new_manager._on_child_hover_exited)
+            
+            var d_component: Draggable = child.get_node_or_null("Draggable")
+            if d_component:
+                d_component.drag_ended.disconnect(_on_child_drag_ended)
+                d_component.drag_ended.connect(new_manager._on_child_drag_ended)
+
+                d_component.state_changed.disconnect(_on_child_state_changed)
+                d_component.state_changed.connect(new_manager._on_child_state_changed)
+        
+        if reparent_to:
+            child.get_parent().remove_child(child)
+            reparent_to.add_child(child)
+
+        if meta_tag:
+            child.set_meta(meta_tag, true)
+
+    return OK

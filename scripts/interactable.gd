@@ -49,7 +49,6 @@ func _process(_delta: float) -> void:
         and not disabled
         and Input.is_action_just_pressed("mouse_interact")
     ):
-        print("interacted")
         interacted.emit(a2d)
 
 
