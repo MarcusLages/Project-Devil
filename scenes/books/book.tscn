@@ -28,16 +28,16 @@ script = ExtResource("1_uk727")
 
 [node name="ZoomedContent" type="Node2D" parent="."]
 
-[node name="Page" parent="ZoomedContent" instance=ExtResource("2_uk727")]
+[node name="1" parent="ZoomedContent" instance=ExtResource("2_uk727")]
 
-[node name="Page2" parent="ZoomedContent" instance=ExtResource("2_uk727")]
+[node name="2" parent="ZoomedContent" instance=ExtResource("2_uk727")]
 
-[node name="RichTextLabel" parent="ZoomedContent/Page2" index="1"]
+[node name="RichTextLabel" parent="ZoomedContent/2" index="1"]
 text = "Page 2"
 
-[node name="Page3" parent="ZoomedContent" instance=ExtResource("2_uk727")]
+[node name="3" parent="ZoomedContent" instance=ExtResource("2_uk727")]
 
-[node name="RichTextLabel" parent="ZoomedContent/Page3" index="1"]
+[node name="RichTextLabel" parent="ZoomedContent/3" index="1"]
 text = "Page 3"
 
 [node name="Content" type="Node2D" parent="."]
@@ -76,6 +76,6 @@ metadata/_custom_type_script = "uid://cs1jmnuy31gbp"
 [connection signal="unzoomed" from="Zoomable" to="." method="_on_zoomable_unzoomed"]
 [connection signal="zoomed" from="Zoomable" to="." method="_on_zoomable_zoomed"]
 
-[editable path="ZoomedContent/Page"]
-[editable path="ZoomedContent/Page2"]
-[editable path="ZoomedContent/Page3"]
+[editable path="ZoomedContent/1"]
+[editable path="ZoomedContent/2"]
+[editable path="ZoomedContent/3"]

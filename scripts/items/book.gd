@@ -19,7 +19,8 @@ func _ready() -> void:
         p.next_page.connect(_on_page_next_page)
         p.prev_page.connect(_on_page_prev_page)
 
-    pages.sort_custom(func(a, b): return a.name > b.name)
+    # Godot is weird
+    pages.sort_custom(func(a, b): return int(a.name) < int(b.name))
     for p in pages:
         p.visible = false
         print(p.name)
