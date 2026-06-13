@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://d0nj45wrigdkv"]
+
+[ext_resource type="Script" uid="uid://8faoysb3qgci" path="res://scripts/day_manager.gd" id="1_splxt"]
+
+[node name="DayManager1" type="Node"]
+script = ExtResource("1_splxt")
+metadata/_custom_type_script = "uid://8faoysb3qgci"
