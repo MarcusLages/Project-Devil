@@ -13,16 +13,18 @@ height = 208.0
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ojcuo"]
 shader = ExtResource("5_x8j62")
 shader_parameter/light_marker = Vector2(0.5, 0.5)
-shader_parameter/light_radius = 0.3
-shader_parameter/darkness_alpha = 0.65
+shader_parameter/light_radius = 0.255
+shader_parameter/darkness_alpha = 0.88
 shader_parameter/light_intensity = 1.0
 shader_parameter/circular_light = false
 
 [node name="Lamp" type="Area2D"]
 script = ExtResource("1_ojcuo")
 lamp_on = ExtResource("2_x8j62")
-light_radius_off = 0.35
 lamp_off = ExtResource("2_tq8gd")
+light_radius_off = 0.19
+darkness_alpha_off = 0.93
+light_intensity_off = 0.245
 
 [node name="Content" type="Node2D" parent="."]
 

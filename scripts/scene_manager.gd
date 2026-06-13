@@ -15,6 +15,7 @@ class_name SceneManager
 
 var day_managers: Array[DayManager]
 var has_items_container: bool = false
+var lamp: Lamp = null
 
 var _curr_day: int = -1
 
@@ -69,6 +70,9 @@ func load_day(day: int) -> Error:
 
     # TODO: load next record for testing too
     day_managers[day].next_record()
+
+    _get_lamp.call_deferred()
+
     _curr_day = day
     print("Day %d" % (_curr_day + 1))
     return OK
@@ -77,6 +81,17 @@ func load_day(day: int) -> Error:
 func next_day() -> Error:
     return load_day(_curr_day + 1)
 
+
+func _get_lamp():
+    # Workaround to get the lamp
+    lamp = null
+    for item in day_managers[_curr_day].main_manager.interactable_items:
+        print("Item: ", item.name)
+        if item is Lamp:
+            lamp = (item as Lamp)
+            break
+    print(lamp)
+    if lamp: lamp.scare(true)
 
 func _on_node_added(node: Node):
     if node is Stampable:
@@ -93,7 +108,7 @@ func _on_stampable_stamped(correct: bool): # TODO: handle stamp being correct or
         print("Correct stamp")
     else:
         GameManager.lives -= 1
-        print("Wrong stamp")
+        if lamp: lamp.scare(true)
 
     if day_managers[_curr_day].next_record() == OK: # TODO: handle last record
         print("Next record")
