@@ -88,7 +88,7 @@ func _on_draggable_drag_ended(_area: Area2D, dropzone: DropZone, _drop_spot: Sna
                 if _has_zoomed_collision:
                     _collision_parent.remove_child(zoomed_collision_object)
                     _collision_parent.add_child(collision_object)
-
+                    
                 unzoomed.emit()
 
 
