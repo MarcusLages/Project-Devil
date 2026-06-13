@@ -5,5 +5,8 @@
 
 [node name="InteractableManagerFixed" instance=ExtResource("1_ykto1")]
 
+[node name="Alarm" parent="." index="0"]
+clicking_interval_sec = 2.0
+
 [node name="Instructions" parent="." index="5" instance=ExtResource("2_q2457")]
-position = Vector2(607, 489)
+position = Vector2(1006, 486)

@@ -21,7 +21,7 @@ texture = ExtResource("3_fj4ll")
 offset_left = -150.0
 offset_top = -214.0
 offset_right = 142.0
-offset_bottom = 132.0
+offset_bottom = -181.0
 theme_override_colors/font_color = Color(0.16078432, 0.15686275, 0.15294118, 1)
 theme_override_fonts/font = ExtResource("4_fj4ll")
 theme_override_font_sizes/font_size = 13
@@ -37,13 +37,13 @@ offset_bottom = 171.0
 theme_override_colors/font_color = Color(0.16078432, 0.15686275, 0.15294118, 1)
 theme_override_fonts/font = ExtResource("4_fj4ll")
 theme_override_font_sizes/font_size = 12
-text = "1. Press X to receive customer’s bargain requests and their corresponding profiles;
-2. Assess their profiles and our Patron codices to allocate them to the Patron that better suits their needs;
+text = "1. Press the red button to receive customers' bargain requests and their profiles;
+2. Assess their profiles and our Patron codices to assign them to the Patron that better suits their needs;
 3. ████ Prime is no more;
-4. Never discard a customer’s dossier unless instructed to do so by a supervisor;
-5. Process each request in a timely manner to prevent bottlenecks;
+4. Assign a Patron by stamping their profile with a Patron's corresponding stamp;
+5. After stamping, press the red button to receive your next assignment;
 6. ████ Prime is no more;
-7. You may request additional information to better assess a customer’s profile, at the cost of time;
+7. Process each request in a timely manner to prevent bottlenecks;
 8. Appease our Patrons above all other concerns. They are our real clients;
 9. ████ Prime is no more.
 "

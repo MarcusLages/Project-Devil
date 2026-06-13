@@ -41,6 +41,7 @@ metadata/_custom_type_script = "uid://ci43rbdbuh1yc"
 layer = 2
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+visible = false
 material = SubResource("ShaderMaterial_cj1p2")
 anchors_preset = 15
 anchor_right = 1.0
