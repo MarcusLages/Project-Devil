@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://c66uf6dfwcemv"]
+
+[ext_resource type="PackedScene" uid="uid://yodo7kh6jrf" path="res://scenes/books/character_sheet.tscn" id="1_ghyvm"]
+
+[node name="CharacterSheet" instance=ExtResource("1_ghyvm")]
+
+[node name="ZoomedContent" parent="." index="0"]
+client_name = "John Goodman"
+client_age = "M"
+client_sex = "31"
+bargain = "Career ascension"
+sacrifice = "5 liters of blood, over the course of 3 years"
+organ = "Spinal cord"
+astral_sign = "Taurus"
+death = "Cancer"
+ethics = "Deontology"
+ambition = "To receive Employee of the Year award"
+nightmare = "Homosexuality exposed"

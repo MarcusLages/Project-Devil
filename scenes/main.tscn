@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bcjbw6cnck4le"]
+[gd_scene load_steps=7 format=3 uid="uid://bcjbw6cnck4le"]
 
 [ext_resource type="PackedScene" uid="uid://dors6pbtgudn2" path="res://scenes/items/table.tscn" id="1_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://cxrftxr8bfvfa" path="res://scenes/components/scene_manager.tscn" id="3_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://ba64yusffnm4c" path="res://scenes/items/zoom_table.tscn" id="4_jyhfs"]
 [ext_resource type="Script" uid="uid://b6kihpl0g4hgo" path="res://scripts/interactable_manager.gd" id="5_tbgi4"]
+[ext_resource type="Texture2D" uid="uid://5ufkrtg08pbh" path="res://assets/img/Sheet.png" id="6_tefeu"]
 [ext_resource type="PackedScene" uid="uid://c7p7loqcnx44j" path="res://scenes/test_scenes/day_manager_test.tscn" id="7_o6xl0"]
 
 [node name="Main" type="Node2D"]
@@ -24,3 +25,7 @@ metadata/_custom_type_script = "uid://b6kihpl0g4hgo"
 
 [node name="ZoomTable" parent="." instance=ExtResource("4_jyhfs")]
 position = Vector2(953, 453)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(943, 395)
+texture = ExtResource("6_tefeu")

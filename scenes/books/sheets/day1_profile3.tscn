@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://3ho42tujxyy"]
+
+[ext_resource type="PackedScene" uid="uid://yodo7kh6jrf" path="res://scenes/books/character_sheet.tscn" id="1_j1vpn"]
+
+[node name="CharacterSheet" instance=ExtResource("1_j1vpn")]
+
+[node name="ZoomedContent" parent="." index="0"]
+client_name = "Terrence May"
+client_age = "M"
+client_sex = "44"
+bargain = "Insertion of bullet in politician’s head"
+sacrifice = "Seventh daughter"
+organ = "Eyes"
+astral_sign = "Leo"
+death = "Bullet wound to cranium"
+ethics = "Utilitarianism"
+ambition = "To become overlord of ██████████"
+nightmare = "Being powerless"
+
+[node name="Content" parent="ZoomedContent/Bargain" index="0"]
+offset_right = 284.0
+offset_bottom = 48.0

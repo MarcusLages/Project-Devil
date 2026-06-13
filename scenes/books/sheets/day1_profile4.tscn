@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://bilqyo8bs8dxe"]
+
+[ext_resource type="PackedScene" uid="uid://yodo7kh6jrf" path="res://scenes/books/character_sheet.tscn" id="1_1u4f8"]
+
+[node name="CharacterSheet" instance=ExtResource("1_1u4f8")]
+
+[node name="ZoomedContent" parent="." index="0"]
+client_name = "Nicholas McFee"
+client_age = "M"
+client_sex = "41"
+bargain = "Lady Luck's hand"
+sacrifice = "A favor for the future"
+organ = "Liver"
+astral_sign = "Gemini"
+death = "Cirrhosis"
+ethics = "Hedonism"
+ambition = "To receive Employee of the Year award"
+nightmare = "Homosexuality exposed"
