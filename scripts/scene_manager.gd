@@ -13,6 +13,9 @@ class_name SceneManager
 ## If null, each DayManager will use their own
 @export var items_container: Node
 
+@export var game_over_scene: PackedScene = preload("res://scenes/game_over_screen.tscn")
+@export var ending_scene: PackedScene = preload("res://scenes/ending_scene.tscn")
+
 var day_managers: Array[DayManager]
 var has_items_container: bool = false
 var lamp: Lamp = null
@@ -119,6 +122,9 @@ func _on_node_removed(node: Node):
 
 
 func _on_stampable_stamped(correct: bool):
+    if lamp: lamp.change_state(false, false)
+    await get_tree().create_timer(0.05).timeout
+
     if correct:
         print("Correct stamp")
     else:
@@ -130,10 +136,12 @@ func _on_stampable_stamped(correct: bool):
             if lamp: lamp.scare(true, true)
         else:
             if lamp: lamp.scare(false, true)
-    
-    
-    if lamp: lamp.change_state(false, false)
-    await get_tree().create_timer(0.05).timeout
+
+            # await get_tree().create_timer(1.).timeout
+            # DANILO, SOM DE GAME OVER AQUI
+
+            get_tree().change_scene_to_packed(game_over_scene)
+            return
 
     if day_managers[_curr_day].next_record() == OK:
         if lamp: lamp.change_state(true, false)
