@@ -118,16 +118,30 @@ func _on_node_removed(node: Node):
         (node as Stampable).stamped.disconnect(_on_stampable_stamped)
 
 
-func _on_stampable_stamped(correct: bool): # TODO: handle stamp being correct or not
+func _on_stampable_stamped(correct: bool):
     if correct:
         print("Correct stamp")
     else:
         GameManager.lives -= 1
-        if lamp: lamp.scare(true, true)
 
-    if day_managers[_curr_day].next_record() == OK: # TODO: handle last record
+        if GameManager.lives == 2:
+            if lamp: lamp.scare(true, false)
+        elif GameManager.lives == 1:
+            if lamp: lamp.scare(true, true)
+        else:
+            if lamp: lamp.scare(false, true)
+    
+    
+    if lamp: lamp.change_state(false, false)
+    await get_tree().create_timer(0.05).timeout
+
+    if day_managers[_curr_day].next_record() == OK:
+        if lamp: lamp.change_state(true, false)
         print("Next record")
     else:
         print("Last record of the day")
         day_managers[_curr_day].clean_record_scene(true)
         next_day()
+
+        await get_tree().create_timer(0.5).timeout
+        if lamp: lamp.change_state(true, false)
