@@ -1,0 +1,59 @@
+[gd_scene load_steps=2 format=3 uid="uid://e0lxhfs5ep2m"]
+
+[ext_resource type="Script" path="res://scripts/items/page.gd" id="1_ijqg6"]
+
+[node name="Page" type="Node2D"]
+script = ExtResource("1_ijqg6")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -106.5
+offset_top = -151.0
+offset_right = 106.5
+offset_bottom = 151.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -87.0
+offset_top = -132.0
+offset_right = 87.0
+offset_bottom = 67.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 14
+text = "Page 1"
+scroll_active = false
+
+[node name="NextButton" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 70.0
+offset_top = 114.0
+offset_right = 107.0
+offset_bottom = 151.0
+action_mode = 0
+flat = true
+
+[node name="PrevButton" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = -106.0
+offset_top = 114.0
+offset_right = -69.0
+offset_bottom = 151.0
+action_mode = 0
+flat = true
+
+[connection signal="pressed" from="NextButton" to="." method="_on_next_button_pressed"]
+[connection signal="pressed" from="PrevButton" to="." method="_on_prev_button_pressed"]
