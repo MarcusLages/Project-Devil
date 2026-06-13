@@ -28,4 +28,4 @@ func _on_drop_zone_drop_applied(_zone: DropZone, stamp_area: Area2D, _plan: Drop
 
 	var stamp := stamp_area as Stamp
 	stamped.emit(stamp.stamp_name == correct_stamp)
-	SoundManager.play_sfx(SoundManager.SFX.STAMP)
+	SoundManager.play_sfx(SoundManager.SFX.STAMP, false, 10.0)
