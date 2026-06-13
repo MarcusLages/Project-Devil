@@ -1,13 +1,13 @@
 [gd_scene load_steps=8 format=3 uid="uid://dj56qrkqssj7k"]
 
 [ext_resource type="Script" uid="uid://b6r3y4w7ikk0g" path="res://scripts/stamp.gd" id="1_6yx5s"]
-[ext_resource type="Texture2D" uid="uid://ca36ohqd2xpxx" path="res://assets/img/stamp_test_1.png" id="2_ful50"]
+[ext_resource type="Texture2D" uid="uid://bicuypyl8r6rn" path="res://assets/img/carimbo_source.png" id="2_6yx5s"]
 [ext_resource type="PackedScene" uid="uid://d33y1bfr1gojc" path="res://scenes/components/interactable.tscn" id="3_xxmik"]
 [ext_resource type="Script" uid="uid://crmnw3ldr3xev" path="res://addons/drag_and_drop/scripts/draggable.gd" id="4_cbxls"]
 [ext_resource type="Script" uid="uid://djdmnemxrx7bg" path="res://addons/drag_and_drop/resources/draggable_types/draggable_type.gd" id="5_2s6fy"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ode6b"]
-size = Vector2(90, 90)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j0t5u"]
+size = Vector2(61, 122)
 
 [sub_resource type="Resource" id="Resource_lnl7l"]
 script = ExtResource("5_2s6fy")
@@ -21,10 +21,10 @@ stamp_name = "SOURCE"
 [node name="Content" type="Node2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="Content"]
-texture = ExtResource("2_ful50")
+texture = ExtResource("2_6yx5s")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_ode6b")
+shape = SubResource("RectangleShape2D_j0t5u")
 
 [node name="Interactable" parent="." instance=ExtResource("3_xxmik")]
 

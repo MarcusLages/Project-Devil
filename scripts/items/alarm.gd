@@ -4,6 +4,11 @@ extends Area2D
 @export var max_ringing_time_sec: float = 120.
 @export var clicking_interval_sec: float = 1.
 
+@export var phone_on : Texture
+@export var phone_off : Texture
+
+@onready var sprite = $Content/Sprite2D
+
 var _rng = RandomNumberGenerator.new()
 var _click: int = 0
 
@@ -21,10 +26,12 @@ func _on_interactable_interacted(_from: Area2D) -> void:
 		_start_alarm_timer()
 		SoundManager.stop_sfx(SoundManager.SFX.ALARM)
 		ringing = false
+		sprite.texture = phone_off
 
 
 func _on_alarm_timer_timeout() -> void:
 	ringing = true
+	sprite.texture = phone_on
 	SoundManager.play_sfx(SoundManager.SFX.ALARM, true)
 
 
