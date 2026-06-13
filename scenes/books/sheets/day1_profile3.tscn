@@ -16,6 +16,7 @@ death = "Bullet wound to cranium"
 ethics = "Utilitarianism"
 ambition = "To become overlord of ██████████"
 nightmare = "Being powerless"
+correct_patron = "KING"
 
 [node name="Content" parent="ZoomedContent/Bargain" index="0"]
 offset_right = 284.0

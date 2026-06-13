@@ -1,16 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://yodo7kh6jrf"]
+[gd_scene load_steps=7 format=3 uid="uid://yodo7kh6jrf"]
 
 [ext_resource type="PackedScene" uid="uid://bqt842joqbmsr" path="res://scenes/books/book.tscn" id="1_ipnha"]
 [ext_resource type="Script" uid="uid://bx2hagoxfv5k3" path="res://scripts/items/character_sheet.gd" id="2_4whi3"]
 [ext_resource type="Texture2D" uid="uid://5ufkrtg08pbh" path="res://assets/img/Sheet.png" id="2_frdq2"]
 [ext_resource type="FontFile" uid="uid://ogmrm1t4aybl" path="res://assets/font/ELEGANT TYPEWRITER Regular.ttf" id="4_fh06m"]
 [ext_resource type="Texture2D" uid="uid://dst6x5wwtnnhb" path="res://assets/img/ProvidenceIcon.png" id="4_g6a3g"]
+[ext_resource type="PackedScene" uid="uid://lfobgcdrmmk4" path="res://scenes/test_scenes/stampable_test.tscn" id="6_mv85c"]
 
 [node name="CharacterSheet" instance=ExtResource("1_ipnha")]
 position = Vector2(133, 407)
 
 [node name="ZoomedContent" parent="." index="0"]
-visible = false
 script = ExtResource("2_4whi3")
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
@@ -92,9 +92,9 @@ vertical_alignment = 1
 
 [node name="Request" type="Label" parent="ZoomedContent" index="5"]
 offset_left = -151.0
-offset_top = -124.0
+offset_top = -137.0
 offset_right = -14.0
-offset_bottom = -103.0
+offset_bottom = -116.0
 theme_override_colors/font_color = Color(0.16078432, 0.15686275, 0.15294118, 1)
 theme_override_fonts/font = ExtResource("4_fh06m")
 theme_override_font_sizes/font_size = 18
@@ -103,9 +103,9 @@ vertical_alignment = 2
 
 [node name="Bargain" type="Label" parent="ZoomedContent" index="6"]
 offset_left = -150.0
-offset_top = -100.0
+offset_top = -113.0
 offset_right = -33.0
-offset_bottom = -86.0
+offset_bottom = -99.0
 theme_override_colors/font_color = Color(0.16078432, 0.15686275, 0.15294118, 1)
 theme_override_fonts/font = ExtResource("4_fh06m")
 theme_override_font_sizes/font_size = 12
@@ -125,9 +125,9 @@ autowrap_mode = 2
 
 [node name="Sacrifice" type="Label" parent="ZoomedContent" index="7"]
 offset_left = -150.0
-offset_top = -65.0
+offset_top = -78.0
 offset_right = -33.0
-offset_bottom = -51.0
+offset_bottom = -64.0
 theme_override_colors/font_color = Color(0.16078432, 0.15686275, 0.15294118, 1)
 theme_override_fonts/font = ExtResource("4_fh06m")
 theme_override_font_sizes/font_size = 12
@@ -146,10 +146,10 @@ text = "I DON’T KNOW HOW BUT YOU’RE HOLDING ME"
 autowrap_mode = 2
 
 [node name="Details" type="Label" parent="ZoomedContent" index="8"]
-offset_left = -151.0
-offset_top = -15.0
-offset_right = -27.0
-offset_bottom = 6.0
+offset_left = -150.0
+offset_top = -43.0
+offset_right = -26.0
+offset_bottom = -22.0
 theme_override_colors/font_color = Color(0.16078432, 0.15686275, 0.15294118, 1)
 theme_override_fonts/font = ExtResource("4_fh06m")
 theme_override_font_sizes/font_size = 18
@@ -157,10 +157,10 @@ text = "Client details"
 vertical_alignment = 2
 
 [node name="Organ" type="Label" parent="ZoomedContent" index="9"]
-offset_left = -149.0
-offset_top = 8.0
-offset_right = -32.0
-offset_bottom = 22.0
+offset_left = -148.0
+offset_top = -20.0
+offset_right = -31.0
+offset_bottom = -6.0
 theme_override_colors/font_color = Color(0.16078432, 0.15686275, 0.15294118, 1)
 theme_override_fonts/font = ExtResource("4_fh06m")
 theme_override_font_sizes/font_size = 12
@@ -179,10 +179,10 @@ text = "Reproductive organs"
 autowrap_mode = 2
 
 [node name="Sign" type="Label" parent="ZoomedContent" index="10"]
-offset_left = 9.0
-offset_top = 8.0
-offset_right = 126.0
-offset_bottom = 22.0
+offset_left = 10.0
+offset_top = -20.0
+offset_right = 127.0
+offset_bottom = -6.0
 theme_override_colors/font_color = Color(0.16078432, 0.15686275, 0.15294118, 1)
 theme_override_fonts/font = ExtResource("4_fh06m")
 theme_override_font_sizes/font_size = 12
@@ -201,10 +201,10 @@ text = "Libra"
 autowrap_mode = 2
 
 [node name="Death" type="Label" parent="ZoomedContent" index="11"]
-offset_left = -148.0
-offset_top = 48.0
-offset_right = -4.0
-offset_bottom = 62.0
+offset_left = -147.0
+offset_top = 20.0
+offset_right = -3.0
+offset_bottom = 34.0
 theme_override_colors/font_color = Color(0.16078432, 0.15686275, 0.15294118, 1)
 theme_override_fonts/font = ExtResource("4_fh06m")
 theme_override_font_sizes/font_size = 12
@@ -223,10 +223,10 @@ text = "Dismemberment by foreign powers"
 autowrap_mode = 2
 
 [node name="Ethics" type="Label" parent="ZoomedContent" index="12"]
-offset_left = -149.0
-offset_top = 83.0
-offset_right = 9.0
-offset_bottom = 97.0
+offset_left = -148.0
+offset_top = 55.0
+offset_right = 10.0
+offset_bottom = 69.0
 theme_override_colors/font_color = Color(0.16078432, 0.15686275, 0.15294118, 1)
 theme_override_fonts/font = ExtResource("4_fh06m")
 theme_override_font_sizes/font_size = 12
@@ -245,10 +245,10 @@ text = "Dismemberment by foreign powers"
 autowrap_mode = 2
 
 [node name="Ambition" type="Label" parent="ZoomedContent" index="13"]
-offset_left = -149.0
-offset_top = 117.0
-offset_right = -5.0
-offset_bottom = 131.0
+offset_left = -148.0
+offset_top = 89.0
+offset_right = -4.0
+offset_bottom = 103.0
 theme_override_colors/font_color = Color(0.16078432, 0.15686275, 0.15294118, 1)
 theme_override_fonts/font = ExtResource("4_fh06m")
 theme_override_font_sizes/font_size = 12
@@ -267,10 +267,10 @@ text = "To become overlord of ██████████"
 autowrap_mode = 2
 
 [node name="Nightmare" type="Label" parent="ZoomedContent" index="14"]
-offset_left = -150.0
-offset_top = 152.0
-offset_right = -6.0
-offset_bottom = 166.0
+offset_left = -149.0
+offset_top = 124.0
+offset_right = -5.0
+offset_bottom = 138.0
 theme_override_colors/font_color = Color(0.16078432, 0.15686275, 0.15294118, 1)
 theme_override_fonts/font = ExtResource("4_fh06m")
 theme_override_font_sizes/font_size = 12
@@ -289,16 +289,18 @@ text = "Dismemberment by foreign powers"
 autowrap_mode = 2
 
 [node name="Patron" type="Label" parent="ZoomedContent" index="15"]
-offset_left = 5.0
-offset_top = 186.0
-offset_right = 149.0
-offset_bottom = 200.0
+offset_left = -150.0
+offset_top = 160.0
+offset_right = 58.0
+offset_bottom = 174.0
 theme_override_colors/font_color = Color(0.16078432, 0.15686275, 0.15294118, 1)
 theme_override_fonts/font = ExtResource("4_fh06m")
 theme_override_font_sizes/font_size = 12
-text = "PATRON"
-horizontal_alignment = 2
+text = "CORRECT PATRON - STAMP HERE"
 vertical_alignment = 2
+
+[node name="Stampable" parent="ZoomedContent" index="16" instance=ExtResource("6_mv85c")]
+position = Vector2(-104, 177)
 
 [node name="Background" type="Sprite2D" parent="Content" index="0"]
 texture_filter = 1

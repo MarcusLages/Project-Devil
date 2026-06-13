@@ -16,6 +16,7 @@ extends Node2D
 @export var ethics = ""
 @export var ambition = ""
 @export var nightmare = ""
+@export var correct_patron = ""
 
 @onready var name_label = $Name/Content
 @onready var age_label = $Age/Content
@@ -28,6 +29,7 @@ extends Node2D
 @onready var ethics_label = $Ethics/Content
 @onready var ambition_label = $Ambition/Content
 @onready var nightmare_label = $Nightmare/Content
+@onready var stampable = $Stampable
 
 
 func _ready() -> void:
@@ -42,3 +44,4 @@ func _ready() -> void:
 	ethics_label.text = ethics
 	ambition_label.text = ambition
 	nightmare_label.text = nightmare
+	stampable.correct_stamp = correct_patron

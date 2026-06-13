@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://d0nj45wrigdkv"]
 
 [ext_resource type="Script" uid="uid://8faoysb3qgci" path="res://scripts/day_manager.gd" id="1_splxt"]
-[ext_resource type="PackedScene" uid="uid://djkjmsebu1jrp" path="res://scenes/days/day1/interactable_manager_fixed.tscn" id="2_ove00"]
+[ext_resource type="PackedScene" uid="uid://djkjmsebu1jrp" path="res://scenes/days/day1/interactable_manager_day1_fixed.tscn" id="2_ove00"]
 [ext_resource type="PackedScene" uid="uid://dflviv6ii6uiu" path="res://scenes/days/day1/interactable_manager_1.tscn" id="3_4tdn2"]
 [ext_resource type="PackedScene" uid="uid://bm8htov87720f" path="res://scenes/days/day1/interactable_manager_2.tscn" id="4_slrga"]
 [ext_resource type="PackedScene" uid="uid://5nisjugg4mmc" path="res://scenes/days/day1/interactable_manager_3.tscn" id="5_rj5be"]

@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://b5j40lwctylst"]
-
-[ext_resource type="PackedScene" uid="uid://coebt3hr31ag1" path="res://scenes/days/interactable_manager_fixed.tscn" id="1_2lmec"]
-
-[node name="InteractableManager3" instance=ExtResource("1_2lmec")]

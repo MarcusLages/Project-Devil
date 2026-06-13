@@ -1,0 +1,37 @@
+[gd_scene load_steps=8 format=3 uid="uid://bnjtns7pcomfo"]
+
+[ext_resource type="Script" uid="uid://b6r3y4w7ikk0g" path="res://scripts/stamp.gd" id="1_8s4ms"]
+[ext_resource type="Texture2D" uid="uid://ca36ohqd2xpxx" path="res://assets/img/stamp_test_1.png" id="2_f6304"]
+[ext_resource type="PackedScene" uid="uid://d33y1bfr1gojc" path="res://scenes/components/interactable.tscn" id="3_i2mso"]
+[ext_resource type="Script" uid="uid://crmnw3ldr3xev" path="res://addons/drag_and_drop/scripts/draggable.gd" id="4_2m8os"]
+[ext_resource type="Script" uid="uid://djdmnemxrx7bg" path="res://addons/drag_and_drop/resources/draggable_types/draggable_type.gd" id="5_s3j32"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ode6b"]
+size = Vector2(90, 90)
+
+[sub_resource type="Resource" id="Resource_lnl7l"]
+script = ExtResource("5_s3j32")
+id = "item"
+metadata/_custom_type_script = "uid://djdmnemxrx7bg"
+
+[node name="StampGodmother" type="Area2D"]
+script = ExtResource("1_8s4ms")
+stamp_name = "GODMOTHER"
+
+[node name="Content" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Content"]
+texture = ExtResource("2_f6304")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ode6b")
+
+[node name="Interactable" parent="." instance=ExtResource("3_i2mso")]
+
+[node name="Draggable" type="Node" parent="."]
+script = ExtResource("4_2m8os")
+dragging_speed = 12.0
+drag_z_index = 100
+relative_dragging = true
+type = SubResource("Resource_lnl7l")
+metadata/_custom_type_script = "uid://crmnw3ldr3xev"
