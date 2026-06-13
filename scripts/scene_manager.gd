@@ -79,7 +79,23 @@ func load_day(day: int) -> Error:
 
 
 func next_day() -> Error:
+    fade("Day %d" % (_curr_day + 2))
     return load_day(_curr_day + 1)
+
+
+func fade(text: String = ""):
+    var fade_rect = $CanvasLayer/ColorRect
+    var text_label = $CanvasLayer/Label
+    text_label.text = text
+        
+    var tween = create_tween()
+    tween.tween_property(fade_rect, "modulate:a", 1.0, 1.0)
+        
+    tween.tween_callback(func(): text_label.visible = true)
+    tween.tween_callback(func(): await get_tree().create_timer(2.0).timeout)
+        
+    tween.tween_property(fade_rect, "modulate:a", 0.0, 1.0)
+    tween.tween_callback(func(): text_label.visible = false)
 
 
 func _get_lamp():
@@ -90,8 +106,7 @@ func _get_lamp():
         if item is Lamp:
             lamp = (item as Lamp)
             break
-    print(lamp)
-    if lamp: lamp.scare(true)
+
 
 func _on_node_added(node: Node):
     if node is Stampable:
@@ -108,7 +123,7 @@ func _on_stampable_stamped(correct: bool): # TODO: handle stamp being correct or
         print("Correct stamp")
     else:
         GameManager.lives -= 1
-        if lamp: lamp.scare(true)
+        if lamp: lamp.scare(true, true)
 
     if day_managers[_curr_day].next_record() == OK: # TODO: handle last record
         print("Next record")
