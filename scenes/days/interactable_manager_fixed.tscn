@@ -1,0 +1,27 @@
+[gd_scene load_steps=7 format=3 uid="uid://coebt3hr31ag1"]
+
+[ext_resource type="Script" uid="uid://b6kihpl0g4hgo" path="res://scripts/interactable_manager.gd" id="1_1l7k0"]
+[ext_resource type="PackedScene" uid="uid://c3teswcgfhijm" path="res://scenes/items/alarm.tscn" id="2_6bjo4"]
+[ext_resource type="PackedScene" uid="uid://daorxf41jrgcl" path="res://scenes/items/lamp.tscn" id="3_5dgt1"]
+[ext_resource type="PackedScene" uid="uid://fvf6d2b1j1jr" path="res://scenes/items/stamp_board.tscn" id="4_whgmt"]
+[ext_resource type="PackedScene" uid="uid://bnjtns7pcomfo" path="res://scenes/items/stamp_godmother.tscn" id="5_c4v5l"]
+[ext_resource type="PackedScene" uid="uid://d3pxiuml0kwpc" path="res://scenes/items/stamp_king.tscn" id="6_udm4l"]
+
+[node name="InteractableManagerFixed" type="Node"]
+script = ExtResource("1_1l7k0")
+metadata/_custom_type_script = "uid://b6kihpl0g4hgo"
+
+[node name="Alarm" parent="." instance=ExtResource("2_6bjo4")]
+position = Vector2(150, 551)
+
+[node name="Lamp" parent="." instance=ExtResource("3_5dgt1")]
+position = Vector2(502, 178)
+
+[node name="StampBoard" parent="." instance=ExtResource("4_whgmt")]
+position = Vector2(785, 132)
+
+[node name="StampGodmother" parent="." instance=ExtResource("5_c4v5l")]
+position = Vector2(919, 130)
+
+[node name="StampKing" parent="." instance=ExtResource("6_udm4l")]
+position = Vector2(1061, 132)

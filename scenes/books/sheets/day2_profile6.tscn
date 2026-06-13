@@ -1,18 +1,5 @@
-[gd_scene load_steps=2 format=3 uid="uid://cb2lux02sxyd0"]
+[gd_scene load_steps=2 format=3 uid="uid://cscqnxbcbglv7"]
 
-[ext_resource type="PackedScene" uid="uid://yodo7kh6jrf" path="res://scenes/books/character_sheet.tscn" id="1_dknni"]
+[ext_resource type="PackedScene" uid="uid://dv6b3on3xb85b" path="res://scenes/books/character_sheet.tscn" id="1_dknni"]
 
 [node name="CharacterSheet" instance=ExtResource("1_dknni")]
-
-[node name="ZoomedContent" parent="." index="0"]
-client_name = "Marco Rosa"
-client_age = "M"
-client_sex = "25"
-bargain = "Wealth beyond dreams"
-sacrifice = "Father's life"
-organ = "Reproductive organs"
-astral_sign = "Scorpio"
-death = "Cancer"
-ethics = "Egoism"
-ambition = "Always more riches"
-nightmare = "Laughs from peers in second grade"

@@ -1,18 +1,5 @@
-[gd_scene load_steps=2 format=3 uid="uid://te3rvjltoiob"]
+[gd_scene load_steps=2 format=3 uid="uid://b104mx66fbifb"]
 
-[ext_resource type="PackedScene" uid="uid://yodo7kh6jrf" path="res://scenes/books/character_sheet.tscn" id="1_oojx0"]
+[ext_resource type="PackedScene" uid="uid://dv6b3on3xb85b" path="res://scenes/books/character_sheet.tscn" id="1_oojx0"]
 
 [node name="CharacterSheet" instance=ExtResource("1_oojx0")]
-
-[node name="ZoomedContent" parent="." index="0"]
-client_name = "Flower under a crimson tree"
-client_age = "X"
-client_sex = "2"
-bargain = "Light"
-sacrifice = "Oxygen"
-organ = "Seed"
-astral_sign = "N/A"
-death = "Heat death of the universe"
-ethics = "THE ENGINE IS BROKEN"
-ambition = "There is light"
-nightmare = "We thought we were alone"

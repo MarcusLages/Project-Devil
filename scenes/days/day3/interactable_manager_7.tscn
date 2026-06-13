@@ -8,3 +8,4 @@ script = ExtResource("1_f3mv6")
 metadata/_custom_type_script = "uid://b6kihpl0g4hgo"
 
 [node name="CharacterSheet" parent="." instance=ExtResource("2_7liqy")]
+position = Vector2(133, 407)

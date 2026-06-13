@@ -12,3 +12,4 @@ metadata/_custom_type_script = "uid://b6kihpl0g4hgo"
 position = Vector2(240, 436)
 
 [node name="CharacterSheet" parent="." instance=ExtResource("3_qu4nw")]
+position = Vector2(133, 407)

@@ -1,0 +1,61 @@
+[gd_scene load_steps=5 format=3 uid="uid://b2ivadhw4oqcw"]
+
+[ext_resource type="PackedScene" uid="uid://bqt842joqbmsr" path="res://scenes/books/book.tscn" id="1_0edoc"]
+[ext_resource type="Texture2D" uid="uid://5ufkrtg08pbh" path="res://assets/img/Sheet.png" id="2_0s0ne"]
+[ext_resource type="Texture2D" uid="uid://dst6x5wwtnnhb" path="res://assets/img/ProvidenceIcon.png" id="3_grttb"]
+[ext_resource type="FontFile" uid="uid://ogmrm1t4aybl" path="res://assets/font/ELEGANT TYPEWRITER Regular.ttf" id="4_7cf7g"]
+
+[node name="Instructions" instance=ExtResource("1_0edoc")]
+position = Vector2(928, 353)
+
+[node name="Background" type="Sprite2D" parent="ZoomedContent" index="0"]
+texture = ExtResource("2_0s0ne")
+metadata/_edit_lock_ = true
+
+[node name="Icon" type="Sprite2D" parent="ZoomedContent" index="1"]
+modulate = Color(0.16470589, 0.16470589, 0.16862746, 1)
+position = Vector2(-0.9999999, 178.00002)
+scale = Vector2(0.17166667, 0.17166667)
+texture = ExtResource("3_grttb")
+
+[node name="Content" type="Label" parent="ZoomedContent" index="2"]
+offset_left = -150.0
+offset_top = -214.0
+offset_right = 142.0
+offset_bottom = 132.0
+theme_override_colors/font_color = Color(0.16078432, 0.15686275, 0.15294118, 1)
+theme_override_fonts/font = ExtResource("4_7cf7g")
+theme_override_font_sizes/font_size = 13
+text = "[CLEARED ONLY FOR LEVEL V AND ABOVE]
+Facility directors, be advised to monitor local budget spending on additional investigative procedures in regards to client profiles. For your information, here are our currently available data vectors and their corresponding methods of acquisition and deployment costs:
+"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Content2" type="Label" parent="ZoomedContent" index="3"]
+offset_left = -150.0
+offset_top = -68.0
+offset_right = 142.0
+offset_bottom = 167.0
+theme_override_colors/font_color = Color(0.16078432, 0.15686275, 0.15294118, 1)
+theme_override_fonts/font = ExtResource("4_7cf7g")
+theme_override_font_sizes/font_size = 12
+text = "1. Favorite organ: inexpensive. Simple biopathic evaluation.
+2. Astral sign: inexpensive. Standard delta-level divination ritual.
+3. Projected cause of death: moderate. Vector transformation of subject’s death lines.
+4. Implicit ethical framework: moderate. Parapsychological evaluation of subject’s Alma.
+5. Greatest ambition: costly. Simulation of subject’s behavior within Icarus’ Engine.
+6. Recurrent nightmare: costly. Deployment of oneiric exploration agent into subject’s noosphere.
+"
+autowrap_mode = 2
+
+[node name="Background" type="Sprite2D" parent="Content" index="0"]
+texture_filter = 1
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_0s0ne")
+
+[node name="Icon" type="Sprite2D" parent="Content/Background" index="0"]
+modulate = Color(0.16470589, 0.16470589, 0.16862746, 1)
+position = Vector2(0, 144)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("3_grttb")

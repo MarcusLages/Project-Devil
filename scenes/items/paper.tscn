@@ -1,0 +1,56 @@
+[gd_scene load_steps=9 format=3 uid="uid://ch3hyfugepnca"]
+
+[ext_resource type="Script" uid="uid://ci43rbdbuh1yc" path="res://scripts/interactable.gd" id="1_ka12s"]
+[ext_resource type="Script" uid="uid://crmnw3ldr3xev" path="res://addons/drag_and_drop/scripts/draggable.gd" id="2_e1w1h"]
+[ext_resource type="Script" uid="uid://djdmnemxrx7bg" path="res://addons/drag_and_drop/resources/draggable_types/draggable_type.gd" id="3_uof56"]
+[ext_resource type="Script" uid="uid://cs1jmnuy31gbp" path="res://scripts/zoomable.gd" id="4_yfjsk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jipkg"]
+size = Vector2(318, 445)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pvyw8"]
+size = Vector2(78, 112)
+
+[sub_resource type="Resource" id="Resource_7i3y2"]
+script = ExtResource("3_uof56")
+id = "item"
+
+[sub_resource type="Resource" id="Resource_us5r4"]
+script = ExtResource("3_uof56")
+id = "zoom_zone"
+metadata/_custom_type_script = "uid://djdmnemxrx7bg"
+
+[node name="Paper" type="Area2D"]
+
+[node name="ZoomedContent" type="Node2D" parent="."]
+
+[node name="Content" type="Node2D" parent="."]
+
+[node name="ZoomedCollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_jipkg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_pvyw8")
+
+[node name="Interactable" type="Node" parent="."]
+script = ExtResource("1_ka12s")
+metadata/_custom_type_script = "uid://ci43rbdbuh1yc"
+
+[node name="Draggable" type="Node" parent="."]
+script = ExtResource("2_e1w1h")
+dragging_speed = 12.0
+drag_z_index = 100
+relative_dragging = true
+type = SubResource("Resource_7i3y2")
+metadata/_custom_type_script = "uid://crmnw3ldr3xev"
+
+[node name="Zoomable" type="Node" parent="." node_paths=PackedStringArray("draggable", "display_container", "zoomed_display_container", "collision_object", "zoomed_collision_object")]
+script = ExtResource("4_yfjsk")
+draggable = NodePath("")
+zoom_tag = SubResource("Resource_us5r4")
+display_container = NodePath("../Content")
+zoomed_display_container = NodePath("../ZoomedContent")
+collision_object = NodePath("../CollisionShape2D")
+zoomed_collision_object = NodePath("../ZoomedCollisionShape2D")
+metadata/_custom_type_script = "uid://cs1jmnuy31gbp"

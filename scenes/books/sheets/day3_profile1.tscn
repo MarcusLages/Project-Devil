@@ -1,18 +1,5 @@
-[gd_scene load_steps=2 format=3 uid="uid://cl5xddws388ec"]
+[gd_scene load_steps=2 format=3 uid="uid://biml0snybylfw"]
 
-[ext_resource type="PackedScene" uid="uid://yodo7kh6jrf" path="res://scenes/books/character_sheet.tscn" id="1_rnmf0"]
+[ext_resource type="PackedScene" uid="uid://dv6b3on3xb85b" path="res://scenes/books/character_sheet.tscn" id="1_rnmf0"]
 
 [node name="CharacterSheet" instance=ExtResource("1_rnmf0")]
-
-[node name="ZoomedContent" parent="." index="0"]
-client_name = "Neil Berners"
-client_age = "M"
-client_sex = "31"
-bargain = "Perfect physical appearance"
-sacrifice = "Capacity to accept love"
-organ = "Brain"
-astral_sign = "Aquarius"
-death = "Self-inflicted harm"
-ethics = "Deontology"
-ambition = "To deserve love"
-nightmare = "Death in mediocrity"

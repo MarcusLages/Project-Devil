@@ -1,18 +1,5 @@
 [gd_scene load_steps=2 format=3 uid="uid://c66uf6dfwcemv"]
 
-[ext_resource type="PackedScene" uid="uid://yodo7kh6jrf" path="res://scenes/books/character_sheet.tscn" id="1_ghyvm"]
+[ext_resource type="PackedScene" uid="uid://dv6b3on3xb85b" path="res://scenes/books/character_sheet.tscn" id="1_ghyvm"]
 
 [node name="CharacterSheet" instance=ExtResource("1_ghyvm")]
-
-[node name="ZoomedContent" parent="." index="0"]
-client_name = "Julie Li"
-client_age = "F"
-client_sex = "7"
-bargain = "Two friends"
-sacrifice = "A friend"
-organ = "Ears"
-astral_sign = "Libra"
-death = "Decapitation"
-ethics = "Egoism"
-ambition = "To have three friends"
-nightmare = "Marie is still here"
