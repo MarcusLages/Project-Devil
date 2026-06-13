@@ -82,15 +82,21 @@ func load_day(day: int) -> Error:
 
 
 func next_day() -> Error:
-	var res: Error = load_day(_curr_day + 1)
-	if res == OK: 
-		fade("Day %d" % (_curr_day + 1))
+	var day = _curr_day + 1
+	var error = OK
+	
+	if day < 0 or day >= day_managers.size():
+		await fade_out("Day %d" % (day + 1))
+		error = ERR_DOES_NOT_EXIST
 	else:
-		fade("Day %d" % (_curr_day + 1), true)
-	return res
+		await fade_out("Day %d" % (day + 1))
+		error = load_day(_curr_day + 1)
+		await fade_in()
+	
+	return error
 
 
-func fade(text: String = "", stay_dark: bool = false):
+func fade_out(text: String = "") -> bool:
 	var fade_rect = $CanvasLayer/ColorRect
 	var text_label = $CanvasLayer/Label
 	text_label.text = text
@@ -99,13 +105,24 @@ func fade(text: String = "", stay_dark: bool = false):
 	tween.tween_property(fade_rect, "modulate:a", 1.0, 1.0)
 		
 	tween.tween_callback(func(): text_label.visible = true)
-	tween.tween_callback(func(): await get_tree().create_timer(2.0).timeout)
-		
-	tween.tween_callback(func(): text_label.visible = false)
+	tween.tween_callback(func(): text_label.visible = false).set_delay(1.0)
+	
+	await tween.finished
+	return true
 
-	if not stay_dark:
-		tween.tween_property(fade_rect, "modulate:a", 0.0, 1.0)
-		
+
+func fade_in() -> bool:
+	var fade_rect = $CanvasLayer/ColorRect
+	var text_label = $CanvasLayer/Label
+	text_label.visible = false
+	
+	var tween = create_tween()
+	tween.tween_property(fade_rect, "modulate:a", 0.0, 1.0)
+	
+	await tween.finished
+	return true
+
+
 
 func _get_lamp():
 	# Workaround to get the lamp
@@ -160,7 +177,7 @@ func _on_stampable_stamped(correct: bool, tag_stamped: String, _correct_stamp: S
 		print("Last record of the day")
 		day_managers[_curr_day].clean_record_scene(true)
 
-		if next_day() == OK:
+		if await next_day() == OK:
 			await get_tree().create_timer(0.5).timeout
 			if lamp: lamp.change_state(true, false)
 		else:

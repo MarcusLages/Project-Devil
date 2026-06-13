@@ -104,9 +104,13 @@ func scare(final_state: bool = true, eyes_on: bool = false):
 	print("scaring")
 	change_state(false, false) 
 	await get_tree().create_timer(0.6).timeout
+	if !is_inside_tree():
+		return
 
-	change_state(true, false) 
+	change_state(true, false)
 	await get_tree().create_timer(0.1).timeout
+	if !is_inside_tree():
+		return
 
 	if eyes_on:
 		eyes_canvas.visible = true
