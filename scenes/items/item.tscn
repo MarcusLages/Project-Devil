@@ -1,6 +1,5 @@
-[gd_scene load_steps=7 format=3 uid="uid://bg7s3bw6y0485"]
+[gd_scene load_steps=6 format=3 uid="uid://bg7s3bw6y0485"]
 
-[ext_resource type="Script" uid="uid://b7tj5mxit8ddi" path="res://scripts/items/alarm.gd" id="1_u6xce"]
 [ext_resource type="PackedScene" uid="uid://d33y1bfr1gojc" path="res://scenes/components/interactable.tscn" id="3_y74tu"]
 [ext_resource type="Script" uid="uid://crmnw3ldr3xev" path="res://addons/drag_and_drop/scripts/draggable.gd" id="4_3nvbd"]
 [ext_resource type="Script" uid="uid://djdmnemxrx7bg" path="res://addons/drag_and_drop/resources/draggable_types/draggable_type.gd" id="5_3xnsl"]
@@ -13,7 +12,6 @@ id = "item"
 metadata/_custom_type_script = "uid://djdmnemxrx7bg"
 
 [node name="Item" type="Area2D"]
-script = ExtResource("1_u6xce")
 
 [node name="Content" type="Node2D" parent="."]
 
