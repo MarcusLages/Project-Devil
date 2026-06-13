@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bnk6pj6oonbck"]
+[gd_scene load_steps=12 format=3 uid="uid://beh20sdvwemxu"]
 
 [ext_resource type="Script" uid="uid://ci43rbdbuh1yc" path="res://scripts/interactable.gd" id="1_bw4w6"]
 [ext_resource type="Texture2D" uid="uid://csgk7v74fbneb" path="res://assets/img/book_board.png" id="1_yvgib"]

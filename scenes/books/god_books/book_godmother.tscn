@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bt5dgopegufos"]
+
+[ext_resource type="PackedScene" uid="uid://bqt842joqbmsr" path="res://scenes/books/book.tscn" id="1_mswk3"]
+[ext_resource type="Texture2D" uid="uid://l0etoj65m50r" path="res://assets/img/book_godmother.png" id="2_241ij"]
+
+[node name="BookGodmother" instance=ExtResource("1_mswk3")]
+
+[node name="BookBoard" type="Sprite2D" parent="Content" index="0"]
+texture = ExtResource("2_241ij")
+
+[editable path="ZoomedContent/1"]
+[editable path="ZoomedContent/2"]
+[editable path="ZoomedContent/3"]

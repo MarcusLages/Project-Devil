@@ -1,9 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://bqt842joqbmsr"]
+[gd_scene load_steps=11 format=3 uid="uid://bqt842joqbmsr"]
 
 [ext_resource type="Script" uid="uid://xnlcvm4jijjm" path="res://scripts/items/book.gd" id="1_uk727"]
 [ext_resource type="Script" uid="uid://ci43rbdbuh1yc" path="res://scripts/interactable.gd" id="2_3xy4u"]
 [ext_resource type="PackedScene" uid="uid://e0lxhfs5ep2m" path="res://scenes/books/page.tscn" id="2_uk727"]
-[ext_resource type="Texture2D" uid="uid://csgk7v74fbneb" path="res://assets/img/book_board.png" id="3_14bna"]
 [ext_resource type="Script" uid="uid://crmnw3ldr3xev" path="res://addons/drag_and_drop/scripts/draggable.gd" id="3_uk727"]
 [ext_resource type="Script" uid="uid://djdmnemxrx7bg" path="res://addons/drag_and_drop/resources/draggable_types/draggable_type.gd" id="4_14bna"]
 [ext_resource type="Script" uid="uid://cs1jmnuy31gbp" path="res://scripts/zoomable.gd" id="5_qlimn"]
@@ -30,20 +29,26 @@ script = ExtResource("1_uk727")
 
 [node name="1" parent="ZoomedContent" instance=ExtResource("2_uk727")]
 
+[node name="RichTextLabel2" parent="ZoomedContent/1" index="2"]
+text = "Page 2"
+
 [node name="2" parent="ZoomedContent" instance=ExtResource("2_uk727")]
 
 [node name="RichTextLabel" parent="ZoomedContent/2" index="1"]
-text = "Page 2"
+text = "Page 3"
+
+[node name="RichTextLabel2" parent="ZoomedContent/2" index="2"]
+text = "Page 4"
 
 [node name="3" parent="ZoomedContent" instance=ExtResource("2_uk727")]
 
 [node name="RichTextLabel" parent="ZoomedContent/3" index="1"]
-text = "Page 3"
+text = "Page 5"
+
+[node name="RichTextLabel2" parent="ZoomedContent/3" index="2"]
+text = "Page 6"
 
 [node name="Content" type="Node2D" parent="."]
-
-[node name="BookBoard" type="Sprite2D" parent="Content"]
-texture = ExtResource("3_14bna")
 
 [node name="ZoomedCollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_yvgib")
