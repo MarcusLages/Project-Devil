@@ -81,3 +81,28 @@ func _on_mouse_exited() -> void:
 func _on_draggable_drag_ended(_area: Area2D, _dropzone: DropZone, _drop_spot: SnappingSpot) -> void:
     if not is_hovered:
         a2d.scale = std_a2d_scale
+
+DEATH IS ILLUSION
+EXPERIENCE IS CONSTANT
+SUFFERING IS KING
+ACCEPT
+   MUNDI
+				ACCEPT
+		ANIMA
+  ACCEPT
+		  ANIMA
+				  ACCEPT
+	MUNDI
+	  ACCEPT
+		ACCEPT
+  MUNDI
+		  MUNDI
+ANIMA
+		ANIMA
+  ACCEPT
+		  ACCEPT
+				  ANIMA
+	MUNDI
+	  ACCEPT
+
+

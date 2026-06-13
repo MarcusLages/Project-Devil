@@ -8,9 +8,6 @@
 
 [node name="BookGodmother" instance=ExtResource("1_mswk3")]
 
-[node name="1" parent="ZoomedContent" index="0"]
-visible = false
-
 [node name="TextureRect" parent="ZoomedContent/1" index="0"]
 texture = ExtResource("2_qjk21")
 
@@ -46,7 +43,6 @@ Isn’t life so silly and fun?
 "
 
 [node name="2" parent="ZoomedContent" index="1" instance=ExtResource("4_5d6tq")]
-visible = false
 
 [node name="TextureRect" parent="ZoomedContent/2" index="0"]
 texture = ExtResource("2_qjk21")
@@ -91,7 +87,6 @@ never frighten,
 "
 
 [node name="3" parent="ZoomedContent" index="2" instance=ExtResource("4_5d6tq")]
-visible = false
 
 [node name="TextureRect" parent="ZoomedContent/3" index="0"]
 texture = ExtResource("2_qjk21")
@@ -128,7 +123,6 @@ never let the fun die out!
 "
 
 [node name="4" parent="ZoomedContent" index="3" instance=ExtResource("4_5d6tq")]
-visible = false
 
 [node name="TextureRect" parent="ZoomedContent/4" index="0"]
 texture = ExtResource("2_qjk21")
@@ -169,7 +163,6 @@ never let the fun die out!
 "
 
 [node name="5" parent="ZoomedContent" index="4" instance=ExtResource("4_5d6tq")]
-visible = false
 
 [node name="TextureRect" parent="ZoomedContent/5" index="0"]
 texture = ExtResource("2_qjk21")
@@ -233,17 +226,8 @@ theme_override_font_sizes/normal_font_size = 13
 text = "never let the fun die out!never let the fun die out!never let the fun die out!never let the fun die out!never let the fun die out!never let the fun die out!never let the fun die out!never let the fun die out!never let the fun die out!never let the fun die out!never let the fun die out!never let the fun die out!never let the fun die out!never let the fun die out!never let the fun die out!never let the fun die out!never let the fun die out!never let the fun die out!never let the fun die out! never"
 horizontal_alignment = 2
 
-[node name="Content" parent="." index="1"]
-visible = false
-
 [node name="BookGodmother" type="Sprite2D" parent="Content" index="0"]
 texture = ExtResource("2_241ij")
-
-[node name="ZoomedCollisionShape2D" parent="." index="2"]
-visible = false
-
-[node name="CollisionShape2D" parent="." index="3"]
-visible = false
 
 [editable path="ZoomedContent/1"]
 [editable path="ZoomedContent/2"]
