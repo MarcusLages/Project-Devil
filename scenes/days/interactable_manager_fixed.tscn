@@ -18,7 +18,7 @@ script = ExtResource("1_1l7k0")
 metadata/_custom_type_script = "uid://b6kihpl0g4hgo"
 
 [node name="Alarm" parent="." instance=ExtResource("2_6bjo4")]
-position = Vector2(131.51, 612.31)
+position = Vector2(96, 659)
 
 [node name="Lamp" parent="." instance=ExtResource("3_5dgt1")]
 position = Vector2(666, 276)
@@ -55,4 +55,4 @@ position = Vector2(491, 236)
 scale = Vector2(0.88, 0.88)
 
 [node name="Mug" parent="." instance=ExtResource("12_jp3mj")]
-position = Vector2(84, 463)
+position = Vector2(281, 659)
