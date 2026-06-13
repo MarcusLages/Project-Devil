@@ -16,7 +16,7 @@ height = 208.0
 shader = ExtResource("5_x8j62")
 shader_parameter/light_marker = Vector2(0.5, 0.5)
 shader_parameter/light_radius = 0.255
-shader_parameter/darkness_alpha = 0.88
+shader_parameter/darkness_alpha = 0.98
 shader_parameter/light_intensity = 1.0
 shader_parameter/circular_light = false
 
@@ -24,7 +24,7 @@ shader_parameter/circular_light = false
 script = ExtResource("1_ojcuo")
 lamp_on = ExtResource("2_hh4gv")
 light_radius_off = 0.19
-darkness_alpha_off = 0.93
+darkness_alpha_off = 0.98
 light_intensity_off = 0.245
 lamp_off = ExtResource("3_lgu1i")
 

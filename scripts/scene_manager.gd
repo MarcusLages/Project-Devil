@@ -135,10 +135,10 @@ func _on_stampable_stamped(correct: bool):
 		elif GameManager.lives == 1:
 			if lamp: lamp.scare(true, true)
 		else:
+			$GameOver.play()
 			if lamp: lamp.scare(false, true)
 
-			# await get_tree().create_timer(1.).timeout
-			# DANILO, SOM DE GAME OVER AQUI
+			await $GameOver.finished
 
 			get_tree().change_scene_to_packed(game_over_scene)
 			return
