@@ -53,6 +53,7 @@ offset_bottom = 40.0
 texture = ExtResource("4_x8j62")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 follow_viewport_enabled = true
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
