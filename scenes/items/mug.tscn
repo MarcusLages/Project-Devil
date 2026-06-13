@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://bywfqn28706i7"]
+[gd_scene load_steps=8 format=3 uid="uid://bywfqn28706i7"]
 
 [ext_resource type="Script" uid="uid://ci43rbdbuh1yc" path="res://scripts/interactable.gd" id="1_be8lu"]
 [ext_resource type="Script" uid="uid://b8iwwfgs8e5nf" path="res://scripts/items/mug.gd" id="1_cj1p2"]
-[ext_resource type="Texture2D" uid="uid://dtskikbf4qlol" path="res://assets/img/mug.png" id="1_kvfju"]
+[ext_resource type="Texture2D" uid="uid://cuvqxwqxnr6x4" path="res://assets/img/coffee_full.png" id="2_cj1p2"]
+[ext_resource type="Texture2D" uid="uid://baxe815wh0ikp" path="res://assets/img/coffee_empty.png" id="2_xegvf"]
 [ext_resource type="Shader" uid="uid://dmgdn4ij4tfdb" path="res://scripts/shaders/mug.gdshader" id="3_54i30"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_54i30"]
@@ -19,11 +20,13 @@ shader_parameter/gaussian_blur_corner = 0.0625
 [node name="Mug" type="Area2D"]
 script = ExtResource("1_cj1p2")
 blur_transition_speed_sec = 5.0
+empty_texture = ExtResource("2_xegvf")
+full_texture = ExtResource("2_cj1p2")
 
 [node name="Node2D" type="Node2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D"]
-texture = ExtResource("1_kvfju")
+texture = ExtResource("2_cj1p2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(3, 0)
