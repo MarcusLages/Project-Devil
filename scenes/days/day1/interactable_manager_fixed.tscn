@@ -1,15 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://coebt3hr31ag1"]
+[gd_scene load_steps=3 format=3 uid="uid://djkjmsebu1jrp"]
 
-[ext_resource type="Script" uid="uid://b6kihpl0g4hgo" path="res://scripts/interactable_manager.gd" id="1_1l7k0"]
-[ext_resource type="PackedScene" uid="uid://c3teswcgfhijm" path="res://scenes/items/alarm.tscn" id="2_6bjo4"]
-[ext_resource type="PackedScene" uid="uid://daorxf41jrgcl" path="res://scenes/items/lamp.tscn" id="3_5dgt1"]
+[ext_resource type="PackedScene" uid="uid://coebt3hr31ag1" path="res://scenes/days/interactable_manager_fixed.tscn" id="1_d0eua"]
+[ext_resource type="PackedScene" uid="uid://b6t0irw1b2sca" path="res://scenes/items/instructions.tscn" id="2_q2457"]
 
-[node name="InteractableManager1" type="Node"]
-script = ExtResource("1_1l7k0")
-metadata/_custom_type_script = "uid://b6kihpl0g4hgo"
+[node name="InteractableManagerFixed" instance=ExtResource("1_d0eua")]
 
-[node name="Alarm" parent="." instance=ExtResource("2_6bjo4")]
-position = Vector2(463, 350)
-
-[node name="Lamp" parent="." instance=ExtResource("3_5dgt1")]
-position = Vector2(766, 255)
+[node name="Instructions" parent="." index="2" instance=ExtResource("2_q2457")]
+position = Vector2(607, 489)

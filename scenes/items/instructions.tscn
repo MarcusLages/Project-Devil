@@ -1,0 +1,62 @@
+[gd_scene load_steps=5 format=3 uid="uid://b6t0irw1b2sca"]
+
+[ext_resource type="PackedScene" uid="uid://bqt842joqbmsr" path="res://scenes/books/book.tscn" id="1_1qdl6"]
+[ext_resource type="Texture2D" uid="uid://5ufkrtg08pbh" path="res://assets/img/Sheet.png" id="2_conye"]
+[ext_resource type="Texture2D" uid="uid://dst6x5wwtnnhb" path="res://assets/img/ProvidenceIcon.png" id="3_fj4ll"]
+[ext_resource type="FontFile" uid="uid://ogmrm1t4aybl" path="res://assets/font/ELEGANT TYPEWRITER Regular.ttf" id="4_fj4ll"]
+
+[node name="Instructions" instance=ExtResource("1_1qdl6")]
+position = Vector2(928, 353)
+
+[node name="Background" type="Sprite2D" parent="ZoomedContent" index="0"]
+texture = ExtResource("2_conye")
+metadata/_edit_lock_ = true
+
+[node name="Icon" type="Sprite2D" parent="ZoomedContent" index="1"]
+modulate = Color(0.16470589, 0.16470589, 0.16862746, 1)
+position = Vector2(-0.9999999, 166.00002)
+scale = Vector2(0.17166667, 0.17166667)
+texture = ExtResource("3_fj4ll")
+
+[node name="Content" type="Label" parent="ZoomedContent" index="2"]
+offset_left = -150.0
+offset_top = -214.0
+offset_right = 142.0
+offset_bottom = 132.0
+theme_override_colors/font_color = Color(0.16078432, 0.15686275, 0.15294118, 1)
+theme_override_fonts/font = ExtResource("4_fj4ll")
+theme_override_font_sizes/font_size = 13
+text = "Follow these simple instructions to ensure a productive day:"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Content2" type="Label" parent="ZoomedContent" index="3"]
+offset_left = -149.0
+offset_top = -175.0
+offset_right = 143.0
+offset_bottom = 171.0
+theme_override_colors/font_color = Color(0.16078432, 0.15686275, 0.15294118, 1)
+theme_override_fonts/font = ExtResource("4_fj4ll")
+theme_override_font_sizes/font_size = 12
+text = "1. Press X to receive customer’s bargain requests and their corresponding profiles;
+2. Assess their profiles and our Patron codices to allocate them to the Patron that better suits their needs;
+3. ████ Prime is no more;
+4. Never discard a customer’s dossier unless instructed to do so by a supervisor;
+5. Process each request in a timely manner to prevent bottlenecks;
+6. ████ Prime is no more;
+7. You may request additional information to better assess a customer’s profile, at the cost of time;
+8. Appease our Patrons above all other concerns. They are our real clients;
+9. ████ Prime is no more.
+"
+autowrap_mode = 2
+
+[node name="Background" type="Sprite2D" parent="Content" index="0"]
+texture_filter = 1
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_conye")
+
+[node name="Icon" type="Sprite2D" parent="Content/Background" index="0"]
+modulate = Color(0.16470589, 0.16470589, 0.16862746, 1)
+position = Vector2(0, 144)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("3_fj4ll")
