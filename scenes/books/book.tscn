@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bqt842joqbmsr"]
+[gd_scene load_steps=15 format=3 uid="uid://bqt842joqbmsr"]
 
 [ext_resource type="Script" uid="uid://xnlcvm4jijjm" path="res://scripts/items/book.gd" id="1_uk727"]
 [ext_resource type="Script" uid="uid://ci43rbdbuh1yc" path="res://scripts/interactable.gd" id="2_3xy4u"]
@@ -6,6 +6,9 @@
 [ext_resource type="Script" uid="uid://crmnw3ldr3xev" path="res://addons/drag_and_drop/scripts/draggable.gd" id="3_uk727"]
 [ext_resource type="Script" uid="uid://djdmnemxrx7bg" path="res://addons/drag_and_drop/resources/draggable_types/draggable_type.gd" id="4_14bna"]
 [ext_resource type="Script" uid="uid://cs1jmnuy31gbp" path="res://scripts/zoomable.gd" id="5_qlimn"]
+[ext_resource type="AudioStream" uid="uid://cnr1rqiorun1r" path="res://assets/sfx/page-flip-03.mp3" id="7_qlimn"]
+[ext_resource type="AudioStream" uid="uid://ddcj380gfhge3" path="res://assets/sfx/page-flip-4.mp3" id="8_nd2pv"]
+[ext_resource type="AudioStream" uid="uid://blsc4t3n0adxm" path="res://assets/sfx/page-flip-9.mp3" id="9_yygty"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yvgib"]
 size = Vector2(344, 321)
@@ -21,6 +24,12 @@ id = "item"
 script = ExtResource("4_14bna")
 id = "zoom_zone"
 metadata/_custom_type_script = "uid://djdmnemxrx7bg"
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_8g8bu"]
+streams_count = 3
+stream_0/stream = ExtResource("7_qlimn")
+stream_1/stream = ExtResource("8_nd2pv")
+stream_2/stream = ExtResource("9_yygty")
 
 [node name="Book" type="Area2D"]
 script = ExtResource("1_uk727")
@@ -62,6 +71,10 @@ zoomed_display_container = NodePath("../ZoomedContent")
 collision_object = NodePath("../CollisionShape2D")
 zoomed_collision_object = NodePath("../ZoomedCollisionShape2D")
 metadata/_custom_type_script = "uid://cs1jmnuy31gbp"
+
+[node name="PageSFX" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_8g8bu")
+max_polyphony = 2
 
 [connection signal="unzoomed" from="Zoomable" to="." method="_on_zoomable_unzoomed"]
 [connection signal="zoomed" from="Zoomable" to="." method="_on_zoomable_zoomed"]

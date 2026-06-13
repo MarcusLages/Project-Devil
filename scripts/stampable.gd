@@ -12,19 +12,20 @@ signal stamped(correct: bool)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-    if not drop_zone:
-        drop_zone = get_node_or_null("DropZone")
+	if not drop_zone:
+		drop_zone = get_node_or_null("DropZone")
 
-    if not drop_zone:
-        drop_zone = get_node_or_null("../DropZone")
+	if not drop_zone:
+		drop_zone = get_node_or_null("../DropZone")
 
-    assert(drop_zone != null, "Must have a DropZone associated or as a brother/child node to Stampable.")
-    drop_zone.drop_applied.connect(_on_drop_zone_drop_applied)
+	assert(drop_zone != null, "Must have a DropZone associated or as a brother/child node to Stampable.")
+	drop_zone.drop_applied.connect(_on_drop_zone_drop_applied)
 
 
 func _on_drop_zone_drop_applied(_zone: DropZone, stamp_area: Area2D, _plan: DropPlan):
-    if stamp_area is not Stamp:
-        return
+	if stamp_area is not Stamp:
+		return
 
-    var stamp := stamp_area as Stamp
-    stamped.emit(stamp.stamp_name == correct_stamp)
+	var stamp := stamp_area as Stamp
+	stamped.emit(stamp.stamp_name == correct_stamp)
+	SoundManager.play_sfx(SoundManager.SFX.STAMP)

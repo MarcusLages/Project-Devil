@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bcjbw6cnck4le"]
+[gd_scene load_steps=21 format=3 uid="uid://bcjbw6cnck4le"]
 
 [ext_resource type="PackedScene" uid="uid://dors6pbtgudn2" path="res://scenes/items/table.tscn" id="1_0wfyh"]
 [ext_resource type="Texture2D" uid="uid://6rxs6trkenfw" path="res://assets/img/background.jpg" id="1_o6xl0"]
@@ -10,6 +10,27 @@
 [ext_resource type="PackedScene" uid="uid://cfdipbwqsnsxs" path="res://scenes/days/day3/day_manager3.tscn" id="5_choun"]
 [ext_resource type="AudioStream" uid="uid://dt4xdaw4f7k07" path="res://assets/sfx/BackgroundFan.mp3" id="9_85g3d"]
 [ext_resource type="AudioStream" uid="uid://6dwxqvi0f6u7" path="res://assets/sfx/Background Loop.mp3" id="10_choun"]
+[ext_resource type="PackedScene" uid="uid://dv82egawnsjs4" path="res://scenes/components/recurrent_sound.tscn" id="11_ya4ey"]
+[ext_resource type="AudioStream" uid="uid://x2g4rnc823pg" path="res://assets/sfx/DoorKnock.wav" id="12_a8y0u"]
+[ext_resource type="AudioStream" uid="uid://bu433pnixwpj1" path="res://assets/sfx/DoorKnockFast2.wav" id="13_jkv2x"]
+[ext_resource type="AudioStream" uid="uid://cndeqamucmkq8" path="res://assets/sfx/DoorKnockFast.wav" id="14_jbj1t"]
+[ext_resource type="AudioStream" uid="uid://daj0w175gh4be" path="res://assets/sfx/CaveSound.mp3" id="15_jkv2x"]
+[ext_resource type="AudioStream" uid="uid://byj7lb1haddmn" path="res://assets/sfx/CaveSound2.mp3" id="16_muem4"]
+[ext_resource type="AudioStream" uid="uid://btqf2x1x2j23r" path="res://assets/sfx/CaveSound3.mp3" id="17_dp3eg"]
+[ext_resource type="AudioStream" uid="uid://cqowytofv81m3" path="res://assets/sfx/drip2.ogg" id="18_dp3eg"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_muem4"]
+streams_count = 3
+stream_0/stream = ExtResource("12_a8y0u")
+stream_0/weight = 2.0
+stream_1/stream = ExtResource("13_jkv2x")
+stream_2/stream = ExtResource("14_jbj1t")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_0ld40"]
+streams_count = 3
+stream_0/stream = ExtResource("15_jkv2x")
+stream_1/stream = ExtResource("16_muem4")
+stream_2/stream = ExtResource("17_dp3eg")
 
 [node name="Main" type="Node2D"]
 
@@ -45,8 +66,23 @@ position = Vector2(1055, 549)
 [node name="Fan" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("9_85g3d")
 volume_db = -12.0
-autoplay = true
 
 [node name="Ominous" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_choun")
 volume_db = -8.0
+autoplay = true
+
+[node name="Knocking" parent="." instance=ExtResource("11_ya4ey")]
+stream = SubResource("AudioStreamRandomizer_muem4")
+volume_db = 8.0
+frequency = 60.0
+
+[node name="CaveSound" parent="." instance=ExtResource("11_ya4ey")]
+stream = SubResource("AudioStreamRandomizer_0ld40")
+variance = 30.0
+
+[node name="Drip" parent="." instance=ExtResource("11_ya4ey")]
+stream = ExtResource("18_dp3eg")
+max_polyphony = 2
+frequency = 9.25
+variance = 8.0
