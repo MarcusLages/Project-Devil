@@ -42,6 +42,7 @@ shape = SubResource("RectangleShape2D_m63hi")
 
 [node name="Interactable" type="Node" parent="."]
 script = ExtResource("2_3xy4u")
+hover_zoom_scale = Vector2(1.1, 1.1)
 metadata/_custom_type_script = "uid://ci43rbdbuh1yc"
 
 [node name="Draggable" type="Node" parent="."]

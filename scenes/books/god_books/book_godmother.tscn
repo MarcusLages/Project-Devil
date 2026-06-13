@@ -235,6 +235,9 @@ texture = ExtResource("2_241ij")
 [node name="ZoomedCollisionShape2D" parent="." index="2"]
 visible = false
 
+[node name="Interactable" parent="." index="4"]
+hover_zoom_scale = Vector2(1.1, 1.1)
+
 [editable path="ZoomedContent/1"]
 [editable path="ZoomedContent/2"]
 [editable path="ZoomedContent/3"]

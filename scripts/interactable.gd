@@ -45,6 +45,7 @@ func _ready() -> void:
 
     if drag:
         drag.drag_ended.connect(_on_draggable_drag_ended)
+        drag.state_changed.connect(_on_draggable_state_changed)
 
 
 func _process(_delta: float) -> void:
@@ -80,4 +81,9 @@ func _on_mouse_exited() -> void:
 
 func _on_draggable_drag_ended(_area: Area2D, _dropzone: DropZone, _drop_spot: SnappingSpot) -> void:
     if not is_hovered:
+        a2d.scale = std_a2d_scale
+
+
+func _on_draggable_state_changed(area: Area2D, state: Draggable.DRAGGABLE_STATE):
+    if state == Draggable.DRAGGABLE_STATE.IDLE and not is_hovered:
         a2d.scale = std_a2d_scale
