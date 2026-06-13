@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c3teswcgfhijm"]
+[gd_scene load_steps=10 format=3 uid="uid://c3teswcgfhijm"]
 
 [ext_resource type="Script" uid="uid://b7tj5mxit8ddi" path="res://scripts/items/alarm.gd" id="1_n20cq"]
 [ext_resource type="PackedScene" uid="uid://d33y1bfr1gojc" path="res://scenes/components/interactable.tscn" id="1_wrbec"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://crmnw3ldr3xev" path="res://addons/drag_and_drop/scripts/draggable.gd" id="2_n20cq"]
 [ext_resource type="Texture2D" uid="uid://1aqki6lw5y71" path="res://assets/img/celular_alarm.png" id="2_tcwt8"]
 [ext_resource type="Script" uid="uid://djdmnemxrx7bg" path="res://addons/drag_and_drop/resources/draggable_types/draggable_type.gd" id="3_jjlt2"]
+[ext_resource type="AudioStream" uid="uid://bo7dx0j3phpxv" path="res://assets/sfx/Snooze.wav" id="7_s23la"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jjlt2"]
 radius = 53.163372
@@ -44,6 +45,9 @@ metadata/_custom_type_script = "uid://crmnw3ldr3xev"
 one_shot = true
 
 [node name="ClickTimer" type="Timer" parent="."]
+
+[node name="Snooze" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_s23la")
 
 [connection signal="interacted" from="Interactable" to="." method="_on_interactable_interacted"]
 [connection signal="timeout" from="AlarmTimer" to="." method="_on_alarm_timer_timeout"]
