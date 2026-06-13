@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cxrftxr8bfvfa"]
+[gd_scene load_steps=4 format=3 uid="uid://cxrftxr8bfvfa"]
 
 [ext_resource type="Script" uid="uid://c2sgh3t35ic3k" path="res://scripts/scene_manager.gd" id="1_naves"]
 [ext_resource type="FontFile" uid="uid://ogmrm1t4aybl" path="res://assets/font/ELEGANT TYPEWRITER Regular.ttf" id="2_eq538"]
+[ext_resource type="AudioStream" uid="uid://bruqbsc512e3" path="res://assets/sfx/GameOver.mp3" id="3_q46eh"]
 
 [node name="SceneManager" type="Node"]
 script = ExtResource("1_naves")
@@ -33,3 +34,6 @@ theme_override_fonts/font = ExtResource("2_eq538")
 theme_override_font_sizes/font_size = 61
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="GameOver" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_q46eh")

@@ -179,3 +179,5 @@ func scare(final_state: bool = true, eyes_on: bool = false):
 	if final_state:
 		await get_tree().create_timer(1).timeout
 		change_state(true)
+	else:
+		shader_material.set_shader_parameter("light_intensity", 0.0)
