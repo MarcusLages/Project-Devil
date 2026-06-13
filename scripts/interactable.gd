@@ -11,8 +11,12 @@ signal hover_exited(from: Area2D)
 
 ## Disable hovering and interacting with item.
 ## IMPORTANT: if disabled through code while before mouse exit, doesn't 
-## guarantee that the item will return to the same size
+## guarantee that the item will return to the same size. Also used by
+## InteractableManager
 @export var disabled: bool = false
+
+## Hard disabled, cannot be changed by InteractableManager
+@export var hard_disabled: bool = false
 
 var std_a2d_scale: Vector2 = Vector2(1, 1) # Constant-like reevaluated at ready()
 
@@ -47,6 +51,7 @@ func _process(_delta: float) -> void:
     if (
         is_hovered 
         and not disabled
+        and not hard_disabled
         and Input.is_action_just_pressed("mouse_interact")
     ):
         interacted.emit(a2d)
@@ -55,7 +60,7 @@ func _process(_delta: float) -> void:
 func _on_mouse_entered() -> void:
     is_hovered = true
 
-    if disabled:
+    if disabled or hard_disabled:
         return
         
     a2d.scale = hover_zoom_scale
@@ -65,7 +70,7 @@ func _on_mouse_entered() -> void:
 func _on_mouse_exited() -> void:
     is_hovered = false
 
-    if disabled:
+    if disabled or hard_disabled:
         return
 
     hover_exited.emit(a2d)

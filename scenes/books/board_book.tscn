@@ -39,7 +39,6 @@ texture = SubResource("GradientTexture2D_7anmg")
 [node name="Content" type="Node2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="Content"]
-scale = Vector2(0.05173077, 0.051730774)
 texture = ExtResource("1_yvgib")
 
 [node name="ZoomedCollisionShape2D" type="CollisionShape2D" parent="."]

@@ -1,15 +1,18 @@
-[gd_scene load_steps=9 format=3 uid="uid://bqt842joqbmsr"]
+[gd_scene load_steps=12 format=3 uid="uid://bqt842joqbmsr"]
 
+[ext_resource type="Script" uid="uid://xnlcvm4jijjm" path="res://scripts/items/book.gd" id="1_uk727"]
 [ext_resource type="Script" uid="uid://ci43rbdbuh1yc" path="res://scripts/interactable.gd" id="2_3xy4u"]
+[ext_resource type="PackedScene" uid="uid://e0lxhfs5ep2m" path="res://scenes/books/page.tscn" id="2_uk727"]
+[ext_resource type="Texture2D" uid="uid://csgk7v74fbneb" path="res://assets/img/book_board.png" id="3_14bna"]
 [ext_resource type="Script" uid="uid://crmnw3ldr3xev" path="res://addons/drag_and_drop/scripts/draggable.gd" id="3_uk727"]
 [ext_resource type="Script" uid="uid://djdmnemxrx7bg" path="res://addons/drag_and_drop/resources/draggable_types/draggable_type.gd" id="4_14bna"]
 [ext_resource type="Script" uid="uid://cs1jmnuy31gbp" path="res://scripts/zoomable.gd" id="5_qlimn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yvgib"]
-size = Vector2(168, 222)
+size = Vector2(212, 302)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m63hi"]
-size = Vector2(65, 120)
+size = Vector2(150, 285)
 
 [sub_resource type="Resource" id="Resource_nr8in"]
 script = ExtResource("4_14bna")
@@ -21,16 +24,31 @@ id = "zoom_zone"
 metadata/_custom_type_script = "uid://djdmnemxrx7bg"
 
 [node name="Book" type="Area2D"]
+script = ExtResource("1_uk727")
 
 [node name="ZoomedContent" type="Node2D" parent="."]
 
+[node name="Page" parent="ZoomedContent" instance=ExtResource("2_uk727")]
+
+[node name="Page2" parent="ZoomedContent" instance=ExtResource("2_uk727")]
+
+[node name="RichTextLabel" parent="ZoomedContent/Page2" index="1"]
+text = "Page 2"
+
+[node name="Page3" parent="ZoomedContent" instance=ExtResource("2_uk727")]
+
+[node name="RichTextLabel" parent="ZoomedContent/Page3" index="1"]
+text = "Page 3"
+
 [node name="Content" type="Node2D" parent="."]
+
+[node name="BookBoard" type="Sprite2D" parent="Content"]
+texture = ExtResource("3_14bna")
 
 [node name="ZoomedCollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_yvgib")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_m63hi")
 
 [node name="Interactable" type="Node" parent="."]
@@ -54,3 +72,10 @@ zoomed_display_container = NodePath("../ZoomedContent")
 collision_object = NodePath("../CollisionShape2D")
 zoomed_collision_object = NodePath("../ZoomedCollisionShape2D")
 metadata/_custom_type_script = "uid://cs1jmnuy31gbp"
+
+[connection signal="unzoomed" from="Zoomable" to="." method="_on_zoomable_unzoomed"]
+[connection signal="zoomed" from="Zoomable" to="." method="_on_zoomable_zoomed"]
+
+[editable path="ZoomedContent/Page"]
+[editable path="ZoomedContent/Page2"]
+[editable path="ZoomedContent/Page3"]

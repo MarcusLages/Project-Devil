@@ -15,4 +15,4 @@ position = Vector2(964, 380)
 position = Vector2(942, 360)
 
 [node name="ZoomableTest" parent="." instance=ExtResource("4_gl85w")]
-position = Vector2(933, 119)
+position = Vector2(914, 104)
