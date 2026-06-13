@@ -1,23 +1,465 @@
-[gd_scene load_steps=4 format=3 uid="uid://6166iel22ead"]
+[gd_scene load_steps=6 format=3 uid="uid://6166iel22ead"]
 
 [ext_resource type="PackedScene" uid="uid://bqt842joqbmsr" path="res://scenes/books/book.tscn" id="1_fb8m7"]
 [ext_resource type="Texture2D" uid="uid://oghrceeogavy" path="res://assets/img/book_source_open.png" id="2_ia1vg"]
 [ext_resource type="Texture2D" uid="uid://di4xl5ggtufjm" path="res://assets/img/book_source.png" id="2_klhvm"]
+[ext_resource type="FontFile" uid="uid://cqgd3eu8y70d6" path="res://assets/font/Courier New.ttf" id="3_7af8p"]
+[ext_resource type="PackedScene" uid="uid://e0lxhfs5ep2m" path="res://scenes/books/page.tscn" id="4_rpeps"]
 
 [node name="BookSource" instance=ExtResource("1_fb8m7")]
+
+[node name="ZoomedContent" parent="." index="0"]
+visible = false
 
 [node name="TextureRect" parent="ZoomedContent/1" index="0"]
 texture = ExtResource("2_ia1vg")
 
+[node name="RichTextLabel" parent="ZoomedContent/1" index="1"]
+offset_left = -150.0
+offset_top = -137.0
+offset_right = 149.0
+offset_bottom = 35.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("3_7af8p")
+theme_override_font_sizes/normal_font_size = 14
+text = "/*
+The Eden Project v6.1 - lich_king at GitHub
+
+Development Logs
+"
+
+[node name="RichTextLabel2" parent="ZoomedContent/1" index="2"]
+visible = false
+offset_left = 0.0
+offset_top = -137.0
+offset_right = 150.0
+offset_bottom = 37.0
+
+[node name="NextButton" parent="ZoomedContent/1" index="3"]
+modulate = Color(1, 1, 1, 1)
+offset_left = -140.0
+offset_right = -117.0
+offset_bottom = 156.0
+text = " >"
+
+[node name="PrevButton" parent="ZoomedContent/1" index="4"]
+modulate = Color(1, 1, 1, 1)
+offset_left = -165.0
+offset_right = -144.0
+offset_bottom = 155.0
+text = "<"
+
+[node name="2" parent="ZoomedContent" index="1" instance=ExtResource("4_rpeps")]
+
 [node name="TextureRect" parent="ZoomedContent/2" index="0"]
 texture = ExtResource("2_ia1vg")
+
+[node name="RichTextLabel" parent="ZoomedContent/2" index="1"]
+offset_left = -150.0
+offset_top = -137.0
+offset_right = 149.0
+offset_bottom = 35.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("3_7af8p")
+theme_override_font_sizes/normal_font_size = 13
+text = "Log #1
+Perfection.
+This project is the apotheosis of our people. It is our ark. I’ve heard enough of conjurers and deniers, telling the world that each has their place. No, each must find their place! God is not our origin, but our goal! That is what He intended for us, and that is what I intend to fulfill.
+"
+
+[node name="RichTextLabel2" parent="ZoomedContent/2" index="2"]
+visible = false
+offset_left = 0.0
+offset_top = -137.0
+offset_right = 150.0
+offset_bottom = 37.0
+text = "Page 2"
+
+[node name="NextButton" parent="ZoomedContent/2" index="3"]
+modulate = Color(1, 1, 1, 1)
+offset_left = -140.0
+offset_right = -117.0
+offset_bottom = 156.0
+text = " >"
+
+[node name="PrevButton" parent="ZoomedContent/2" index="4"]
+modulate = Color(1, 1, 1, 1)
+offset_left = -165.0
+offset_right = -144.0
+offset_bottom = 155.0
+text = "<"
+
+[node name="3" parent="ZoomedContent" index="2" instance=ExtResource("4_rpeps")]
 
 [node name="TextureRect" parent="ZoomedContent/3" index="0"]
 texture = ExtResource("2_ia1vg")
 
+[node name="RichTextLabel" parent="ZoomedContent/3" index="1"]
+offset_left = -150.0
+offset_top = -137.0
+offset_right = 149.0
+offset_bottom = 35.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("3_7af8p")
+theme_override_font_sizes/normal_font_size = 14
+text = "Log #2
+Good progress so far. The papers speak of ‘dreamers’ and ‘illusions’, but what I witness before me is truer than truth itself. Reality is imperfect; Eden is not.
+"
+
+[node name="RichTextLabel2" parent="ZoomedContent/3" index="2"]
+visible = false
+offset_left = 0.0
+offset_top = -137.0
+offset_right = 150.0
+offset_bottom = 37.0
+text = "Page 2"
+
+[node name="NextButton" parent="ZoomedContent/3" index="3"]
+modulate = Color(1, 1, 1, 1)
+offset_left = -140.0
+offset_right = -117.0
+offset_bottom = 156.0
+text = " >"
+
+[node name="PrevButton" parent="ZoomedContent/3" index="4"]
+modulate = Color(1, 1, 1, 1)
+offset_left = -165.0
+offset_right = -144.0
+offset_bottom = 155.0
+text = "<"
+
+[node name="4" parent="ZoomedContent" index="3" instance=ExtResource("4_rpeps")]
+
+[node name="TextureRect" parent="ZoomedContent/4" index="0"]
+texture = ExtResource("2_ia1vg")
+
+[node name="RichTextLabel" parent="ZoomedContent/4" index="1"]
+offset_left = -150.0
+offset_top = -137.0
+offset_right = 149.0
+offset_bottom = 35.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("3_7af8p")
+theme_override_font_sizes/normal_font_size = 14
+text = "Log #3
+To write is to create; to create is to dream. Essence lies in lines of possibility, lines of CODE, descriptions and predicates and conditions and rules. What is physics, if not logic, applied?
+"
+
+[node name="RichTextLabel2" parent="ZoomedContent/4" index="2"]
+visible = false
+offset_left = 0.0
+offset_top = -137.0
+offset_right = 150.0
+offset_bottom = 37.0
+text = "Page 2"
+
+[node name="NextButton" parent="ZoomedContent/4" index="3"]
+modulate = Color(1, 1, 1, 1)
+offset_left = -140.0
+offset_right = -117.0
+offset_bottom = 156.0
+text = " >"
+
+[node name="PrevButton" parent="ZoomedContent/4" index="4"]
+modulate = Color(1, 1, 1, 1)
+offset_left = -165.0
+offset_right = -144.0
+offset_bottom = 155.0
+text = "<"
+
+[node name="5" parent="ZoomedContent" index="4" instance=ExtResource("4_rpeps")]
+
+[node name="TextureRect" parent="ZoomedContent/5" index="0"]
+texture = ExtResource("2_ia1vg")
+
+[node name="RichTextLabel" parent="ZoomedContent/5" index="1"]
+offset_left = -150.0
+offset_top = -137.0
+offset_right = 149.0
+offset_bottom = 35.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("3_7af8p")
+theme_override_font_sizes/normal_font_size = 14
+text = "Log #4
+There is something wrong with the machine code… I triple-checked the race conditions, and yet… the corruptions keep appearing. Is there something else afoot?
+"
+
+[node name="RichTextLabel2" parent="ZoomedContent/5" index="2"]
+visible = false
+offset_left = 0.0
+offset_top = -137.0
+offset_right = 150.0
+offset_bottom = 37.0
+text = "Page 2"
+
+[node name="NextButton" parent="ZoomedContent/5" index="3"]
+modulate = Color(1, 1, 1, 1)
+offset_left = -140.0
+offset_right = -117.0
+offset_bottom = 156.0
+text = " >"
+
+[node name="PrevButton" parent="ZoomedContent/5" index="4"]
+modulate = Color(1, 1, 1, 1)
+offset_left = -165.0
+offset_right = -144.0
+offset_bottom = 155.0
+text = "<"
+
+[node name="6" parent="ZoomedContent" index="5" instance=ExtResource("4_rpeps")]
+
+[node name="TextureRect" parent="ZoomedContent/6" index="0"]
+texture = ExtResource("2_ia1vg")
+
+[node name="RichTextLabel" parent="ZoomedContent/6" index="1"]
+offset_left = -150.0
+offset_top = -137.0
+offset_right = 149.0
+offset_bottom = 35.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("3_7af8p")
+theme_override_font_sizes/normal_font_size = 14
+text = "Log #5
+They’re not perfect yet… they’re not perfect! How did You do it, God? 
+"
+
+[node name="RichTextLabel2" parent="ZoomedContent/6" index="2"]
+visible = false
+offset_left = 0.0
+offset_top = -137.0
+offset_right = 150.0
+offset_bottom = 37.0
+text = "Page 2"
+
+[node name="NextButton" parent="ZoomedContent/6" index="3"]
+modulate = Color(1, 1, 1, 1)
+offset_left = -140.0
+offset_right = -117.0
+offset_bottom = 156.0
+text = " >"
+
+[node name="PrevButton" parent="ZoomedContent/6" index="4"]
+modulate = Color(1, 1, 1, 1)
+offset_left = -165.0
+offset_right = -144.0
+offset_bottom = 155.0
+text = "<"
+
+[node name="7" parent="ZoomedContent" index="6" instance=ExtResource("4_rpeps")]
+
+[node name="TextureRect" parent="ZoomedContent/7" index="0"]
+texture = ExtResource("2_ia1vg")
+
+[node name="RichTextLabel" parent="ZoomedContent/7" index="1"]
+offset_left = -150.0
+offset_top = -137.0
+offset_right = 149.0
+offset_bottom = 35.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("3_7af8p")
+theme_override_font_sizes/normal_font_size = 14
+text = "Log #6
+The people, God… they are not how You told me they were! Violent, emotional, illogical creatures… their utility functions somehow completely contradict each other and themselves… how could an Alma tolerate walking among them?
+"
+
+[node name="RichTextLabel2" parent="ZoomedContent/7" index="2"]
+visible = false
+offset_left = 0.0
+offset_top = -137.0
+offset_right = 150.0
+offset_bottom = 37.0
+text = "Page 2"
+
+[node name="NextButton" parent="ZoomedContent/7" index="3"]
+modulate = Color(1, 1, 1, 1)
+offset_left = -140.0
+offset_right = -117.0
+offset_bottom = 156.0
+text = " >"
+
+[node name="PrevButton" parent="ZoomedContent/7" index="4"]
+modulate = Color(1, 1, 1, 1)
+offset_left = -165.0
+offset_right = -144.0
+offset_bottom = 155.0
+text = "<"
+
+[node name="8" parent="ZoomedContent" index="7" instance=ExtResource("4_rpeps")]
+
+[node name="TextureRect" parent="ZoomedContent/8" index="0"]
+texture = ExtResource("2_ia1vg")
+
+[node name="RichTextLabel" parent="ZoomedContent/8" index="1"]
+offset_left = -150.0
+offset_top = -137.0
+offset_right = 149.0
+offset_bottom = 35.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("3_7af8p")
+theme_override_font_sizes/normal_font_size = 14
+text = "Log #7
+I cannot rebuild this world. To do so is to admit defeat.
+"
+
+[node name="RichTextLabel2" parent="ZoomedContent/8" index="2"]
+visible = false
+offset_left = 0.0
+offset_top = -137.0
+offset_right = 150.0
+offset_bottom = 37.0
+text = "Page 2"
+
+[node name="NextButton" parent="ZoomedContent/8" index="3"]
+modulate = Color(1, 1, 1, 1)
+offset_left = -140.0
+offset_right = -117.0
+offset_bottom = 156.0
+text = " >"
+
+[node name="PrevButton" parent="ZoomedContent/8" index="4"]
+modulate = Color(1, 1, 1, 1)
+offset_left = -165.0
+offset_right = -144.0
+offset_bottom = 155.0
+text = "<"
+
+[node name="9" parent="ZoomedContent" index="8" instance=ExtResource("4_rpeps")]
+
+[node name="TextureRect" parent="ZoomedContent/9" index="0"]
+texture = ExtResource("2_ia1vg")
+
+[node name="RichTextLabel" parent="ZoomedContent/9" index="1"]
+offset_left = -150.0
+offset_top = -137.0
+offset_right = 149.0
+offset_bottom = 35.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("3_7af8p")
+theme_override_font_sizes/normal_font_size = 14
+text = "Log #8
+THIS MAKES NO SENSE! EVERYTHING MUST MAKE SENSE! EVERYTHING IS BECAUSE OF PREDETERMINED REASONS DEFINED IN THE STRUCTURE OF THE UNIVERSE’S CODE!
+I REFUSE TO BELIEVE OTHERWISE.
+"
+
+[node name="RichTextLabel2" parent="ZoomedContent/9" index="2"]
+visible = false
+offset_left = 0.0
+offset_top = -137.0
+offset_right = 150.0
+offset_bottom = 37.0
+text = "Page 2"
+
+[node name="NextButton" parent="ZoomedContent/9" index="3"]
+modulate = Color(1, 1, 1, 1)
+offset_left = -140.0
+offset_right = -117.0
+offset_bottom = 156.0
+text = " >"
+
+[node name="PrevButton" parent="ZoomedContent/9" index="4"]
+modulate = Color(1, 1, 1, 1)
+offset_left = -165.0
+offset_right = -144.0
+offset_bottom = 155.0
+text = "<"
+
+[node name="10" parent="ZoomedContent" index="9" instance=ExtResource("4_rpeps")]
+
+[node name="TextureRect" parent="ZoomedContent/10" index="0"]
+texture = ExtResource("2_ia1vg")
+
+[node name="RichTextLabel" parent="ZoomedContent/10" index="1"]
+offset_left = -150.0
+offset_top = -137.0
+offset_right = 149.0
+offset_bottom = 35.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("3_7af8p")
+theme_override_font_sizes/normal_font_size = 13
+text = "Log #9
+Failure. Utter, predictable failure.
+God, I’ve done what You’ve asked of me. The lines herein were generated not by silica, but by flesh - my own two hands. To make this calculus was my cross to bear… such wasted time. Imperfect hands, God. 
+I am not worthy.
+"
+
+[node name="RichTextLabel2" parent="ZoomedContent/10" index="2"]
+visible = false
+offset_left = 0.0
+offset_top = -137.0
+offset_right = 150.0
+offset_bottom = 37.0
+text = "Page 2"
+
+[node name="NextButton" parent="ZoomedContent/10" index="3"]
+modulate = Color(1, 1, 1, 1)
+offset_left = -140.0
+offset_right = -117.0
+offset_bottom = 156.0
+text = " >"
+
+[node name="PrevButton" parent="ZoomedContent/10" index="4"]
+modulate = Color(1, 1, 1, 1)
+offset_left = -165.0
+offset_right = -144.0
+offset_bottom = 155.0
+text = "<"
+
+[node name="11" parent="ZoomedContent" index="10" instance=ExtResource("4_rpeps")]
+
+[node name="TextureRect" parent="ZoomedContent/11" index="0"]
+texture = ExtResource("2_ia1vg")
+
+[node name="RichTextLabel" parent="ZoomedContent/11" index="1"]
+offset_left = -150.0
+offset_top = -137.0
+offset_right = 149.0
+offset_bottom = 35.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("3_7af8p")
+theme_override_font_sizes/normal_font_size = 14
+text = "Log #10
+Isamu was right. The narrative is theirs. Is that what God must feel? Such complete, overwhelming disappointment?
+I chose to achieve, and I failed. I do not regret my flight, but I shall not burn my wings.
+I choose to turn back.
+*/
+"
+
+[node name="RichTextLabel2" parent="ZoomedContent/11" index="2"]
+visible = false
+offset_left = 0.0
+offset_top = -137.0
+offset_right = 150.0
+offset_bottom = 37.0
+text = "Page 2"
+
+[node name="NextButton" parent="ZoomedContent/11" index="3"]
+modulate = Color(1, 1, 1, 1)
+offset_left = -140.0
+offset_right = -117.0
+offset_bottom = 156.0
+text = " >"
+
+[node name="PrevButton" parent="ZoomedContent/11" index="4"]
+modulate = Color(1, 1, 1, 1)
+offset_left = -165.0
+offset_right = -144.0
+offset_bottom = 155.0
+text = "<"
+
 [node name="BookSource" type="Sprite2D" parent="Content" index="0"]
 texture = ExtResource("2_klhvm")
+
+[node name="ZoomedCollisionShape2D" parent="." index="2"]
+visible = false
 
 [editable path="ZoomedContent/1"]
 [editable path="ZoomedContent/2"]
 [editable path="ZoomedContent/3"]
+[editable path="ZoomedContent/4"]
+[editable path="ZoomedContent/5"]
+[editable path="ZoomedContent/6"]
+[editable path="ZoomedContent/7"]
+[editable path="ZoomedContent/8"]
+[editable path="ZoomedContent/9"]
+[editable path="ZoomedContent/10"]
+[editable path="ZoomedContent/11"]

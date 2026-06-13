@@ -9,5 +9,14 @@
 [node name="Memo" parent="." index="2" instance=ExtResource("2_7b5wd")]
 position = Vector2(499, 513)
 
+[node name="StampBoard" parent="." index="3"]
+position = Vector2(837, 321)
+
+[node name="StampGodmother" parent="." index="4"]
+position = Vector2(1067, 320)
+
+[node name="StampKing" parent="." index="5"]
+position = Vector2(1181, 319)
+
 [node name="StampAncient" parent="." index="6" instance=ExtResource("3_onc73")]
-position = Vector2(656, 135)
+position = Vector2(951, 320)

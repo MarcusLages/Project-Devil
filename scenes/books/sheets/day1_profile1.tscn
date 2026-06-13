@@ -3,3 +3,37 @@
 [ext_resource type="PackedScene" uid="uid://dv6b3on3xb85b" path="res://scenes/books/character_sheet.tscn" id="1_xcc3c"]
 
 [node name="CharacterSheet" instance=ExtResource("1_xcc3c")]
+
+[node name="Content" parent="ZoomedContent/Name" index="0"]
+text = "John Goodman"
+
+[node name="Content" parent="ZoomedContent/Age" index="0"]
+text = "31"
+
+[node name="Content" parent="ZoomedContent/Bargain" index="0"]
+text = "Career ascension"
+
+[node name="Content" parent="ZoomedContent/Sacrifice" index="0"]
+offset_right = 304.0
+text = "5 liters of blood, over the course of 3 years"
+
+[node name="Content" parent="ZoomedContent/Organ" index="0"]
+text = "Spinal Cord"
+
+[node name="Content" parent="ZoomedContent/Sign" index="0"]
+text = "Taurus"
+
+[node name="Content" parent="ZoomedContent/Death" index="0"]
+text = "Cancer"
+
+[node name="Content" parent="ZoomedContent/Ethics" index="0"]
+text = "Deontology"
+
+[node name="Content" parent="ZoomedContent/Ambition" index="0"]
+text = "To receive Employee of the Year award
+"
+
+[node name="Content" parent="ZoomedContent/Nightmare" index="0"]
+text = "Homosexuality exposed"
+
+[editable path="ZoomedContent/StampableTest"]

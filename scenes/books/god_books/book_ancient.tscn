@@ -1,23 +1,287 @@
-[gd_scene load_steps=4 format=3 uid="uid://vr7crq83x5ux"]
+[gd_scene load_steps=6 format=3 uid="uid://vr7crq83x5ux"]
 
 [ext_resource type="PackedScene" uid="uid://bqt842joqbmsr" path="res://scenes/books/book.tscn" id="1_hmb50"]
 [ext_resource type="Texture2D" uid="uid://50ukic1etg0o" path="res://assets/img/book_ancient.png" id="2_ly4ys"]
 [ext_resource type="Texture2D" uid="uid://bj427xdp0pg4h" path="res://assets/img/book_ancient_open.png" id="2_ok3cd"]
+[ext_resource type="FontFile" uid="uid://ogmrm1t4aybl" path="res://assets/font/ELEGANT TYPEWRITER Regular.ttf" id="3_t2kmd"]
+[ext_resource type="PackedScene" uid="uid://e0lxhfs5ep2m" path="res://scenes/books/page.tscn" id="4_bm0xu"]
 
 [node name="BookAncient" instance=ExtResource("1_hmb50")]
+
+[node name="ZoomedContent" parent="." index="0"]
+visible = false
 
 [node name="TextureRect" parent="ZoomedContent/1" index="0"]
 texture = ExtResource("2_ok3cd")
 
+[node name="RichTextLabel" parent="ZoomedContent/1" index="1"]
+offset_left = -152.0
+offset_top = -142.0
+offset_right = -20.0
+offset_bottom = 133.0
+theme_override_fonts/normal_font = ExtResource("3_t2kmd")
+theme_override_font_sizes/normal_font_size = 13
+text = "   IDENTITY IS FALSE
+
+SOUL 		I S
+		EVERYWHERE
+
+			MANY IS ONE
+
+				ACCEPT
+	ACCEPT
+  		ACCEPT
+  ACCEPT
+	 	    ACCEPT
+		  ACCEPT
+	    	    ACCEPT
+ACCEPT
+				   ACCEPT
+	   ACCEPT
+		 ACCEPT"
+
+[node name="RichTextLabel2" parent="ZoomedContent/1" index="2"]
+offset_left = 15.33
+offset_top = -142.0
+offset_right = 147.33
+offset_bottom = 156.0
+theme_override_fonts/normal_font = ExtResource("3_t2kmd")
+theme_override_font_sizes/normal_font_size = 13
+text = "ALL CATEGO 
+	RIZATION 	I S 	
+		THE PRODUCT OF ARBITRARY BIOLOGICAL              LOGISTIC REGRE
+	SSI ON
+
+YOU ARE MACHINE
+WORLD IS YOU
+
+ACCEPT
+   ACCEPT
+				ACCEPT
+		ACCEPT
+  ACCEPT
+		  ACCEPT
+				  ACCEPT
+	ACCEPT
+	  ACCEPT
+
+"
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="ZoomedContent/1" index="3"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -135.0
+offset_top = -53.0
+offset_right = -3.0
+offset_bottom = 139.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_t2kmd")
+theme_override_font_sizes/normal_font_size = 13
+text = "				ACCEPT
+	ACCEPT
+  		ACCEPT
+  ACCEPT
+	 	    ACCEPT
+		  ACCEPT
+	    	    ACCEPT
+ACCEPT
+				   ACCEPT
+	   ACCEPT
+		 ACCEPT"
+scroll_active = false
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="ZoomedContent/1" index="4"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -187.0
+offset_top = -53.0
+offset_right = -10.0
+offset_bottom = 154.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_t2kmd")
+theme_override_font_sizes/normal_font_size = 13
+text = "				ACCEPT
+	ACCEPT
+  		ACCEPT
+   ACCEPT    			ACCEPT
+	 	    ACCEPT
+		  ACCEPT
+	    ACCEPT
+    ACCEPT
+				   ACCEPT
+	   ACCEPT
+		 ACCEPT"
+scroll_active = false
+
+[node name="RichTextLabel5" type="RichTextLabel" parent="ZoomedContent/1" index="5"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 37.0
+offset_top = -1.0
+offset_right = 169.0
+offset_bottom = 161.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_t2kmd")
+theme_override_font_sizes/normal_font_size = 13
+text = "				ACCEPT
+	ACCEPT
+  		ACCEPT
+  ACCEPT
+	 	    ACCEPT
+		  ACCEPT
+	    	    ACCEPT
+ACCEPT
+				   ACCEPT
+	   ACCEPT
+		 ACCEPT"
+scroll_active = false
+
+[node name="2" parent="ZoomedContent" index="1" instance=ExtResource("4_bm0xu")]
+
 [node name="TextureRect" parent="ZoomedContent/2" index="0"]
 texture = ExtResource("2_ok3cd")
 
-[node name="TextureRect" parent="ZoomedContent/3" index="0"]
-texture = ExtResource("2_ok3cd")
+[node name="RichTextLabel" parent="ZoomedContent/2" index="1"]
+offset_left = -152.0
+offset_top = -142.0
+offset_right = -20.0
+offset_bottom = 133.0
+theme_override_fonts/normal_font = ExtResource("3_t2kmd")
+theme_override_font_sizes/normal_font_size = 13
+text = "   DEATHISILLUS ION
+EXPE	RIENCE    IS
+CON CON CON CON CON CON CON	STANT
+
+SUFFERI  NG 
+			IS KING
+
+ACCEPT	ACCEPT
+ANIMA 	  ANIMA
+ACCEPTACCEPTACCEPTACCEPTACCEPT
+MUNDI 		MUNDI
+ACCEPT ACCEPT
+ANIMA ANIMA
+ACCEPT    ACCEPT
+MUNDI  MUNDI
+ACCEPT ACCEPT"
+
+[node name="RichTextLabel2" parent="ZoomedContent/2" index="2"]
+offset_left = 15.33
+offset_top = -142.0
+offset_right = 147.33
+offset_bottom = 156.0
+theme_override_fonts/normal_font = ExtResource("3_t2kmd")
+theme_override_font_sizes/normal_font_size = 13
+text = "ACCEPT
+   MUNDI
+				ACCEPT
+		ANIMA
+  ACCEPT
+		  ANIMA
+				  ACCEPT
+	MUNDI
+	  ACCEPT
+		ACCEPT
+  MUNDI
+		  MUNDI
+ANIMA
+		ANIMA
+  ACCEPT
+		  ACCEPT
+				  ANIMA
+	MUNDI
+	  ACCEPT"
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="ZoomedContent/2" index="3"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -62.0
+offset_top = -59.0
+offset_right = 70.0
+offset_bottom = 133.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_t2kmd")
+theme_override_font_sizes/normal_font_size = 13
+text = "				ACCEPT
+	ACCEPT
+  		ACCEPT
+  ACCEPT
+	 	    ACCEPT
+		  ACCEPT
+	    	    ACCEPT
+ACCEPT
+				   ACCEPT
+	   ACCEPT
+		 ACCEPT"
+scroll_active = false
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="ZoomedContent/2" index="4"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 61.0
+offset_top = -137.0
+offset_right = 238.0
+offset_bottom = 163.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_t2kmd")
+theme_override_font_sizes/normal_font_size = 13
+text = "				ACCEPT
+	ACCEPT
+  		ACCEPT
+   ACCEPTACCEPT
+	 	    ACCEPT
+		  ACCEPT
+	    ACCEPT
+    ACCEPT
+		 ACCEPT
+	   ACCEPT
+		 ACCEPT
+ACCEPT
+   MUNDI
+	  		 ACCEPT
+		ANIMA
+  ACCEPT
+		  ANIMA
+		   ACCEPT
+	MUNDI
+	  ACCEPT"
+scroll_active = false
 
 [node name="BookAncient" type="Sprite2D" parent="Content" index="0"]
 texture = ExtResource("2_ly4ys")
 
+[node name="ZoomedCollisionShape2D" parent="." index="2"]
+visible = false
+
 [editable path="ZoomedContent/1"]
 [editable path="ZoomedContent/2"]
-[editable path="ZoomedContent/3"]

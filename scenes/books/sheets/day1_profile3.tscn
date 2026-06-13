@@ -3,3 +3,32 @@
 [ext_resource type="PackedScene" uid="uid://dv6b3on3xb85b" path="res://scenes/books/character_sheet.tscn" id="1_j1vpn"]
 
 [node name="CharacterSheet" instance=ExtResource("1_j1vpn")]
+
+[node name="Content" parent="ZoomedContent/Name" index="0"]
+text = "Terrence May"
+
+[node name="Content" parent="ZoomedContent/Age" index="0"]
+text = "44"
+
+[node name="Content" parent="ZoomedContent/Bargain" index="0"]
+text = "Seventh daughter"
+
+[node name="Content" parent="ZoomedContent/Sacrifice" index="0"]
+text = "Eyes"
+
+[node name="Content" parent="ZoomedContent/Organ" index="0"]
+text = "Eyes"
+
+[node name="Content" parent="ZoomedContent/Sign" index="0"]
+text = "Leo"
+
+[node name="Content" parent="ZoomedContent/Death" index="0"]
+text = "Bullet wound to the cranium"
+
+[node name="Content" parent="ZoomedContent/Ethics" index="0"]
+text = "Utilitarianism"
+
+[node name="Content" parent="ZoomedContent/Nightmare" index="0"]
+text = "Being powerless"
+
+[editable path="ZoomedContent/StampableTest"]

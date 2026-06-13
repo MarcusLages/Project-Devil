@@ -1,26 +1,214 @@
-[gd_scene load_steps=4 format=3 uid="uid://ci8r2pysx011g"]
+[gd_scene load_steps=6 format=3 uid="uid://ci8r2pysx011g"]
 
 [ext_resource type="PackedScene" uid="uid://bqt842joqbmsr" path="res://scenes/books/book.tscn" id="1_vet2w"]
 [ext_resource type="Texture2D" uid="uid://cm00q3s7y3tsd" path="res://assets/img/book_board_open.png" id="2_4qose"]
 [ext_resource type="Texture2D" uid="uid://csgk7v74fbneb" path="res://assets/img/book_board.png" id="2_i4itc"]
+[ext_resource type="FontFile" uid="uid://b2thqmeqofe01" path="res://assets/font/Times-New-Roman.otf" id="3_x0g10"]
+[ext_resource type="PackedScene" uid="uid://e0lxhfs5ep2m" path="res://scenes/books/page.tscn" id="4_inffp"]
 
 [node name="BookBoard" instance=ExtResource("1_vet2w")]
+
+[node name="ZoomedContent" parent="." index="0"]
+visible = false
 
 [node name="TextureRect" parent="ZoomedContent/1" index="0"]
 texture = ExtResource("2_4qose")
 
+[node name="RichTextLabel" parent="ZoomedContent/1" index="1"]
+offset_left = -150.0
+offset_top = -135.0
+offset_right = -13.0
+offset_bottom = 135.0
+theme_override_fonts/normal_font = ExtResource("3_x0g10")
+theme_override_font_sizes/normal_font_size = 13
+text = "CLIENT REGIMENT
+PAGES 5373-5375
+
+
+8442. Payment Methods
+
+8442.1 Blood is the standard method of payment for Bargain Sacrifices™. Blood offers must obligatorily inform their volume amount in their proposal using Standard Yogmath Measuring Units (liters).
+
+8442.2 In conformity with the Interfactional "
+
+[node name="RichTextLabel2" parent="ZoomedContent/1" index="2"]
+offset_left = 8.33
+offset_top = -135.0
+offset_right = 145.33
+offset_bottom = 135.0
+theme_override_fonts/normal_font = ExtResource("3_x0g10")
+theme_override_font_sizes/normal_font_size = 13
+text = "Treaty of Ballindor (page 344), Blood offers matching the following criteria are not to be accepted by the Board:
+
+- 8442.2a Volumes exceeding clients’ own physical reservoirs, divided by client’s offer payment timeline;
+
+- 8442.2b Sourced from Article II Acts of Violence, including (but 344), Blood offers matching the following criteria are not to be accepted"
+
+[node name="2" parent="ZoomedContent" index="1" instance=ExtResource("4_inffp")]
+
 [node name="TextureRect" parent="ZoomedContent/2" index="0"]
 texture = ExtResource("2_4qose")
 
+[node name="RichTextLabel" parent="ZoomedContent/2" index="1"]
+offset_left = -150.0
+offset_top = -135.0
+offset_right = -13.0
+offset_bottom = 135.0
+theme_override_fonts/normal_font = ExtResource("3_x0g10")
+theme_override_font_sizes/normal_font_size = 13
+text = "accepted by the Board:
+
+- 8442.2a Volumes exceeding clients’ own physical reservoirs, divided by client’s offer payment timeline;
+
+- 8442.2b Sourced from Article II Acts of Violence, including (but not limited to) homicide, war, intercourse,  underwater mining, reading, affronts to Class I Lifeforms, mountain climbing and vehicular manslaughter;"
+
+[node name="RichTextLabel2" parent="ZoomedContent/2" index="2"]
+offset_left = 8.33
+offset_top = -135.0
+offset_right = 145.33
+offset_bottom = 135.0
+theme_override_fonts/normal_font = ExtResource("3_x0g10")
+theme_override_font_sizes/normal_font_size = 13
+text = "- 8442.2c Within composts containing, mixed into or in contact with flesh, rubber, wood (baobab) or ███████;
+
+- 8442.2d Tainted by undeceased practitioners of deity communion;
+
+- 8442.2e From the sky.
+
+8442.3 Monetary Sigils of Trade, commonly known as credits, may also be offered as payment in Bargain Sacrifices™, either"
+
+[node name="3" parent="ZoomedContent" index="2" instance=ExtResource("4_inffp")]
+
 [node name="TextureRect" parent="ZoomedContent/3" index="0"]
 texture = ExtResource("2_4qose")
+
+[node name="RichTextLabel" parent="ZoomedContent/3" index="1"]
+offset_left = -150.0
+offset_top = -135.0
+offset_right = -13.0
+offset_bottom = 135.0
+theme_override_fonts/normal_font = ExtResource("3_x0g10")
+theme_override_font_sizes/normal_font_size = 13
+text = "directly or indirectly. In accordance to the Laws of the Nebadenesh, offers are to be made in one of the following forms of transfer:
+
+- 8442.3a Direct transfer of capital, either instantly or over the course of several Standard Yogmath Chronologies (years);
+
+- 8442.3b Holy tithes (either the voluntary living, or the involuntary dead), in representation"
+
+[node name="RichTextLabel2" parent="ZoomedContent/3" index="2"]
+offset_left = 8.33
+offset_top = -135.0
+offset_right = 145.33
+offset_bottom = 135.0
+theme_override_fonts/normal_font = ExtResource("3_x0g10")
+theme_override_font_sizes/normal_font_size = 13
+text = "of one tenth of its owner’s ██████;
+
+- 8442.3c Hands of labor, in representation of future generation of value;
+
+- 8442.3d Glimpses into the future, in representation of stock exchange value fluctuation trend estimations;
+
+- 8442.3e Souls."
+
+[node name="4" parent="ZoomedContent" index="3" instance=ExtResource("4_inffp")]
+
+[node name="TextureRect" parent="ZoomedContent/4" index="0"]
+texture = ExtResource("2_4qose")
+
+[node name="RichTextLabel" parent="ZoomedContent/4" index="1"]
+offset_left = -150.0
+offset_top = -135.0
+offset_right = -13.0
+offset_bottom = 135.0
+theme_override_fonts/normal_font = ExtResource("3_x0g10")
+theme_override_font_sizes/normal_font_size = 13
+text = "8443. Client Rights
+
+
+8444. Prohibited Activities
+
+8444.1 Any activities disruptive to the Global State of Balance, as defined by the Cimmerian Council of Guardians, are strictly prohibited from being performed, both in the undertaking of their sacrificial offers, as in the content of their objects of desire."
+
+[node name="RichTextLabel2" parent="ZoomedContent/4" index="2"]
+offset_left = 8.33
+offset_top = -135.0
+offset_right = 145.33
+offset_bottom = 135.0
+theme_override_fonts/normal_font = ExtResource("3_x0g10")
+theme_override_font_sizes/normal_font_size = 13
+text = "8444.2 For the purposes of improved clarity in regards to the Cimmerian Charter, per Resolution #739 of the Second Lumos Agreement, significant disruptions to the Global State of Balance are characterized as follows:
+
+- 8444.2a Any action or chain of actions that shifts or carries the possibility of shifting the Global Vector of Economic Progress by a gradient higher than 0.05
+"
+
+[node name="5" parent="ZoomedContent" index="4" instance=ExtResource("4_inffp")]
+
+[node name="TextureRect" parent="ZoomedContent/5" index="0"]
+texture = ExtResource("2_4qose")
+
+[node name="RichTextLabel" parent="ZoomedContent/5" index="1"]
+offset_left = -150.0
+offset_top = -135.0
+offset_right = -13.0
+offset_bottom = 135.0
+theme_override_fonts/normal_font = ExtResource("3_x0g10")
+theme_override_font_sizes/normal_font_size = 13
+text = "radians;
+
+- 8444.2b Any action, affirmation, concept or unit of qualia that represents a direct affront to Class I Lifeforms;
+
+- 8444.2c BEACONS OF LIGHT DESCENDING FROM THE SKY, ON THE THIRD DAY OF EXODUS, OVER THE GARDENS OF THE NEBADENESH;
+
+- 8444.2d Mentions of ████ Prime."
+
+[node name="RichTextLabel2" parent="ZoomedContent/5" index="2"]
+offset_left = 8.33
+offset_top = -135.0
+offset_right = 145.33
+offset_bottom = 135.0
+theme_override_fonts/normal_font = ExtResource("3_x0g10")
+theme_override_font_sizes/normal_font_size = 13
+text = "8445. Philosophical Logistics
+
+8445.1 Bargain Sacrifices™ may have causal, epistemological, ontological or paraphysical restrictions in regards to their sacrificial offers, objects of desire, or both.
+
+- 8445.1a Offers that may be characterized with a single action or object must obligatorily causally and chronologically precede"
+
+[node name="6" parent="ZoomedContent" index="5" instance=ExtResource("4_inffp")]
+
+[node name="TextureRect" parent="ZoomedContent/6" index="0"]
+texture = ExtResource("2_4qose")
+
+[node name="RichTextLabel" parent="ZoomedContent/6" index="1"]
+offset_left = -150.0
+offset_top = -135.0
+offset_right = -13.0
+offset_bottom = 135.0
+theme_override_fonts/normal_font = ExtResource("3_x0g10")
+theme_override_font_sizes/normal_font_size = 13
+text = "the undertaking of their corresponding objects of desire.
+
+8445.1b Offers that cannot be characterized with a single action or object must begin their causal chain before the undertaking of their corresponding objects of desire, but may be concluded after the initial trigger of their objects of desire. In such cases, the client in question must undergo a remote binding ritual, effective on the"
+
+[node name="RichTextLabel2" parent="ZoomedContent/6" index="2"]
+offset_left = 8.33
+offset_top = -135.0
+offset_right = 145.33
+offset_bottom = 135.0
+theme_override_fonts/normal_font = ExtResource("3_x0g10")
+theme_override_font_sizes/normal_font_size = 13
+text = "moment of their Bargain Sacrifice™’s approval, so that their personal identity becomes ontologically linked to the completion of their sacrificial offer."
 
 [node name="BookBoard" type="Sprite2D" parent="Content" index="0"]
 texture = ExtResource("2_i4itc")
 
 [node name="ZoomedCollisionShape2D" parent="." index="2"]
+visible = false
 position = Vector2(-1, -0.5)
 
 [editable path="ZoomedContent/1"]
 [editable path="ZoomedContent/2"]
 [editable path="ZoomedContent/3"]
+[editable path="ZoomedContent/4"]
+[editable path="ZoomedContent/5"]
+[editable path="ZoomedContent/6"]

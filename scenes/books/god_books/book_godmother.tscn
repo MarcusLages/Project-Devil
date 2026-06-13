@@ -1,23 +1,243 @@
-[gd_scene load_steps=4 format=3 uid="uid://bt5dgopegufos"]
+[gd_scene load_steps=6 format=3 uid="uid://bt5dgopegufos"]
 
 [ext_resource type="PackedScene" uid="uid://bqt842joqbmsr" path="res://scenes/books/book.tscn" id="1_mswk3"]
 [ext_resource type="Texture2D" uid="uid://l0etoj65m50r" path="res://assets/img/book_godmother.png" id="2_241ij"]
 [ext_resource type="Texture2D" uid="uid://d2q8rqfgryh0q" path="res://assets/img/book_godmother_open.png" id="2_qjk21"]
+[ext_resource type="FontFile" uid="uid://drclq7xxrcv0u" path="res://assets/font/Holidays Homework.ttf" id="3_0ck4w"]
+[ext_resource type="PackedScene" uid="uid://e0lxhfs5ep2m" path="res://scenes/books/page.tscn" id="4_5d6tq"]
 
 [node name="BookGodmother" instance=ExtResource("1_mswk3")]
+
+[node name="ZoomedContent" parent="." index="0"]
+visible = false
 
 [node name="TextureRect" parent="ZoomedContent/1" index="0"]
 texture = ExtResource("2_qjk21")
 
+[node name="RichTextLabel" parent="ZoomedContent/1" index="1"]
+offset_top = -121.0
+offset_bottom = 131.0
+theme_override_fonts/normal_font = ExtResource("3_0ck4w")
+theme_override_font_sizes/normal_font_size = 13
+text = "Hippity hoppity hoppity ho,
+
+Step your step and break your ankle,
+
+Hippity hoppity hoppity ho,
+
+Fall again and on your face,
+
+"
+
+[node name="RichTextLabel2" parent="ZoomedContent/1" index="2"]
+offset_left = 10.33
+offset_top = -108.0
+offset_right = 147.0
+offset_bottom = 131.0
+theme_override_fonts/normal_font = ExtResource("3_0ck4w")
+theme_override_font_sizes/normal_font_size = 13
+text = " Hippity hoppity hoppity ho,
+
+Now your 
+blood is on the pavement,
+
+Hippity hoppity hoppity ho,
+Isn’t life so silly and fun?
+"
+
+[node name="2" parent="ZoomedContent" index="1" instance=ExtResource("4_5d6tq")]
+
 [node name="TextureRect" parent="ZoomedContent/2" index="0"]
 texture = ExtResource("2_qjk21")
+
+[node name="RichTextLabel" parent="ZoomedContent/2" index="1"]
+offset_left = -133.0
+offset_top = -121.0
+offset_bottom = 131.0
+theme_override_fonts/normal_font = ExtResource("3_0ck4w")
+theme_override_font_sizes/normal_font_size = 13
+text = "Ha ha hi hi,
+Ha ha hi hi,
+Ha ha hi hi,
+Ha ha ho!,
+
+Ha ha hi hi,
+Ha ha hi hi,
+Ha ha hi hi,
+Ha ha ho!
+"
+
+[node name="RichTextLabel2" parent="ZoomedContent/2" index="2"]
+offset_left = 13.0
+offset_top = -121.0
+offset_right = 147.0
+offset_bottom = 131.0
+theme_override_fonts/normal_font = ExtResource("3_0ck4w")
+theme_override_font_sizes/normal_font_size = 13
+text = "  Cage of glass or plastic shackles,
+
+Ha ha hi hi,
+or Ha ha ho!,
+
+Don’t frown thinking of tomorrow,
+
+Ha ha hi hi,
+or Ha ha ho!,
+
+Be yourself and 
+never frighten,
+
+"
+
+[node name="3" parent="ZoomedContent" index="2" instance=ExtResource("4_5d6tq")]
 
 [node name="TextureRect" parent="ZoomedContent/3" index="0"]
 texture = ExtResource("2_qjk21")
 
+[node name="RichTextLabel" parent="ZoomedContent/3" index="1"]
+offset_left = -137.0
+offset_top = -121.0
+offset_bottom = 131.0
+theme_override_fonts/normal_font = ExtResource("3_0ck4w")
+theme_override_font_sizes/normal_font_size = 13
+text = "Ha ha hi hi,
+or Ha ha ho!,
+
+You just want your heart to flicker
+
+Call my name and here we go!"
+
+[node name="RichTextLabel2" parent="ZoomedContent/3" index="2"]
+offset_left = 9.0
+offset_top = -121.0
+offset_right = 154.0
+offset_bottom = 131.0
+theme_override_fonts/normal_font = ExtResource("3_0ck4w")
+theme_override_font_sizes/normal_font_size = 13
+text = "  Give your pinky,
+ tell a lie,
+
+tell a joke,
+make me laugh,
+
+prance around, over lava,
+
+never let the fun die out!
+"
+
+[node name="4" parent="ZoomedContent" index="3" instance=ExtResource("4_5d6tq")]
+
+[node name="TextureRect" parent="ZoomedContent/4" index="0"]
+texture = ExtResource("2_qjk21")
+
+[node name="RichTextLabel" parent="ZoomedContent/4" index="1"]
+offset_left = -137.0
+offset_top = -121.0
+offset_bottom = 131.0
+theme_override_fonts/normal_font = ExtResource("3_0ck4w")
+theme_override_font_sizes/normal_font_size = 13
+text = "Give your pinky,
+tell a lie,
+
+tell a joke,
+make me laugh,
+
+prance around, over lava,
+
+never let the fun die out!
+"
+
+[node name="RichTextLabel2" parent="ZoomedContent/4" index="2"]
+offset_left = 9.0
+offset_top = -121.0
+offset_right = 154.0
+offset_bottom = 131.0
+theme_override_fonts/normal_font = ExtResource("3_0ck4w")
+theme_override_font_sizes/normal_font_size = 13
+text = "  Give your pinky,
+ tell a lie,
+
+tell a joke,
+make me laugh,
+
+prance around, over lava,
+
+never let the fun die out!
+"
+
+[node name="5" parent="ZoomedContent" index="4" instance=ExtResource("4_5d6tq")]
+
+[node name="TextureRect" parent="ZoomedContent/5" index="0"]
+texture = ExtResource("2_qjk21")
+
+[node name="RichTextLabel" parent="ZoomedContent/5" index="1"]
+offset_left = -137.0
+offset_top = -121.0
+offset_bottom = 131.0
+theme_override_fonts/normal_font = ExtResource("3_0ck4w")
+theme_override_font_sizes/normal_font_size = 13
+text = "Give your pinky,
+tell a lie,
+
+tell a joke,
+make me laugh,
+
+prance around, over laaaaaava,
+
+never let the fun die out!
+never let the fun die out!
+never let the fun die out!"
+
+[node name="RichTextLabel2" parent="ZoomedContent/5" index="2"]
+offset_left = 14.0
+offset_top = -121.0
+offset_right = 154.0
+offset_bottom = 131.0
+theme_override_fonts/normal_font = ExtResource("3_0ck4w")
+theme_override_font_sizes/normal_font_size = 13
+text = " never let the fun die out!
+never let the fun die out!
+never let the  fun die out!
+never let the fun die out!
+never let the fun die out!
+never let the fun die out!
+never let the fun die out!
+never let the fun die out!
+never let the fun 
+ die out!"
+
+[node name="6" parent="ZoomedContent" index="5" instance=ExtResource("4_5d6tq")]
+
+[node name="TextureRect" parent="ZoomedContent/6" index="0"]
+texture = ExtResource("2_qjk21")
+
+[node name="RichTextLabel" parent="ZoomedContent/6" index="1"]
+offset_left = -137.0
+offset_top = -121.0
+offset_bottom = 131.0
+theme_override_fonts/normal_font = ExtResource("3_0ck4w")
+theme_override_font_sizes/normal_font_size = 13
+text = "never let the fun die out!never let the fun die out!never let the fun die out!never let the fun die out!never let the fun die out!never let the fun die out!never let the fun die out!never let the fun die out!never let the fun die out!"
+
+[node name="RichTextLabel2" parent="ZoomedContent/6" index="2"]
+offset_left = -19.0
+offset_top = -157.0
+offset_right = 173.0
+offset_bottom = 158.0
+theme_override_fonts/normal_font = ExtResource("3_0ck4w")
+theme_override_font_sizes/normal_font_size = 13
+text = "never let the fun die out!never let the fun die out!never let the fun die out!never let the fun die out!never let the fun die out!never let the fun die out!never let the fun die out!never let the fun die out!never let the fun die out!never let the fun die out!never let the fun die out!never let the fun die out!never let the fun die out!never let the fun die out!never let the fun die out!never let the fun die out!never let the fun die out!never let the fun die out!never let the fun die out! never"
+horizontal_alignment = 2
+
 [node name="BookGodmother" type="Sprite2D" parent="Content" index="0"]
 texture = ExtResource("2_241ij")
+
+[node name="ZoomedCollisionShape2D" parent="." index="2"]
+visible = false
 
 [editable path="ZoomedContent/1"]
 [editable path="ZoomedContent/2"]
 [editable path="ZoomedContent/3"]
+[editable path="ZoomedContent/4"]
+[editable path="ZoomedContent/5"]
+[editable path="ZoomedContent/6"]
