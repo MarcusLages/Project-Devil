@@ -32,6 +32,7 @@ class_name Lamp
 @export var min_dark_time_sec: float = 50.
 @export var max_dark_time_sec: float = 120.
 
+@onready var canvas = $CanvasLayer
 @onready var shader_material: ShaderMaterial = $"CanvasLayer/ColorRect".material
 @onready var darkness_timer: Timer = $DarknessTimer
 @onready var sprite = $Content/Sprite2D
@@ -41,6 +42,7 @@ class_name Lamp
 var _rng = RandomNumberGenerator.new()
 
 func _ready() -> void:
+	canvas.visible = true
 	if not light_marker:
 		light_marker = get_node_or_null("LightMarker")
 

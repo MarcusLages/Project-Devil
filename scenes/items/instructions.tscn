@@ -38,11 +38,11 @@ offset_bottom = 171.0
 theme_override_colors/font_color = Color(0.16078432, 0.15686275, 0.15294118, 1)
 theme_override_fonts/font = ExtResource("4_fj4ll")
 theme_override_font_sizes/font_size = 12
-text = "1. Press the red button to receive customers' bargain requests and their profiles;
+text = "1. Press the blue button to receive customers' bargain requests and their profiles;
 2. Assess their profiles and our Patron codices to assign them to the Patron that better suits their needs;
 3. ████ Prime is no more;
 4. Assign a Patron by stamping their profile with a Patron's corresponding stamp;
-5. After stamping, press the red button to receive your next assignment;
+5. After stamping, press the blue button to receive your next assignment;
 6. ████ Prime is no more;
 7. Process each request in a timely manner to prevent bottlenecks;
 8. Appease our Patrons above all other concerns. They are our real clients;

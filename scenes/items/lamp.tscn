@@ -72,6 +72,7 @@ theme_override_font_sizes/font_size = 100
 text = "WRONG"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 follow_viewport_enabled = true
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]

@@ -1,17 +1,24 @@
-[gd_scene load_steps=13 format=3 uid="uid://coebt3hr31ag1"]
+[gd_scene load_steps=19 format=3 uid="uid://coebt3hr31ag1"]
 
 [ext_resource type="Script" uid="uid://b6kihpl0g4hgo" path="res://scripts/interactable_manager.gd" id="1_1l7k0"]
 [ext_resource type="PackedScene" uid="uid://c3teswcgfhijm" path="res://scenes/items/alarm.tscn" id="2_6bjo4"]
 [ext_resource type="PackedScene" uid="uid://daorxf41jrgcl" path="res://scenes/items/lamp.tscn" id="3_5dgt1"]
+[ext_resource type="Texture2D" uid="uid://n2nof2otk2c4" path="res://assets/img/spawner_off_porta_aberta.png" id="3_n4f3l"]
+[ext_resource type="Script" uid="uid://c2cs8nndatmri" path="res://scenes/components/dispenser.gd" id="3_qql0p"]
+[ext_resource type="Texture2D" uid="uid://yo3iduln7lre" path="res://assets/img/spawner_on_porta_aberta.png" id="4_ed77n"]
 [ext_resource type="PackedScene" uid="uid://fvf6d2b1j1jr" path="res://scenes/items/stamp_board.tscn" id="4_whgmt"]
 [ext_resource type="PackedScene" uid="uid://bnjtns7pcomfo" path="res://scenes/items/stamp_godmother.tscn" id="5_c4v5l"]
+[ext_resource type="PackedScene" uid="uid://d33y1bfr1gojc" path="res://scenes/components/interactable.tscn" id="6_q26lx"]
 [ext_resource type="PackedScene" uid="uid://d3pxiuml0kwpc" path="res://scenes/items/stamp_king.tscn" id="6_udm4l"]
 [ext_resource type="PackedScene" uid="uid://b608v1bt38v64" path="res://scenes/books/god_books/book_king.tscn" id="7_c4v5l"]
+[ext_resource type="AudioStream" uid="uid://bpfucjsb8do0s" path="res://assets/sfx/Button 2.mp3" id="7_pvivq"]
 [ext_resource type="PackedScene" uid="uid://ci8r2pysx011g" path="res://scenes/books/god_books/book_board.tscn" id="9_3nfto"]
 [ext_resource type="PackedScene" uid="uid://bt5dgopegufos" path="res://scenes/books/god_books/book_godmother.tscn" id="10_n4f3l"]
 [ext_resource type="PackedScene" uid="uid://vr7crq83x5ux" path="res://scenes/books/god_books/book_ancient.tscn" id="11_qql0p"]
 [ext_resource type="PackedScene" uid="uid://6166iel22ead" path="res://scenes/books/god_books/book_source.tscn" id="12_ed77n"]
 [ext_resource type="PackedScene" uid="uid://bywfqn28706i7" path="res://scenes/items/mug.tscn" id="12_jp3mj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qql0p"]
 
 [node name="InteractableManagerFixed" type="Node"]
 script = ExtResource("1_1l7k0")
@@ -20,8 +27,45 @@ metadata/_custom_type_script = "uid://b6kihpl0g4hgo"
 [node name="Alarm" parent="." instance=ExtResource("2_6bjo4")]
 position = Vector2(96, 659)
 
+[node name="Dispenser" type="Area2D" parent="."]
+z_index = -10
+position = Vector2(-12, 453)
+script = ExtResource("3_qql0p")
+button_on = ExtResource("4_ed77n")
+button_off = ExtResource("3_n4f3l")
+
+[node name="Content" type="Node2D" parent="Dispenser"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Dispenser/Content"]
+position = Vector2(-29, -1)
+texture = ExtResource("4_ed77n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dispenser"]
+position = Vector2(-39, 1.9999995)
+rotation = -1.2845623
+shape = SubResource("RectangleShape2D_qql0p")
+
+[node name="Advance" type="Button" parent="Dispenser"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 86.0
+offset_top = -108.0
+offset_right = 138.0
+offset_bottom = -71.0
+action_mode = 0
+flat = true
+
+[node name="Interactable" parent="Dispenser" instance=ExtResource("6_q26lx")]
+disabled = true
+
+[node name="Timer" type="Timer" parent="Dispenser"]
+wait_time = 0.2
+autostart = true
+
+[node name="SFX" type="AudioStreamPlayer" parent="Dispenser"]
+stream = ExtResource("7_pvivq")
+
 [node name="Lamp" parent="." instance=ExtResource("3_5dgt1")]
-position = Vector2(666, 276)
+position = Vector2(690, 264)
 
 [node name="StampBoard" parent="." instance=ExtResource("4_whgmt")]
 position = Vector2(766, 376)
@@ -33,26 +77,31 @@ position = Vector2(767, 512)
 position = Vector2(766, 644)
 
 [node name="BookKing" parent="." instance=ExtResource("7_c4v5l")]
-position = Vector2(193, 236)
+position = Vector2(260, 257)
 scale = Vector2(0.88, 0.88)
 
 [node name="BookBoard" parent="." instance=ExtResource("9_3nfto")]
-position = Vector2(262, 236)
+position = Vector2(329, 257)
 scale = Vector2(0.88, 0.88)
 
 [node name="BookGodmother" parent="." instance=ExtResource("10_n4f3l")]
-position = Vector2(341, 236)
+position = Vector2(408, 257)
 scale = Vector2(0.88, 0.88)
 
 [node name="BookAncient" parent="." instance=ExtResource("11_qql0p")]
 visible = false
-position = Vector2(414, 236)
+position = Vector2(478, 256)
 scale = Vector2(0.88, 0.88)
 
 [node name="BookSource" parent="." instance=ExtResource("12_ed77n")]
 visible = false
-position = Vector2(491, 236)
+position = Vector2(555, 256)
 scale = Vector2(0.88, 0.88)
 
 [node name="Mug" parent="." instance=ExtResource("12_jp3mj")]
 position = Vector2(281, 659)
+
+[connection signal="button_up" from="Dispenser/Advance" to="Dispenser" method="_on_advance_button_up"]
+[connection signal="mouse_entered" from="Dispenser/Advance" to="Dispenser" method="_on_advance_mouse_entered"]
+[connection signal="mouse_exited" from="Dispenser/Advance" to="Dispenser" method="_on_advance_mouse_exited"]
+[connection signal="timeout" from="Dispenser/Timer" to="Dispenser" method="_on_timer_timeout"]

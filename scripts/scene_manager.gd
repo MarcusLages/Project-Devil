@@ -72,7 +72,7 @@ func load_day(day: int) -> Error:
 		items_container = day_managers[day].items_container
 
 	# TODO: load next record for testing too
-	day_managers[day].next_record()
+	#day_managers[day].next_record()
 
 	_get_lamp.call_deferred()
 
@@ -138,18 +138,42 @@ func _get_lamp():
 			break
 
 
+var dispenser : Dispenser
 func _on_node_added(node: Node):
 	if node is Stampable:
 		(node as Stampable).stamped.connect(_on_stampable_stamped)
+	if node is Dispenser:
+		dispenser = node
+		(node as Dispenser).requested.connect(_on_dispensed)
 
 
 func _on_node_removed(node: Node):
 	if node is Stampable:
 		(node as Stampable).stamped.disconnect(_on_stampable_stamped)
+	if node is Dispenser:
+		dispenser = null
+		(node as Dispenser).requested.disconnect(_on_dispensed)
+
+
+func _on_dispensed():
+	if lamp: 
+		lamp.change_state(false, false)
+		await get_tree().create_timer(0.05).timeout
+	
+	dispenser.set_button_on(false)
+	if day_managers[_curr_day].next_record() == OK:
+		if lamp: lamp.change_state(true, false)
+		print("Next record")
+	else:
+		print("Last record of the day")
+		day_managers[_curr_day].clean_record_scene(true)
+
+		if await next_day() == OK:
+			await get_tree().create_timer(0.5).timeout
+			if lamp: lamp.change_state(true, false)
 
 
 func _on_stampable_stamped(correct: bool, tag_stamped: String, _correct_stamp: String):
-	if lamp: lamp.change_state(false, false)
 	await get_tree().create_timer(0.05).timeout
 
 	if day_managers[_curr_day].is_record_last() and is_day_last():
@@ -178,14 +202,6 @@ func _on_stampable_stamped(correct: bool, tag_stamped: String, _correct_stamp: S
 	# Uncomment for testing ending scene
 	# GameManager.final_stamp = tag_stamped
 	# get_tree().change_scene_to_packed(ending_scene)
-
-	if day_managers[_curr_day].next_record() == OK:
-		if lamp: lamp.change_state(true, false)
-		print("Next record")
-	else:
-		print("Last record of the day")
-		day_managers[_curr_day].clean_record_scene(true)
-
-		if await next_day() == OK:
-			await get_tree().create_timer(0.5).timeout
-			if lamp: lamp.change_state(true, false)
+	if dispenser:
+		dispenser.set_button_on(true)
+	day_managers[_curr_day].clean_record_scene()
