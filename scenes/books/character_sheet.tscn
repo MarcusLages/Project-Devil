@@ -1,12 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://dv6b3on3xb85b"]
+[gd_scene load_steps=7 format=3 uid="uid://dv6b3on3xb85b"]
 
 [ext_resource type="PackedScene" uid="uid://ch3hyfugepnca" path="res://scenes/items/paper.tscn" id="1_ipnha"]
 [ext_resource type="Texture2D" uid="uid://5ufkrtg08pbh" path="res://assets/img/Sheet.png" id="2_frdq2"]
+[ext_resource type="Script" uid="uid://bx2hagoxfv5k3" path="res://scripts/items/character_sheet.gd" id="2_mv85c"]
 [ext_resource type="FontFile" uid="uid://ogmrm1t4aybl" path="res://assets/font/ELEGANT TYPEWRITER Regular.ttf" id="4_fh06m"]
 [ext_resource type="Texture2D" uid="uid://dst6x5wwtnnhb" path="res://assets/img/ProvidenceIcon.png" id="4_g6a3g"]
 [ext_resource type="PackedScene" uid="uid://cncq3gtpvqxaj" path="res://scenes/items/stamp_area.tscn" id="5_g6a3g"]
 
 [node name="CharacterSheet" instance=ExtResource("1_ipnha")]
+position = Vector2(184, 459)
+
+[node name="ZoomedContent" parent="." index="0"]
+script = ExtResource("2_mv85c")
 
 [node name="Background" type="Sprite2D" parent="ZoomedContent" index="0"]
 texture = ExtResource("2_frdq2")

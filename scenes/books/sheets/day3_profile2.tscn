@@ -1,5 +1,21 @@
-[gd_scene load_steps=2 format=3 uid="uid://d3te5egot66b5"]
+[gd_scene load_steps=2 format=3 uid="uid://c85d2oxwikvui"]
 
 [ext_resource type="PackedScene" uid="uid://dv6b3on3xb85b" path="res://scenes/books/character_sheet.tscn" id="1_vr7yf"]
 
 [node name="CharacterSheet" instance=ExtResource("1_vr7yf")]
+
+[node name="ZoomedContent" parent="." index="0"]
+client_name = "Ludovico Mezzo"
+client_age = "M"
+client_sex = "65"
+bargain = "One with God"
+sacrifice = "Self-identity"
+organ = "Pipe organ"
+astral_sign = "Capricorn"
+death = "N/A"
+ethics = "Deontology"
+ambition = "To dream is to sin"
+nightmare = "Eternal isolation"
+correct_patron = "ANCIENT"
+
+[editable path="ZoomedContent/StampableTest"]

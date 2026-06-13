@@ -1,5 +1,21 @@
-[gd_scene load_steps=2 format=3 uid="uid://dehyeri3enkn0"]
+[gd_scene load_steps=2 format=3 uid="uid://cespagrv536jy"]
 
 [ext_resource type="PackedScene" uid="uid://dv6b3on3xb85b" path="res://scenes/books/character_sheet.tscn" id="1_dclcu"]
 
 [node name="CharacterSheet" instance=ExtResource("1_dclcu")]
+
+[node name="ZoomedContent" parent="." index="0"]
+client_name = "Dhiren Tavani"
+client_age = "M"
+client_sex = "32"
+bargain = "Works never rendered obsolete"
+sacrifice = "Remaining lifespan"
+organ = "Mouth"
+astral_sign = "Scorpio"
+death = "Rended apart at a molecular level"
+ethics = "Utilitarianism"
+ambition = "To have made a net-positive impact"
+nightmare = "To become a drain to society"
+correct_patron = "SOURCE"
+
+[editable path="ZoomedContent/StampableTest"]

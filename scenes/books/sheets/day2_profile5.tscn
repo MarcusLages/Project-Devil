@@ -1,5 +1,21 @@
-[gd_scene load_steps=2 format=3 uid="uid://lc8te8bwbajn"]
+[gd_scene load_steps=2 format=3 uid="uid://cfs8bcxn0q3qm"]
 
 [ext_resource type="PackedScene" uid="uid://dv6b3on3xb85b" path="res://scenes/books/character_sheet.tscn" id="1_j7u5g"]
 
 [node name="CharacterSheet" instance=ExtResource("1_j7u5g")]
+
+[node name="ZoomedContent" parent="." index="0"]
+client_name = "Bea"
+client_age = "F"
+client_sex = "20"
+bargain = "Courage"
+sacrifice = "Social acceptance"
+organ = "Ovaries"
+astral_sign = "Aries"
+death = "Tuberculosis"
+ethics = "Emotivism"
+ambition = "To fly away"
+nightmare = "Trapped inside own body"
+correct_patron = "GODMOTHER"
+
+[editable path="ZoomedContent/StampableTest"]

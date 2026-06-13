@@ -1,5 +1,21 @@
-[gd_scene load_steps=2 format=3 uid="uid://drsrtvw3u1r5"]
+[gd_scene load_steps=2 format=3 uid="uid://cipa2x7xb4fb5"]
 
 [ext_resource type="PackedScene" uid="uid://dv6b3on3xb85b" path="res://scenes/books/character_sheet.tscn" id="1_8jc25"]
 
 [node name="CharacterSheet" instance=ExtResource("1_8jc25")]
+
+[node name="ZoomedContent" parent="." index="0"]
+client_name = "Maria Severina"
+client_age = "F"
+client_sex = "45"
+bargain = "Three hundred and five afterlives for the faithul"
+sacrifice = "Three hundred and four posthumous tithes"
+organ = "Stomach"
+astral_sign = "Virgo"
+death = "N/A"
+ethics = "Utilitarianism"
+ambition = "Canonization"
+nightmare = "Public lynching"
+correct_patron = "BOARD"
+
+[editable path="ZoomedContent/StampableTest"]

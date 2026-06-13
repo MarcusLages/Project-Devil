@@ -1,5 +1,21 @@
-[gd_scene load_steps=2 format=3 uid="uid://c7rq504dv44ck"]
+[gd_scene load_steps=2 format=3 uid="uid://bnh1l36otolps"]
 
 [ext_resource type="PackedScene" uid="uid://dv6b3on3xb85b" path="res://scenes/books/character_sheet.tscn" id="1_qm58f"]
 
 [node name="CharacterSheet" instance=ExtResource("1_qm58f")]
+
+[node name="ZoomedContent" parent="." index="0"]
+client_name = "Rodrick Ventura"
+client_age = "M"
+client_sex = "11"
+bargain = "A friggin' (sic) awesome skateboard"
+sacrifice = "Will do a double backflip"
+organ = "Heart"
+astral_sign = "Gemini"
+death = "Broken neck"
+ethics = "Virtue ethics"
+ambition = "Do a double backflip on a skateboard"
+nightmare = "Losing his leg"
+correct_patron = "GODMOTHER"
+
+[editable path="ZoomedContent/StampableTest"]

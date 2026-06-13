@@ -4,31 +4,22 @@
 
 [node name="CharacterSheet" instance=ExtResource("1_j1vpn")]
 
-[node name="Content" parent="ZoomedContent/Name" index="0"]
-text = "Terrence May"
-
-[node name="Content" parent="ZoomedContent/Age" index="0"]
-text = "44"
+[node name="ZoomedContent" parent="." index="0"]
+client_name = "Terrence May"
+client_age = "M"
+client_sex = "44"
+bargain = "Insertion of bullet in politician’s head"
+sacrifice = "Seventh daughter"
+organ = "Eyes"
+astral_sign = "Leo"
+death = "Bullet wound to cranium"
+ethics = "Utilitarianism"
+ambition = "To become overlord of ██████████"
+nightmare = "Being powerless"
+correct_patron = "KING"
 
 [node name="Content" parent="ZoomedContent/Bargain" index="0"]
-text = "Seventh daughter"
-
-[node name="Content" parent="ZoomedContent/Sacrifice" index="0"]
-text = "Eyes"
-
-[node name="Content" parent="ZoomedContent/Organ" index="0"]
-text = "Eyes"
-
-[node name="Content" parent="ZoomedContent/Sign" index="0"]
-text = "Leo"
-
-[node name="Content" parent="ZoomedContent/Death" index="0"]
-text = "Bullet wound to the cranium"
-
-[node name="Content" parent="ZoomedContent/Ethics" index="0"]
-text = "Utilitarianism"
-
-[node name="Content" parent="ZoomedContent/Nightmare" index="0"]
-text = "Being powerless"
+offset_right = 284.0
+offset_bottom = 48.0
 
 [editable path="ZoomedContent/StampableTest"]

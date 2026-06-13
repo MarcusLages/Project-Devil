@@ -4,39 +4,18 @@
 
 [node name="CharacterSheet" instance=ExtResource("1_yiodu")]
 
-[node name="Content" parent="ZoomedContent/Name" index="0"]
-text = "Lisa Juarez"
-
-[node name="Content" parent="ZoomedContent/Age" index="0"]
-text = "59"
-
-[node name="Content" parent="ZoomedContent/Sex" index="0"]
-text = "F"
-
-[node name="Content" parent="ZoomedContent/Bargain" index="0"]
-text = "Youth (3 years)
-"
-
-[node name="Content" parent="ZoomedContent/Sacrifice" index="0"]
-text = "Remaining lifespan"
-
-[node name="Content" parent="ZoomedContent/Organ" index="0"]
-text = "Lungs
-"
-
-[node name="Content" parent="ZoomedContent/Sign" index="0"]
-text = "Pisces"
-
-[node name="Content" parent="ZoomedContent/Death" index="0"]
-text = "Vehicular manslaughter"
-
-[node name="Content" parent="ZoomedContent/Ethics" index="0"]
-text = "Hedonism"
-
-[node name="Content" parent="ZoomedContent/Ambition" index="0"]
-text = "To run a marathon"
-
-[node name="Content" parent="ZoomedContent/Nightmare" index="0"]
-text = "Stuck in a cage"
+[node name="ZoomedContent" parent="." index="0"]
+client_name = "Lisa Juarez"
+client_age = "F"
+client_sex = "59"
+bargain = "Youth (3 years)"
+sacrifice = "Remaining lifespan"
+organ = "Lungs"
+astral_sign = "Pisces"
+death = "Vehicular manslaughter"
+ethics = "Hedonism"
+ambition = "To run a marathon"
+nightmare = "Stuck in a cage"
+correct_patron = "GODMOTHER"
 
 [editable path="ZoomedContent/StampableTest"]

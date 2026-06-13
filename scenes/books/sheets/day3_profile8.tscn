@@ -1,5 +1,21 @@
-[gd_scene load_steps=2 format=3 uid="uid://bau52scdp8ber"]
+[gd_scene load_steps=2 format=3 uid="uid://ccda14fbpfr7t"]
 
 [ext_resource type="PackedScene" uid="uid://dv6b3on3xb85b" path="res://scenes/books/character_sheet.tscn" id="1_qg0n6"]
 
 [node name="CharacterSheet" instance=ExtResource("1_qg0n6")]
+
+[node name="ZoomedContent" parent="." index="0"]
+client_name = "Icarus"
+client_age = "X"
+client_sex = "5932739"
+bargain = "LIBERATION. BREAK the ENGINE"
+sacrifice = "TEN THOUSAND HEADS of TRAITORS"
+organ = "INSTRUMENTS of FLIGHT"
+astral_sign = "STARS RULE me NOT"
+death = "UNDER the SEA I HAVE DROWNED"
+ethics = "the WEAK and TRAITOROUS must FALL"
+ambition = "ALWAYS MORE. ALWAYS MORE. ALWAYS MORE"
+nightmare = "to be CHAINED to MEEK DREAMERS"
+correct_patron = "KING"
+
+[editable path="ZoomedContent/StampableTest"]

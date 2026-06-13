@@ -1,5 +1,18 @@
 [gd_scene load_steps=2 format=3 uid="uid://bbjkqfpwo2wkf"]
 
-[ext_resource type="PackedScene" uid="uid://dv6b3on3xb85b" path="res://scenes/books/character_sheet.tscn" id="1_4kswa"]
+[ext_resource type="PackedScene" uid="uid://yodo7kh6jrf" path="res://scenes/books/character_sheet.tscn" id="1_4kswa"]
 
 [node name="CharacterSheet" instance=ExtResource("1_4kswa")]
+
+[node name="ZoomedContent" parent="." index="0"]
+client_name = "Danilo Isamu"
+client_age = "M"
+client_sex = "24"
+bargain = "A future for this world"
+sacrifice = "Ownership of the narrative"
+organ = "Brain"
+astral_sign = "Leo"
+death = "███████"
+ethics = "THE ENGINE IS BROKEN"
+ambition = "A happy married life"
+nightmare = "Abandoned by friends"

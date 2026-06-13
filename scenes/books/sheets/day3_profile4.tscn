@@ -1,5 +1,21 @@
-[gd_scene load_steps=2 format=3 uid="uid://cnk4r7aobogve"]
+[gd_scene load_steps=2 format=3 uid="uid://ciyh12416hwq1"]
 
 [ext_resource type="PackedScene" uid="uid://dv6b3on3xb85b" path="res://scenes/books/character_sheet.tscn" id="1_yo2fo"]
 
 [node name="CharacterSheet" instance=ExtResource("1_yo2fo")]
+
+[node name="ZoomedContent" parent="." index="0"]
+client_name = "A bargain request"
+client_age = "X"
+client_sex = "0"
+bargain = "PLEASE DISCARD ME"
+sacrifice = "I DON'T KNOW HOW BUT YOU'RE HOLDING ME"
+organ = "MYSELF??"
+astral_sign = "NO IDEA"
+death = "HOPEFULLY SHREDDED"
+ethics = "THEY HAVE THEIR OWN PURGATORY"
+ambition = "JUST KILL ME PLEASE"
+nightmare = " ██████████████"
+correct_patron = "BOARD"
+
+[editable path="ZoomedContent/StampableTest"]

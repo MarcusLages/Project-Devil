@@ -4,6 +4,20 @@
 
 [node name="CharacterSheet" instance=ExtResource("1_xcc3c")]
 
+[node name="ZoomedContent" parent="." index="0"]
+client_name = "John Goodman"
+client_age = "M"
+client_sex = "31"
+bargain = "Career ascension"
+sacrifice = "5 liters of blood, over 3 years"
+organ = "Spinal cord"
+astral_sign = "Taurus"
+death = "Cancer"
+ethics = "Deontology"
+ambition = "To receive Employee of the Year award"
+nightmare = "Homosexuality exposed"
+correct_patron = "BOARD"
+
 [node name="Content" parent="ZoomedContent/Name" index="0"]
 text = "John Goodman"
 

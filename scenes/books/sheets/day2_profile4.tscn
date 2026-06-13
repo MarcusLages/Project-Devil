@@ -1,5 +1,21 @@
-[gd_scene load_steps=2 format=3 uid="uid://utq83mb8qpwg"]
+[gd_scene load_steps=2 format=3 uid="uid://djufyjcdbqmg4"]
 
 [ext_resource type="PackedScene" uid="uid://dv6b3on3xb85b" path="res://scenes/books/character_sheet.tscn" id="1_m3uoj"]
 
 [node name="CharacterSheet" instance=ExtResource("1_m3uoj")]
+
+[node name="ZoomedContent" parent="." index="0"]
+client_name = "Nicole Anders"
+client_age = "F"
+client_sex = "20"
+bargain = "To move on"
+sacrifice = "Beauty"
+organ = "Nose"
+astral_sign = "Pisces"
+death = "Chemical overdose"
+ethics = "Moral nihilism"
+ambition = "To have a normal day"
+nightmare = "Everything around him"
+correct_patron = "ANCIENT"
+
+[editable path="ZoomedContent/StampableTest"]
