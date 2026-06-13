@@ -7,7 +7,11 @@ const DEFAULT_CHOSEN: String = "board"
 
 func _ready() -> void:
     if not chosen_one:
-        chosen_one = DEFAULT_CHOSEN
+        chosen_one = (
+            GameManager.final_stamp
+            if GameManager.final_stamp 
+            else DEFAULT_CHOSEN
+        )
     
     assert(
         endings != null and chosen_one in endings,
