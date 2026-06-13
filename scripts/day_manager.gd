@@ -94,6 +94,9 @@ func load_record(rec_idx: int) -> Error:
 	print("Record %d" % (_curr_record + 1))
 	return OK
 
+func is_record_last() -> bool:
+	return _curr_record + 1 >= record_managers.size()
+
 
 func next_record() -> Error:
 	return load_record(_curr_record + 1)

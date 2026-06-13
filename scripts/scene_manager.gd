@@ -96,6 +96,10 @@ func next_day() -> Error:
 	return error
 
 
+func is_day_last() -> bool:
+	return _curr_day+1 >= day_managers.size()
+
+
 func fade_out(text: String = "") -> bool:
 	var fade_rect = $CanvasLayer/ColorRect
 	var text_label = $CanvasLayer/Label
@@ -148,6 +152,11 @@ func _on_stampable_stamped(correct: bool, tag_stamped: String, _correct_stamp: S
 	if lamp: lamp.change_state(false, false)
 	await get_tree().create_timer(0.05).timeout
 
+	if day_managers[_curr_day].is_record_last() and is_day_last():
+		GameManager.final_stamp = tag_stamped
+		get_tree().change_scene_to_packed(ending_scene)
+		return
+
 	if correct:
 		print("Correct stamp")
 	else:
@@ -180,6 +189,3 @@ func _on_stampable_stamped(correct: bool, tag_stamped: String, _correct_stamp: S
 		if await next_day() == OK:
 			await get_tree().create_timer(0.5).timeout
 			if lamp: lamp.change_state(true, false)
-		else:
-			GameManager.final_stamp = tag_stamped
-			get_tree().change_scene_to_packed(ending_scene)
