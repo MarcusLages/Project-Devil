@@ -1,5 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://bqt842joqbmsr"]
+[gd_scene load_steps=11 format=3 uid="uid://bqt842joqbmsr"]
 
+[ext_resource type="PackedScene" uid="uid://dxww1oegyxiok" path="res://scenes/books/page.tscn" id="1_3xy4u"]
+[ext_resource type="Texture2D" uid="uid://csgk7v74fbneb" path="res://assets/img/book_board.png" id="1_vtxnx"]
 [ext_resource type="Script" uid="uid://ci43rbdbuh1yc" path="res://scripts/interactable.gd" id="2_3xy4u"]
 [ext_resource type="Script" uid="uid://crmnw3ldr3xev" path="res://addons/drag_and_drop/scripts/draggable.gd" id="3_uk727"]
 [ext_resource type="Script" uid="uid://djdmnemxrx7bg" path="res://addons/drag_and_drop/resources/draggable_types/draggable_type.gd" id="4_14bna"]
@@ -9,7 +11,7 @@
 size = Vector2(168, 222)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m63hi"]
-size = Vector2(65, 120)
+size = Vector2(152, 282.5)
 
 [sub_resource type="Resource" id="Resource_nr8in"]
 script = ExtResource("4_14bna")
@@ -23,14 +25,20 @@ metadata/_custom_type_script = "uid://djdmnemxrx7bg"
 [node name="Book" type="Area2D"]
 
 [node name="ZoomedContent" type="Node2D" parent="."]
+visible = false
+
+[node name="1" parent="ZoomedContent" instance=ExtResource("1_3xy4u")]
 
 [node name="Content" type="Node2D" parent="."]
 
+[node name="Sprite2D" type="Sprite2D" parent="Content"]
+texture = ExtResource("1_vtxnx")
+
 [node name="ZoomedCollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource("RectangleShape2D_yvgib")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_m63hi")
 
 [node name="Interactable" type="Node" parent="."]
