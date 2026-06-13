@@ -2,8 +2,9 @@ extends Area2D
 
 @export var pages_container: Node2D
 
-var pages: Array[Page]
+@onready var interactable: Interactable = $Interactable
 
+var pages: Array[Page]
 var curr_page: int = 0
 
 # Called when the node enters the scene tree for the first time.
@@ -41,11 +42,10 @@ func _on_page_prev_page():
 
 
 func _on_zoomable_zoomed() -> void:
-    # TODO: turn off hovering
-    pass
+    interactable.hard_disabled = true
 
 func _on_zoomable_unzoomed() -> void:
-    # TODO: turn on hovering
+    interactable.hard_disabled = false
     pages[curr_page].visible = false
     curr_page = 0
     pages[curr_page].visible = true
