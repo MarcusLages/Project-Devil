@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://djdmnemxrx7bg" path="res://addons/drag_and_drop/resources/draggable_types/draggable_type.gd" id="3_saka2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mjekw"]
-size = Vector2(450, 344)
+size = Vector2(450, 381)
 
 [sub_resource type="Resource" id="Resource_lrrsa"]
 script = ExtResource("2_3ucwg")
@@ -24,6 +24,7 @@ metadata/_custom_type_script = "uid://djdmnemxrx7bg"
 z_index = -100
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -18.5)
 shape = SubResource("RectangleShape2D_mjekw")
 
 [node name="DropZone" type="Node2D" parent="." node_paths=PackedStringArray("attach_spot")]
