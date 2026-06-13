@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://cibhamuh0liqu"]
+
+[ext_resource type="PackedScene" uid="uid://yodo7kh6jrf" path="res://scenes/books/character_sheet.tscn" id="1_yi344"]
+
+[node name="CharacterSheet" instance=ExtResource("1_yi344")]
+
+[node name="ZoomedContent" parent="." index="0"]
+client_name = "Tomás Rosa"
+client_age = "M"
+client_sex = "56"
+bargain = "Prosperity for son"
+sacrifice = "10000 credits, over the course of 10 years"
+organ = "Heart"
+astral_sign = "Leo"
+death = "Sacrificed to ██████████"
+ethics = "Virtue ethics"
+ambition = "To have a grandchild"
+nightmare = "Son is lost in supermarket"

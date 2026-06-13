@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://cf37senh0ngvn"]
+
+[ext_resource type="PackedScene" uid="uid://yodo7kh6jrf" path="res://scenes/books/character_sheet.tscn" id="1_ls5yh"]
+
+[node name="CharacterSheet" instance=ExtResource("1_ls5yh")]
+
+[node name="ZoomedContent" parent="." index="0"]
+client_name = "Sofia Al-Hamadi"
+client_age = "F"
+client_sex = "40"
+bargain = "Infinite knowledge"
+sacrifice = "Human experience"
+organ = "N/A"
+astral_sign = "Taurus"
+death = "██████"
+ethics = "Utilitarianism"
+ambition = "Perfect understanding of reality"
+nightmare = "Experiment's results always differ"

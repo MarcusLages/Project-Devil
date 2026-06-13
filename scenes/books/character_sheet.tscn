@@ -7,8 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://dst6x5wwtnnhb" path="res://assets/img/ProvidenceIcon.png" id="4_g6a3g"]
 
 [node name="CharacterSheet" instance=ExtResource("1_ipnha")]
+position = Vector2(133, 407)
 
 [node name="ZoomedContent" parent="." index="0"]
+visible = false
 script = ExtResource("2_4whi3")
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
