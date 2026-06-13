@@ -44,7 +44,7 @@ func _ready():
 
 
 ## ! IMPORTANT: only loops if sfx is MP3 or OGG
-func play_sfx(sfx: SFX, loop: bool = false):
+func play_sfx(sfx: SFX, loop: bool = false, volume = 0.0):
 	if sfx not in _sfx_streams:
 		push_error("SFX not found: %s" % sfx)
 		return
@@ -56,6 +56,7 @@ func play_sfx(sfx: SFX, loop: bool = false):
 	var sfx_player: AudioStreamPlayer = _get_sfx_player()
 	sfx_player.stream = sound
 	sfx_player.set_meta(SFX_ID_META, sfx)
+	sfx_player.volume_db = volume
 	sfx_player.play()
 
 
