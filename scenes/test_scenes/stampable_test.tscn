@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://lfobgcdrmmk4"]
+[gd_scene load_steps=14 format=3 uid="uid://lfobgcdrmmk4"]
 
 [ext_resource type="Script" uid="uid://ct73rsdxv2xas" path="res://scripts/stampable.gd" id="1_vwd21"]
 [ext_resource type="PackedScene" uid="uid://d33y1bfr1gojc" path="res://scenes/components/interactable.tscn" id="2_tser0"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://nj1hdjl1vob2" path="res://addons/drag_and_drop/scripts/drop_zone.gd" id="4_xks73"]
 [ext_resource type="Script" uid="uid://b5wqxyc42r5u" path="res://addons/drag_and_drop/resources/drop_behaviors/drop_behavior_reject.gd" id="5_2mdjd"]
 [ext_resource type="Script" uid="uid://djdmnemxrx7bg" path="res://addons/drag_and_drop/resources/draggable_types/draggable_type.gd" id="6_naa7f"]
+[ext_resource type="AudioStream" uid="uid://0tq15rmplcvq" path="res://assets/sfx/Stamp3.wav" id="7_xks73"]
 
 [sub_resource type="Gradient" id="Gradient_naa7f"]
 interpolation_mode = 2
@@ -68,3 +69,6 @@ metadata/_custom_type_script = "uid://nj1hdjl1vob2"
 
 [node name="Marker2D" type="Marker2D" parent="DropZone"]
 position = Vector2(0, -45)
+
+[node name="SFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_xks73")

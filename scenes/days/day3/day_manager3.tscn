@@ -1,7 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://cfdipbwqsnsxs"]
+[gd_scene load_steps=12 format=3 uid="uid://cfdipbwqsnsxs"]
 
 [ext_resource type="Script" uid="uid://8faoysb3qgci" path="res://scripts/day_manager.gd" id="1_gxayu"]
-[ext_resource type="PackedScene" uid="uid://b5j40lwctylst" path="res://scenes/days/day3/interactable_manager_day3_fixed.tscn" id="2_uxih8"]
+[ext_resource type="PackedScene" uid="uid://c3yjwpf3vkxmr" path="res://scenes/days/day3/interactable_manager_day3_fixed.tscn" id="2_uxih8"]
 [ext_resource type="PackedScene" uid="uid://cygtn8ixkrgxf" path="res://scenes/days/day3/interactable_manager_1.tscn" id="3_mpun5"]
 [ext_resource type="PackedScene" uid="uid://xe2nihp6rcnu" path="res://scenes/days/day3/interactable_manager_2.tscn" id="4_mijep"]
 [ext_resource type="PackedScene" uid="uid://ddea44st6ql0a" path="res://scenes/days/day3/interactable_manager_3.tscn" id="5_8xwtf"]
@@ -9,12 +9,11 @@
 [ext_resource type="PackedScene" uid="uid://c5vnb56nso2fa" path="res://scenes/days/day3/interactable_manager_5.tscn" id="7_y28qh"]
 [ext_resource type="PackedScene" uid="uid://ca4dnfw33a6q5" path="res://scenes/days/day3/interactable_manager_6.tscn" id="8_lovt1"]
 [ext_resource type="PackedScene" uid="uid://4p0pks5ab06y" path="res://scenes/days/day3/interactable_manager_7.tscn" id="9_82qir"]
-[ext_resource type="PackedScene" uid="uid://bluh35gjg45ut" path="res://scenes/days/day3/interactable_manager_8.tscn" id="10_35oir"]
 [ext_resource type="PackedScene" uid="uid://mkyau0hdyykw" path="res://scenes/days/day3/interactable_manager_9.tscn" id="11_e6bwk"]
 [ext_resource type="PackedScene" uid="uid://bkqy4n6qll7p7" path="res://scenes/days/day3/interactable_manager_10.tscn" id="12_gsckr"]
 
 [node name="DayManager3" type="Node"]
 script = ExtResource("1_gxayu")
 fixed_items_scene = ExtResource("2_uxih8")
-record_scenes = Array[PackedScene]([ExtResource("3_mpun5"), ExtResource("4_mijep"), ExtResource("5_8xwtf"), ExtResource("6_gnjpv"), ExtResource("7_y28qh"), ExtResource("8_lovt1"), ExtResource("9_82qir"), ExtResource("10_35oir"), ExtResource("11_e6bwk"), ExtResource("12_gsckr")])
+record_scenes = Array[PackedScene]([ExtResource("3_mpun5"), ExtResource("4_mijep"), ExtResource("5_8xwtf"), ExtResource("6_gnjpv"), ExtResource("7_y28qh"), ExtResource("8_lovt1"), ExtResource("9_82qir"), ExtResource("11_e6bwk"), ExtResource("12_gsckr")])
 metadata/_custom_type_script = "uid://8faoysb3qgci"

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bcjbw6cnck4le"]
+[gd_scene load_steps=11 format=3 uid="uid://bcjbw6cnck4le"]
 
 [ext_resource type="PackedScene" uid="uid://dors6pbtgudn2" path="res://scenes/items/table.tscn" id="1_0wfyh"]
 [ext_resource type="Texture2D" uid="uid://6rxs6trkenfw" path="res://assets/img/background.jpg" id="1_o6xl0"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://dt1t27pxi58fv" path="res://scenes/days/day2/day_manager2.tscn" id="4_85g3d"]
 [ext_resource type="PackedScene" uid="uid://ba64yusffnm4c" path="res://scenes/items/zoom_table.tscn" id="4_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://cfdipbwqsnsxs" path="res://scenes/days/day3/day_manager3.tscn" id="5_choun"]
+[ext_resource type="AudioStream" uid="uid://dt4xdaw4f7k07" path="res://assets/sfx/BackgroundFan.mp3" id="9_85g3d"]
+[ext_resource type="AudioStream" uid="uid://6dwxqvi0f6u7" path="res://assets/sfx/Background Loop.mp3" id="10_choun"]
 
 [node name="Main" type="Node2D"]
 
@@ -39,3 +41,12 @@ items_container = NodePath("../RecordContainer")
 
 [node name="ZoomTable" parent="." instance=ExtResource("4_jyhfs")]
 position = Vector2(1055, 549)
+
+[node name="Fan" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_85g3d")
+volume_db = -12.0
+autoplay = true
+
+[node name="Ominous" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_choun")
+volume_db = -8.0

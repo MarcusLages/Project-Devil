@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cncq3gtpvqxaj" path="res://scenes/items/stamp_area.tscn" id="5_g6a3g"]
 
 [node name="CharacterSheet" instance=ExtResource("1_ipnha")]
-position = Vector2(283, 536)
+position = Vector2(518, 500)
 
 [node name="ZoomedContent" parent="." index="0"]
 script = ExtResource("2_mv85c")
@@ -300,9 +300,6 @@ vertical_alignment = 2
 [node name="StampableTest" parent="ZoomedContent" index="16" instance=ExtResource("5_g6a3g")]
 position = Vector2(94, 187)
 correct_stamp = "stamp_test"
-
-[node name="DropZone" parent="ZoomedContent/StampableTest" index="2" node_paths=PackedStringArray("attach_spot")]
-attach_spot = NodePath("..")
 
 [node name="Background" type="Sprite2D" parent="Content" index="0"]
 texture_filter = 1

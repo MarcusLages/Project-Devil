@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://cncq3gtpvqxaj"]
+[gd_scene load_steps=11 format=3 uid="uid://cncq3gtpvqxaj"]
 
 [ext_resource type="Script" uid="uid://nj1hdjl1vob2" path="res://addons/drag_and_drop/scripts/drop_zone.gd" id="1_01jta"]
 [ext_resource type="Script" uid="uid://ct73rsdxv2xas" path="res://scripts/stampable.gd" id="1_nben1"]
 [ext_resource type="Script" uid="uid://b5wqxyc42r5u" path="res://addons/drag_and_drop/resources/drop_behaviors/drop_behavior_reject.gd" id="2_nben1"]
 [ext_resource type="Script" uid="uid://djdmnemxrx7bg" path="res://addons/drag_and_drop/resources/draggable_types/draggable_type.gd" id="3_4k7me"]
+[ext_resource type="AudioStream" uid="uid://0tq15rmplcvq" path="res://assets/sfx/Stamp3.wav" id="5_4k7me"]
 
 [sub_resource type="Gradient" id="Gradient_r4px6"]
 interpolation_mode = 2
@@ -43,8 +44,11 @@ shape = SubResource("RectangleShape2D_10i6l")
 
 [node name="DropZone" type="Node2D" parent="." node_paths=PackedStringArray("attach_spot")]
 script = ExtResource("1_01jta")
-attach_spot = NodePath("")
+attach_spot = NodePath("..")
 drop_behavior = SubResource("Resource_cnx24")
 snap_style = 0
 accepted_draggable_types = Array[ExtResource("3_4k7me")]([SubResource("Resource_01jta")])
 metadata/_custom_type_script = "uid://nj1hdjl1vob2"
+
+[node name="SFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_4k7me")
