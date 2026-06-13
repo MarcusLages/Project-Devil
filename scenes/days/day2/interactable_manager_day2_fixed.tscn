@@ -14,3 +14,6 @@ position = Vector2(499, 513)
 
 [node name="StampAncient" parent="." index="6" instance=ExtResource("3_onc73")]
 position = Vector2(842, 445)
+
+[node name="BookAncient" parent="." index="10"]
+visible = true

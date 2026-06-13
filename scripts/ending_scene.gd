@@ -21,3 +21,10 @@ func _ready() -> void:
 	var paragraph := endings[chosen_one] as String
 	lines = paragraph.replace("\\n", "\n").split("\\")
 	super._ready()
+
+
+
+func animate_lines() -> bool:
+	await super()
+	get_tree().quit()
+	return true

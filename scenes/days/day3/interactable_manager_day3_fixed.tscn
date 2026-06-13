@@ -11,3 +11,9 @@ position = Vector2(838, 452)
 
 [node name="StampSource" parent="." index="6" instance=ExtResource("3_h2nbl")]
 position = Vector2(841, 584)
+
+[node name="BookAncient" parent="." index="10"]
+visible = true
+
+[node name="BookSource" parent="." index="11"]
+visible = true

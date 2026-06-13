@@ -34,8 +34,8 @@ extends Node2D
 
 func _ready() -> void:
 	name_label.text = client_name
-	age_label.text = client_age
-	sex_label.text = client_sex
+	age_label.text = client_sex
+	sex_label.text = client_age
 	bargain_label.text = bargain
 	sacrifice_label.text = sacrifice
 	organ_label.text = organ
