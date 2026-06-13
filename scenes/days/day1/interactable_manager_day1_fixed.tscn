@@ -9,4 +9,4 @@
 clicking_interval_sec = 2.0
 
 [node name="Instructions" parent="." index="5" instance=ExtResource("2_q2457")]
-position = Vector2(1006, 486)
+position = Vector2(557, 500)
