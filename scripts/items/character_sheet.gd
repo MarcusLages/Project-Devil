@@ -29,7 +29,7 @@ extends Node2D
 @onready var ethics_label = $Ethics/Content
 @onready var ambition_label = $Ambition/Content
 @onready var nightmare_label = $Nightmare/Content
-@onready var stampable = $Stampable
+@onready var stampable = $StampableTest
 
 
 func _ready() -> void:
