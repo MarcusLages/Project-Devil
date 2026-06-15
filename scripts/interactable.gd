@@ -25,65 +25,65 @@ var drag: Draggable = null
 var is_hovered: bool = false
 
 func _ready() -> void:
-    # Find A2D
-    var a: Area2D = null
-    if get_parent() is Area2D:
-        a = get_parent() as Area2D
-    else:
-        var candidate := get_node_or_null("../Area2D")
-        if candidate:
-            a = candidate
+	# Find A2D
+	var a: Area2D = null
+	if get_parent() is Area2D:
+		a = get_parent() as Area2D
+	else:
+		var candidate := get_node_or_null("../Area2D")
+		if candidate:
+			a = candidate
 
-    drag = get_node_or_null("../Draggable")
-    a2d = a
+	drag = get_node_or_null("../Draggable")
+	a2d = a
 
-    assert(a != null, "Interactable node '%s' must be linked to an Area2D (brother, or parent)" % name)
+	assert(a != null, "Interactable node '%s' must be linked to an Area2D (brother, or parent)" % name)
 
-    std_a2d_scale = a2d.scale
-    a2d.mouse_entered.connect(_on_mouse_entered)
-    a2d.mouse_exited.connect(_on_mouse_exited)
+	std_a2d_scale = a2d.scale
+	a2d.mouse_entered.connect(_on_mouse_entered)
+	a2d.mouse_exited.connect(_on_mouse_exited)
 
-    if drag:
-        drag.drag_ended.connect(_on_draggable_drag_ended)
-        drag.state_changed.connect(_on_draggable_state_changed)
+	if drag:
+		drag.drag_ended.connect(_on_draggable_drag_ended)
+		drag.state_changed.connect(_on_draggable_state_changed)
 
 
 func _process(_delta: float) -> void:
-    if (
-        is_hovered 
-        and not disabled
-        and not hard_disabled
-        and Input.is_action_just_pressed("mouse_interact")
-    ):
-        interacted.emit(a2d)
+	if (
+		is_hovered 
+		and not disabled
+		and not hard_disabled
+		and Input.is_action_just_pressed("mouse_interact")
+	):
+		interacted.emit(a2d)
 
 
 func _on_mouse_entered() -> void:
-    is_hovered = true
+	is_hovered = true
 
-    if disabled or hard_disabled:
-        return
-        
-    a2d.scale = hover_zoom_scale
-    hover_entered.emit(a2d)
+	if disabled or hard_disabled:
+		return
+		
+	a2d.scale = hover_zoom_scale
+	hover_entered.emit(a2d)
 
 
 func _on_mouse_exited() -> void:
-    is_hovered = false
+	is_hovered = false
 
-    if disabled or hard_disabled:
-        return
+	if disabled:
+		return
 
-    hover_exited.emit(a2d)
-    if drag == null or drag.state == drag.DRAGGABLE_STATE.IDLE:
-        a2d.scale = std_a2d_scale
+	hover_exited.emit(a2d)
+	if drag == null or drag.state == drag.DRAGGABLE_STATE.IDLE:
+		a2d.scale = std_a2d_scale
 
 
 func _on_draggable_drag_ended(_area: Area2D, _dropzone: DropZone, _drop_spot: SnappingSpot) -> void:
-    if not is_hovered:
-        a2d.scale = std_a2d_scale
+	if not is_hovered:
+		a2d.scale = std_a2d_scale
 
 
 func _on_draggable_state_changed(area: Area2D, state: Draggable.DRAGGABLE_STATE):
-    if state == Draggable.DRAGGABLE_STATE.IDLE and not is_hovered:
-        a2d.scale = std_a2d_scale
+	if state == Draggable.DRAGGABLE_STATE.IDLE and not is_hovered:
+		a2d.scale = std_a2d_scale

@@ -47,9 +47,10 @@ shape = SubResource("RectangleShape2D_qql0p")
 
 [node name="Advance" type="Button" parent="Dispenser"]
 self_modulate = Color(1, 1, 1, 0)
-offset_left = 86.0
+z_index = 8
+offset_left = 56.0
 offset_top = -108.0
-offset_right = 138.0
+offset_right = 108.0
 offset_bottom = -71.0
 action_mode = 0
 flat = true
@@ -100,6 +101,7 @@ scale = Vector2(0.88, 0.88)
 
 [node name="Mug" parent="." instance=ExtResource("12_jp3mj")]
 position = Vector2(281, 659)
+disabled = true
 
 [connection signal="button_up" from="Dispenser/Advance" to="Dispenser" method="_on_advance_button_up"]
 [connection signal="mouse_entered" from="Dispenser/Advance" to="Dispenser" method="_on_advance_mouse_entered"]

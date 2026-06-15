@@ -35,6 +35,7 @@ stream_2/stream = ExtResource("9_yygty")
 script = ExtResource("1_uk727")
 
 [node name="ZoomedContent" type="Node2D" parent="."]
+scale = Vector2(1.25, 1.25)
 
 [node name="1" parent="ZoomedContent" instance=ExtResource("2_uk727")]
 

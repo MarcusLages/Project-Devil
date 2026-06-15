@@ -206,9 +206,6 @@ texture = ExtResource("2_i4itc")
 visible = false
 position = Vector2(-1, -0.5)
 
-[node name="Interactable" parent="." index="4"]
-hover_zoom_scale = Vector2(1.1, 1.1)
-
 [editable path="ZoomedContent/1"]
 [editable path="ZoomedContent/2"]
 [editable path="ZoomedContent/3"]
