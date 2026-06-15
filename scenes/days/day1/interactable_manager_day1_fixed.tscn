@@ -8,5 +8,17 @@
 [node name="Alarm" parent="." index="0"]
 clicking_interval_sec = 2.0
 
+[node name="Lamp" parent="." index="2"]
+position = Vector2(690, 270)
+
 [node name="Instructions" parent="." index="5" instance=ExtResource("2_q2457")]
 position = Vector2(557, 500)
+
+[node name="BookAncient" parent="." index="10"]
+position = Vector2(478, 257)
+
+[node name="BookSource" parent="." index="11"]
+position = Vector2(555, 257)
+
+[node name="Mug" parent="." index="12"]
+z_index = 30

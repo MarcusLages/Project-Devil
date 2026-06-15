@@ -14,7 +14,7 @@
 size = Vector2(344, 321)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m63hi"]
-size = Vector2(150, 285)
+size = Vector2(150, 265)
 
 [sub_resource type="Resource" id="Resource_nr8in"]
 script = ExtResource("4_14bna")
