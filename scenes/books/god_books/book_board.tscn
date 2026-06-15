@@ -40,9 +40,7 @@ theme_override_fonts/normal_font = ExtResource("3_x0g10")
 theme_override_font_sizes/normal_font_size = 13
 text = "Treaty of Ballindor (page 344), Blood offers matching the following criteria are not to be accepted by the Board:
 
-- 8442.2a Volumes exceeding clients’ own physical reservoirs, divided by client’s offer payment timeline;
-
-- 8442.2b Sourced from Article II Acts of Violence, including (but 344), Blood offers matching the following criteria are not to be accepted"
+- 8442.2a Volumes exceeding clients’ own physical reservoirs, divided by client’s offer payment timeline;"
 
 [node name="2" parent="ZoomedContent" index="1" instance=ExtResource("4_inffp")]
 
@@ -56,11 +54,9 @@ offset_right = -13.0
 offset_bottom = 135.0
 theme_override_fonts/normal_font = ExtResource("3_x0g10")
 theme_override_font_sizes/normal_font_size = 13
-text = "accepted by the Board:
+text = "- 8442.2b Sourced from Article II Acts of Violence, including (but not limited to) homicide, war, intercourse,  underwater mining, reading, affronts to Class I Lifeforms, mountain climbing and vehicular manslaughter;
 
-- 8442.2a Volumes exceeding clients’ own physical reservoirs, divided by client’s offer payment timeline;
-
-- 8442.2b Sourced from Article II Acts of Violence, including (but not limited to) homicide, war, intercourse,  underwater mining, reading, affronts to Class I Lifeforms, mountain climbing and vehicular manslaughter;"
+- 8442.2c Within composts containing, mixed into or in contact with flesh, rubber, wood (baobab) or ███████;"
 
 [node name="RichTextLabel2" parent="ZoomedContent/2" index="2"]
 offset_left = 8.33
@@ -69,13 +65,11 @@ offset_right = 145.33
 offset_bottom = 135.0
 theme_override_fonts/normal_font = ExtResource("3_x0g10")
 theme_override_font_sizes/normal_font_size = 13
-text = "- 8442.2c Within composts containing, mixed into or in contact with flesh, rubber, wood (baobab) or ███████;
-
-- 8442.2d Tainted by undeceased practitioners of deity communion;
+text = "- 8442.2d Tainted by undeceased practitioners of deity communion;
 
 - 8442.2e From the sky.
 
-8442.3 Monetary Sigils of Trade, commonly known as credits, may also be offered as payment in Bargain Sacrifices™, either"
+8442.3 Monetary Sigils of Trade, commonly known as credits, may also be offered as payment in Bargain Sacrifices™, either directly or indirectly. In accordance to the Laws of the Nebadenesh, offers are to be made in one of the following forms of transfer:"
 
 [node name="3" parent="ZoomedContent" index="2" instance=ExtResource("4_inffp")]
 
@@ -89,11 +83,9 @@ offset_right = -13.0
 offset_bottom = 135.0
 theme_override_fonts/normal_font = ExtResource("3_x0g10")
 theme_override_font_sizes/normal_font_size = 13
-text = "directly or indirectly. In accordance to the Laws of the Nebadenesh, offers are to be made in one of the following forms of transfer:
+text = "- 8442.3a Direct transfer of capital, either instantly or over the course of several Standard Yogmath Chronologies (years);
 
-- 8442.3a Direct transfer of capital, either instantly or over the course of several Standard Yogmath Chronologies (years);
-
-- 8442.3b Holy tithes (either the voluntary living, or the involuntary dead), in representation"
+- 8442.3b Holy tithes (either the voluntary living, or the involuntary dead), in representation of one tenth of its owner’s ██████;"
 
 [node name="RichTextLabel2" parent="ZoomedContent/3" index="2"]
 offset_left = 8.33
@@ -102,9 +94,7 @@ offset_right = 145.33
 offset_bottom = 135.0
 theme_override_fonts/normal_font = ExtResource("3_x0g10")
 theme_override_font_sizes/normal_font_size = 13
-text = "of one tenth of its owner’s ██████;
-
-- 8442.3c Hands of labor, in representation of future generation of value;
+text = "- 8442.3c Hands of labor, in representation of future generation of value;
 
 - 8442.3d Glimpses into the future, in representation of stock exchange value fluctuation trend estimations;
 

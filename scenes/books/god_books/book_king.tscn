@@ -30,10 +30,11 @@ text = "
 
 
 -Chapter V-
-Kalir"
+Powers"
 horizontal_alignment = 1
 
 [node name="2" parent="ZoomedContent" index="1" instance=ExtResource("4_baj81")]
+scale = Vector2(0.99999994, 0.99999994)
 
 [node name="TextureRect" parent="ZoomedContent/2" index="0"]
 texture = ExtResource("2_mxac0")
@@ -42,21 +43,22 @@ texture = ExtResource("2_mxac0")
 offset_left = -151.0
 offset_top = -138.0
 theme_override_fonts/normal_font = ExtResource("3_s101f")
-text = "I. These are the words the Lord spoke to the people of ██████, children of ████████, who defiled the Purple Sun, victimized between ████████████ and Yogmath.
+text = "I. I grant thee the power of preservation. Thy existence is thy only sacred object. Protect it at all costs.
 
-II. It is ye, children of the Other, who broke the Sealed Word. Promised me was a sea, and ye delivered a river!
-"
+II. I grant thee the power of freedom. Thy actions are thy own, and thou shall not allow any others to interfere with thy will.
+
+III. I grant thee the power of responsibility. Thy actions have consequences, around which thou must plot."
 
 [node name="RichTextLabel2" parent="ZoomedContent/2" index="2"]
 offset_top = -138.0
 offset_right = 148.0
 theme_override_fonts/normal_font = ExtResource("3_s101f")
-text = "III. Have passion, my children. Have ambition, my children! What greatness do ye aspire to accomplish with such weak will? I am ████████████████████████████
+text = "IV. I grant thee the power of influence. To protect thy freedom and avoid thy consequences, thou must always expand thy sphere of influence over others, at any cost.
 
-IV. From the lavender mountains to the valley of strings, I have given that land to you. Go now and possess the land that the Lord swore to your ancestors, in the
-"
+V. I grant thee the power of ruthlessness. To maintain thy grip over thy powers, thou must not shy away from any actions thy deem necessary."
 
 [node name="3" parent="ZoomedContent" index="2" instance=ExtResource("4_baj81")]
+scale = Vector2(0.99999994, 0.99999994)
 
 [node name="TextureRect" parent="ZoomedContent/3" index="0"]
 texture = ExtResource("2_mxac0")
@@ -65,23 +67,21 @@ texture = ExtResource("2_mxac0")
 offset_left = -151.0
 offset_top = -138.0
 theme_override_fonts/normal_font = ExtResource("3_s101f")
-text = "knowledge that such right is cast in blood.
+text = "VI. I grant thee the power of courage. To expand thy sphere of influence, thou must learn to take risks when thy tide is in thy favor.
 
-V. In the following dawn of the second sun, the people of ██████ began the long walk of the Coolebebs. ████████, son of Kalir, lead the frontmost pack through the eastern desert.
-
-VI. In the evening of the third day, ████████ and his pack came across a
+VII. I grant thee the power of calculus. To ascertain over thy decisions, thou must reason through costs, risks and rewards. No object is sacred outside of continued existence.
 "
 
 [node name="RichTextLabel2" parent="ZoomedContent/3" index="2"]
 offset_top = -138.0
 offset_right = 148.0
 theme_override_fonts/normal_font = ExtResource("3_s101f")
-text = "group of Gitkasri refugees in the sand. Mashda, daughter of Tibira, spoke for them.
+text = "VIII. I grant thee the power of truth. I reveal to thee that these powers are the way of the world, and thy only path to power. Thou must not lend ears to hearsay regarding honor, duty or morality. Thou is only loyal to thyself.
 
-VII. Awesome people of ██████, we urge for your gentleness! Selga the Fourth still rules the Nebadenesh with false pride, and subjugates our children with iron and blood!
-"
+IX. I grant thee the power of lies. Although thou have power over truth, thy enemies have not. In order to instrumentalize "
 
 [node name="4" parent="ZoomedContent" index="3" instance=ExtResource("4_baj81")]
+scale = Vector2(0.99999994, 0.99999994)
 
 [node name="TextureRect" parent="ZoomedContent/4" index="0"]
 texture = ExtResource("2_mxac0")
@@ -90,18 +90,15 @@ texture = ExtResource("2_mxac0")
 offset_left = -151.0
 offset_top = -138.0
 theme_override_fonts/normal_font = ExtResource("3_s101f")
-text = "VIII. Uli, the first meek man of the ██████, saw their scorched faces and calloused hands with compassion. He would later die of disease for his own weakness, and his heart would be ██████████████████.
+text = "their efforts, thy tongue must speak their language.
 
-IX. As was his right, ████████, son of Kalir, ordered the slaughter of the pack, and feasted on their flesh for"
+X. I grant thee no further powers, for I command the same powers as thou. In this last act of honesty, I tell thee that my power is absolute, and thy power is mine. We grow in light and shadow, for as long as our dealings are mutually beneficial."
 
 [node name="RichTextLabel2" parent="ZoomedContent/4" index="2"]
 offset_top = -138.0
 offset_right = 148.0
 theme_override_fonts/normal_font = ExtResource("3_s101f")
-text = "the following three nights.
-
-X. The people of ██████ arrived in the Coolebebs in safety, thirty days later.
-"
+text = ""
 
 [node name="5" parent="ZoomedContent" index="4" instance=ExtResource("4_baj81")]
 
@@ -124,10 +121,11 @@ text = "
 
 
 -Chapter XII-
-Powers"
+Kalir"
 horizontal_alignment = 1
 
 [node name="6" parent="ZoomedContent" index="5" instance=ExtResource("4_baj81")]
+scale = Vector2(0.99999994, 0.99999994)
 
 [node name="TextureRect" parent="ZoomedContent/6" index="0"]
 texture = ExtResource("2_mxac0")
@@ -136,21 +134,22 @@ texture = ExtResource("2_mxac0")
 offset_left = -151.0
 offset_top = -138.0
 theme_override_fonts/normal_font = ExtResource("3_s101f")
-text = "I. I grant thee the power of preservation. Thy existence is thy only sacred object. Protect it at all costs.
+text = "I. These are the words the Lord spoke to the people of ██████, children of ████████, who defiled the Purple Sun, victimized between ████████████ and Yogmath.
 
-II. I grant thee the power of freedom. Thy actions are thy own, and thou shall not allow any others to interfere with thy will.
-
-III. I grant thee the power of responsibility. Thy actions have consequences, around which thou must plot."
+II. It is ye, children of the Other, who broke the Sealed Word. Promised me was a sea, and ye delivered a river!
+"
 
 [node name="RichTextLabel2" parent="ZoomedContent/6" index="2"]
 offset_top = -138.0
 offset_right = 148.0
 theme_override_fonts/normal_font = ExtResource("3_s101f")
-text = "IV. I grant thee the power of influence. To protect thy freedom and avoid thy consequences, thou must always expand thy sphere of influence over others, at any cost.
+text = "III. Have passion, my children. Have ambition, my children! What greatness do ye aspire to accomplish with such weak will? I am ████████████████████████████
 
-V. I grant thee the power of ruthlessness. To maintain thy grip over thy powers, thou must not shy away from any actions thy deem necessary."
+IV. From the lavender mountains to the valley of strings, I have given that land to you. Go now and possess the land that the Lord swore to your ancestors, in the
+"
 
 [node name="7" parent="ZoomedContent" index="6" instance=ExtResource("4_baj81")]
+scale = Vector2(0.99999994, 0.99999994)
 
 [node name="TextureRect" parent="ZoomedContent/7" index="0"]
 texture = ExtResource("2_mxac0")
@@ -159,20 +158,24 @@ texture = ExtResource("2_mxac0")
 offset_left = -151.0
 offset_top = -138.0
 theme_override_fonts/normal_font = ExtResource("3_s101f")
-text = "VI. I grant thee the power of courage. To expand thy sphere of influence, thou must learn to take risks when thy tide is in thy favor.
+text = "knowledge that such right is cast in blood.
 
-VII. I grant thee the power of calculus. To ascertain over thy decisions, thou must reason through costs, risks and rewards. No object is sacred outside of continued existence.
+V. In the following dawn of the second sun, the people of ██████ began the long walk of the Coolebebs. ████████, son of Kalir, lead the frontmost pack through the eastern desert.
+
+VI. In the evening of the third day, ████████ and his pack came across a
 "
 
 [node name="RichTextLabel2" parent="ZoomedContent/7" index="2"]
 offset_top = -138.0
 offset_right = 148.0
 theme_override_fonts/normal_font = ExtResource("3_s101f")
-text = "VIII. I grant thee the power of truth. I reveal to thee that these powers are the way of the world, and thy only path to power. Thou must not lend ears to hearsay regarding honor, duty or morality. Thou is only loyal to thyself.
+text = "group of Gitkasri refugees in the sand. Mashda, daughter of Tibira, spoke for them.
 
-IX. I grant thee the power of lies. Although thou have power over truth, thy enemies have not. In order to instrumentalize "
+VII. Awesome people of ██████, we urge for your gentleness! Selga the Fourth still rules the Nebadenesh with false pride, and subjugates our children with iron and blood!
+"
 
 [node name="8" parent="ZoomedContent" index="7" instance=ExtResource("4_baj81")]
+scale = Vector2(0.99999994, 0.99999994)
 
 [node name="TextureRect" parent="ZoomedContent/8" index="0"]
 texture = ExtResource("2_mxac0")
@@ -181,24 +184,24 @@ texture = ExtResource("2_mxac0")
 offset_left = -151.0
 offset_top = -138.0
 theme_override_fonts/normal_font = ExtResource("3_s101f")
-text = "their efforts, thy tongue must speak their language.
+text = "VIII. Uli, the first meek man of the ██████, saw their scorched faces and calloused hands with compassion. He would later die of disease for his own weakness, and his heart would be ██████████████████.
 
-X. I grant thee no further powers, for I command the same powers as thou. In this last act of honesty, I tell thee that my power is absolute, and thy power is mine. We grow in light and shadow, for as long as our dealings are mutually beneficial."
+IX. As was his right, ████████, son of Kalir, ordered the slaughter of the pack, and feasted on their flesh for"
 
 [node name="RichTextLabel2" parent="ZoomedContent/8" index="2"]
 offset_top = -138.0
 offset_right = 148.0
 theme_override_fonts/normal_font = ExtResource("3_s101f")
-text = ""
+text = "the following three nights.
+
+X. The people of ██████ arrived in the Coolebebs in safety, thirty days later.
+"
 
 [node name="BookKing" type="Sprite2D" parent="Content" index="0"]
 texture = ExtResource("2_7rxs3")
 
 [node name="ZoomedCollisionShape2D" parent="." index="2"]
 visible = false
-
-[node name="Interactable" parent="." index="4"]
-hover_zoom_scale = Vector2(1.1, 1.1)
 
 [editable path="ZoomedContent/1"]
 [editable path="ZoomedContent/2"]
