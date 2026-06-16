@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bt5dgopegufos"]
+[gd_scene format=3 uid="uid://bt5dgopegufos"]
 
 [ext_resource type="PackedScene" uid="uid://bqt842joqbmsr" path="res://scenes/books/book.tscn" id="1_mswk3"]
 [ext_resource type="Texture2D" uid="uid://l0etoj65m50r" path="res://assets/img/book_godmother.png" id="2_241ij"]
@@ -6,15 +6,15 @@
 [ext_resource type="FontFile" uid="uid://drclq7xxrcv0u" path="res://assets/font/Holidays Homework.ttf" id="3_0ck4w"]
 [ext_resource type="PackedScene" uid="uid://e0lxhfs5ep2m" path="res://scenes/books/page.tscn" id="4_5d6tq"]
 
-[node name="BookGodmother" instance=ExtResource("1_mswk3")]
+[node name="BookGodmother" unique_id=117030581 instance=ExtResource("1_mswk3")]
 
-[node name="ZoomedContent" parent="." index="0"]
+[node name="ZoomedContent" parent="." index="0" unique_id=421272004]
 visible = false
 
-[node name="TextureRect" parent="ZoomedContent/1" index="0"]
+[node name="TextureRect" parent="ZoomedContent/1" parent_id_path=PackedInt32Array(131191938) index="0"]
 texture = ExtResource("2_qjk21")
 
-[node name="RichTextLabel" parent="ZoomedContent/1" index="1"]
+[node name="RichTextLabel" parent="ZoomedContent/1" parent_id_path=PackedInt32Array(131191938) index="1"]
 offset_top = -121.0
 offset_bottom = 131.0
 theme_override_fonts/normal_font = ExtResource("3_0ck4w")
@@ -29,7 +29,7 @@ Fall again and on your face,
 
 "
 
-[node name="RichTextLabel2" parent="ZoomedContent/1" index="2"]
+[node name="RichTextLabel2" parent="ZoomedContent/1" parent_id_path=PackedInt32Array(131191938) index="2"]
 offset_left = 10.33
 offset_top = -108.0
 offset_right = 147.0
@@ -45,7 +45,7 @@ Hippity hoppity hoppity ho,
 Isn’t life so silly and fun?
 "
 
-[node name="2" parent="ZoomedContent" index="1" instance=ExtResource("4_5d6tq")]
+[node name="2" parent="ZoomedContent" index="1" unique_id=1297415643 instance=ExtResource("4_5d6tq")]
 
 [node name="TextureRect" parent="ZoomedContent/2" index="0"]
 texture = ExtResource("2_qjk21")
@@ -89,7 +89,7 @@ never frighten,
 
 "
 
-[node name="3" parent="ZoomedContent" index="2" instance=ExtResource("4_5d6tq")]
+[node name="3" parent="ZoomedContent" index="2" unique_id=629591657 instance=ExtResource("4_5d6tq")]
 
 [node name="TextureRect" parent="ZoomedContent/3" index="0"]
 texture = ExtResource("2_qjk21")
@@ -125,7 +125,7 @@ prance around, over lava,
 never let the fun die out!
 "
 
-[node name="4" parent="ZoomedContent" index="3" instance=ExtResource("4_5d6tq")]
+[node name="4" parent="ZoomedContent" index="3" unique_id=1416218407 instance=ExtResource("4_5d6tq")]
 
 [node name="TextureRect" parent="ZoomedContent/4" index="0"]
 texture = ExtResource("2_qjk21")
@@ -165,7 +165,7 @@ prance around, over lava,
 never let the fun die out!
 "
 
-[node name="5" parent="ZoomedContent" index="4" instance=ExtResource("4_5d6tq")]
+[node name="5" parent="ZoomedContent" index="4" unique_id=883238758 instance=ExtResource("4_5d6tq")]
 
 [node name="TextureRect" parent="ZoomedContent/5" index="0"]
 texture = ExtResource("2_qjk21")
@@ -206,7 +206,7 @@ never let the fun die out!
 never let the fun 
  die out!"
 
-[node name="6" parent="ZoomedContent" index="5" instance=ExtResource("4_5d6tq")]
+[node name="6" parent="ZoomedContent" index="5" unique_id=545961829 instance=ExtResource("4_5d6tq")]
 
 [node name="TextureRect" parent="ZoomedContent/6" index="0"]
 texture = ExtResource("2_qjk21")
@@ -229,11 +229,14 @@ theme_override_font_sizes/normal_font_size = 13
 text = "never let the fun die out!never let the fun die out!never let the fun die out!never let the fun die out!never let the fun die out!never let the fun die out!never let the fun die out!never let the fun die out!never let the fun die out!never let the fun die out!never let the fun die out!never let the fun die out!never let the fun die out!never let the fun die out!never let the fun die out!never let the fun die out!never let the fun die out!never let the fun die out!never let the fun die out! never"
 horizontal_alignment = 2
 
-[node name="BookGodmother" type="Sprite2D" parent="Content" index="0"]
+[node name="BookGodmother" type="Sprite2D" parent="Content" parent_id_path=PackedInt32Array(1622079522) index="0" unique_id=661505648]
 texture = ExtResource("2_241ij")
 
-[node name="ZoomedCollisionShape2D" parent="." index="2"]
+[node name="ZoomedCollisionShape2D" parent="." index="2" unique_id=477615235]
 visible = false
+
+[node name="CollisionShape2D" parent="." index="3" unique_id=810442876]
+position = Vector2(-39, -1)
 
 [editable path="ZoomedContent/1"]
 [editable path="ZoomedContent/2"]

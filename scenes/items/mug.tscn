@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bywfqn28706i7"]
+[gd_scene format=3 uid="uid://bywfqn28706i7"]
 
 [ext_resource type="Script" uid="uid://ci43rbdbuh1yc" path="res://scripts/interactable.gd" id="1_be8lu"]
 [ext_resource type="Script" uid="uid://b8iwwfgs8e5nf" path="res://scripts/items/mug.gd" id="1_cj1p2"]
@@ -17,30 +17,30 @@ shader_parameter/gaussian_blur_center = 0.25
 shader_parameter/gaussian_blur_edge = 0.125
 shader_parameter/gaussian_blur_corner = 0.0625
 
-[node name="Mug" type="Area2D"]
+[node name="Mug" type="Area2D" unique_id=1778722736]
 script = ExtResource("1_cj1p2")
 blur_transition_speed_sec = 5.0
 empty_texture = ExtResource("2_xegvf")
 full_texture = ExtResource("2_cj1p2")
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="Node2D" type="Node2D" parent="." unique_id=2093221335]
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D"]
+[node name="Sprite2D" type="Sprite2D" parent="Node2D" unique_id=1237073444]
 texture = ExtResource("2_cj1p2")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2036269699]
 position = Vector2(3, 0)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_54i30")
 
-[node name="Interactable" type="Node" parent="."]
+[node name="Interactable" type="Node" parent="." unique_id=1280371055]
 script = ExtResource("1_be8lu")
 metadata/_custom_type_script = "uid://ci43rbdbuh1yc"
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=452674822]
 layer = 2
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1158408617]
 visible = false
 material = SubResource("ShaderMaterial_cj1p2")
 anchors_preset = 15
@@ -51,7 +51,7 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(1, 1, 1, 0)
 
-[node name="SleepTimer" type="Timer" parent="."]
+[node name="SleepTimer" type="Timer" parent="." unique_id=1361890160]
 one_shot = true
 
 [connection signal="interacted" from="Interactable" to="." method="_on_interactable_interacted"]

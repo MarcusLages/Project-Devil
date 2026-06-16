@@ -28,7 +28,7 @@ extends Area2D
 @onready var sleep_timer: Timer = $SleepTimer
 @onready var sprite = $Node2D/Sprite2D
 
-const MAX_BLUR: float = 5.
+const MAX_BLUR: float = 2.
 const MIN_BLUR: float = 0.
 
 var curr_blur: float = 0.

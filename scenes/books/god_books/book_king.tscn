@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://b608v1bt38v64"]
+[gd_scene format=3 uid="uid://b608v1bt38v64"]
 
 [ext_resource type="PackedScene" uid="uid://bqt842joqbmsr" path="res://scenes/books/book.tscn" id="1_7rxs3"]
 [ext_resource type="Texture2D" uid="uid://hftkoghmnh0i" path="res://assets/img/book_king.png" id="2_7rxs3"]
@@ -6,21 +6,21 @@
 [ext_resource type="FontFile" uid="uid://n5tet4jfywpj" path="res://assets/font/Fiolex_Mephisto.ttf" id="3_s101f"]
 [ext_resource type="PackedScene" uid="uid://e0lxhfs5ep2m" path="res://scenes/books/page.tscn" id="4_baj81"]
 
-[node name="BookKing" instance=ExtResource("1_7rxs3")]
+[node name="BookKing" unique_id=703601556 instance=ExtResource("1_7rxs3")]
 
-[node name="ZoomedContent" parent="." index="0"]
+[node name="ZoomedContent" parent="." index="0" unique_id=421272004]
 visible = false
 
-[node name="TextureRect" parent="ZoomedContent/1" index="0"]
+[node name="TextureRect" parent="ZoomedContent/1" parent_id_path=PackedInt32Array(131191938) index="0"]
 texture = ExtResource("2_mxac0")
 
-[node name="RichTextLabel" parent="ZoomedContent/1" index="1"]
+[node name="RichTextLabel" parent="ZoomedContent/1" parent_id_path=PackedInt32Array(131191938) index="1"]
 offset_left = -151.0
 offset_top = -138.0
 theme_override_fonts/normal_font = ExtResource("3_s101f")
 text = ""
 
-[node name="RichTextLabel2" parent="ZoomedContent/1" index="2"]
+[node name="RichTextLabel2" parent="ZoomedContent/1" parent_id_path=PackedInt32Array(131191938) index="2"]
 offset_top = -138.0
 offset_right = 148.0
 theme_override_fonts/normal_font = ExtResource("3_s101f")
@@ -33,7 +33,7 @@ text = "
 Powers"
 horizontal_alignment = 1
 
-[node name="2" parent="ZoomedContent" index="1" instance=ExtResource("4_baj81")]
+[node name="2" parent="ZoomedContent" index="1" unique_id=1050111522 instance=ExtResource("4_baj81")]
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="TextureRect" parent="ZoomedContent/2" index="0"]
@@ -57,7 +57,7 @@ text = "IV. I grant thee the power of influence. To protect thy freedom and avoi
 
 V. I grant thee the power of ruthlessness. To maintain thy grip over thy powers, thou must not shy away from any actions thy deem necessary."
 
-[node name="3" parent="ZoomedContent" index="2" instance=ExtResource("4_baj81")]
+[node name="3" parent="ZoomedContent" index="2" unique_id=1697875473 instance=ExtResource("4_baj81")]
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="TextureRect" parent="ZoomedContent/3" index="0"]
@@ -80,7 +80,7 @@ text = "VIII. I grant thee the power of truth. I reveal to thee that these power
 
 IX. I grant thee the power of lies. Although thou have power over truth, thy enemies have not. In order to instrumentalize "
 
-[node name="4" parent="ZoomedContent" index="3" instance=ExtResource("4_baj81")]
+[node name="4" parent="ZoomedContent" index="3" unique_id=805061762 instance=ExtResource("4_baj81")]
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="TextureRect" parent="ZoomedContent/4" index="0"]
@@ -100,7 +100,7 @@ offset_right = 148.0
 theme_override_fonts/normal_font = ExtResource("3_s101f")
 text = ""
 
-[node name="5" parent="ZoomedContent" index="4" instance=ExtResource("4_baj81")]
+[node name="5" parent="ZoomedContent" index="4" unique_id=1003003526 instance=ExtResource("4_baj81")]
 
 [node name="TextureRect" parent="ZoomedContent/5" index="0"]
 texture = ExtResource("2_mxac0")
@@ -124,7 +124,7 @@ text = "
 Kalir"
 horizontal_alignment = 1
 
-[node name="6" parent="ZoomedContent" index="5" instance=ExtResource("4_baj81")]
+[node name="6" parent="ZoomedContent" index="5" unique_id=1165909766 instance=ExtResource("4_baj81")]
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="TextureRect" parent="ZoomedContent/6" index="0"]
@@ -148,7 +148,7 @@ text = "III. Have passion, my children. Have ambition, my children! What greatne
 IV. From the lavender mountains to the valley of strings, I have given that land to you. Go now and possess the land that the Lord swore to your ancestors, in the
 "
 
-[node name="7" parent="ZoomedContent" index="6" instance=ExtResource("4_baj81")]
+[node name="7" parent="ZoomedContent" index="6" unique_id=2046377967 instance=ExtResource("4_baj81")]
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="TextureRect" parent="ZoomedContent/7" index="0"]
@@ -174,7 +174,7 @@ text = "group of Gitkasri refugees in the sand. Mashda, daughter of Tibira, spok
 VII. Awesome people of ██████, we urge for your gentleness! Selga the Fourth still rules the Nebadenesh with false pride, and subjugates our children with iron and blood!
 "
 
-[node name="8" parent="ZoomedContent" index="7" instance=ExtResource("4_baj81")]
+[node name="8" parent="ZoomedContent" index="7" unique_id=320294714 instance=ExtResource("4_baj81")]
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="TextureRect" parent="ZoomedContent/8" index="0"]
@@ -197,11 +197,14 @@ text = "the following three nights.
 X. The people of ██████ arrived in the Coolebebs in safety, thirty days later.
 "
 
-[node name="BookKing" type="Sprite2D" parent="Content" index="0"]
+[node name="BookKing" type="Sprite2D" parent="Content" parent_id_path=PackedInt32Array(1622079522) index="0" unique_id=412161153]
 texture = ExtResource("2_7rxs3")
 
-[node name="ZoomedCollisionShape2D" parent="." index="2"]
+[node name="ZoomedCollisionShape2D" parent="." index="2" unique_id=477615235]
 visible = false
+
+[node name="CollisionShape2D" parent="." index="3" unique_id=810442876]
+position = Vector2(-40, 0)
 
 [editable path="ZoomedContent/1"]
 [editable path="ZoomedContent/2"]

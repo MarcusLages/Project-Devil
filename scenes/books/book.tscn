@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bqt842joqbmsr"]
+[gd_scene format=3 uid="uid://bqt842joqbmsr"]
 
 [ext_resource type="Script" uid="uid://xnlcvm4jijjm" path="res://scripts/items/book.gd" id="1_uk727"]
 [ext_resource type="Script" uid="uid://ci43rbdbuh1yc" path="res://scripts/interactable.gd" id="2_3xy4u"]
@@ -11,10 +11,10 @@
 [ext_resource type="AudioStream" uid="uid://blsc4t3n0adxm" path="res://assets/sfx/page-flip-9.mp3" id="9_yygty"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yvgib"]
-size = Vector2(344, 321)
+size = Vector2(150, 264)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m63hi"]
-size = Vector2(150, 265)
+size = Vector2(75, 265)
 
 [sub_resource type="Resource" id="Resource_nr8in"]
 script = ExtResource("4_14bna")
@@ -31,31 +31,32 @@ stream_0/stream = ExtResource("7_qlimn")
 stream_1/stream = ExtResource("8_nd2pv")
 stream_2/stream = ExtResource("9_yygty")
 
-[node name="Book" type="Area2D"]
+[node name="Book" type="Area2D" unique_id=1903814750]
 script = ExtResource("1_uk727")
 
-[node name="ZoomedContent" type="Node2D" parent="."]
+[node name="ZoomedContent" type="Node2D" parent="." unique_id=421272004]
 scale = Vector2(1.25, 1.25)
 
-[node name="1" parent="ZoomedContent" instance=ExtResource("2_uk727")]
+[node name="1" parent="ZoomedContent" unique_id=131191938 instance=ExtResource("2_uk727")]
 
 [node name="RichTextLabel2" parent="ZoomedContent/1" index="2"]
 text = "Page 2"
 
-[node name="Content" type="Node2D" parent="."]
+[node name="Content" type="Node2D" parent="." unique_id=1622079522]
 
-[node name="ZoomedCollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="ZoomedCollisionShape2D" type="CollisionShape2D" parent="." unique_id=477615235]
+position = Vector2(1, 0)
 shape = SubResource("RectangleShape2D_yvgib")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=810442876]
 shape = SubResource("RectangleShape2D_m63hi")
 
-[node name="Interactable" type="Node" parent="."]
+[node name="Interactable" type="Node" parent="." unique_id=912075951]
 script = ExtResource("2_3xy4u")
 hover_zoom_scale = Vector2(1.1, 1.1)
 metadata/_custom_type_script = "uid://ci43rbdbuh1yc"
 
-[node name="Draggable" type="Node" parent="."]
+[node name="Draggable" type="Node" parent="." unique_id=1866206335]
 script = ExtResource("3_uk727")
 dragging_speed = 12.0
 drag_z_index = 100
@@ -63,7 +64,7 @@ relative_dragging = true
 type = SubResource("Resource_nr8in")
 metadata/_custom_type_script = "uid://crmnw3ldr3xev"
 
-[node name="Zoomable" type="Node" parent="." node_paths=PackedStringArray("draggable", "display_container", "zoomed_display_container", "collision_object", "zoomed_collision_object")]
+[node name="Zoomable" type="Node" parent="." unique_id=455799198 node_paths=PackedStringArray("draggable", "display_container", "zoomed_display_container", "collision_object", "zoomed_collision_object")]
 script = ExtResource("5_qlimn")
 draggable = NodePath("../Draggable")
 zoom_tag = SubResource("Resource_yvgib")
@@ -73,7 +74,7 @@ collision_object = NodePath("../CollisionShape2D")
 zoomed_collision_object = NodePath("../ZoomedCollisionShape2D")
 metadata/_custom_type_script = "uid://cs1jmnuy31gbp"
 
-[node name="PageSFX" type="AudioStreamPlayer" parent="."]
+[node name="PageSFX" type="AudioStreamPlayer" parent="." unique_id=1539514142]
 stream = SubResource("AudioStreamRandomizer_8g8bu")
 max_polyphony = 2
 

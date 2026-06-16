@@ -1,7 +1,7 @@
 shader_type canvas_item;
 
 const float MIN_BLUR = 0.;
-const float MAX_BLUR = 5.;
+const float MAX_BLUR = 2.;
 
 // To use the screen as texture
 uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, filter_linear_mipmap;

@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://ci8r2pysx011g"]
+[gd_scene format=3 uid="uid://ci8r2pysx011g"]
 
 [ext_resource type="PackedScene" uid="uid://bqt842joqbmsr" path="res://scenes/books/book.tscn" id="1_vet2w"]
 [ext_resource type="Texture2D" uid="uid://cm00q3s7y3tsd" path="res://assets/img/book_board_open.png" id="2_4qose"]
@@ -6,15 +6,15 @@
 [ext_resource type="FontFile" uid="uid://b2thqmeqofe01" path="res://assets/font/Times-New-Roman.otf" id="3_x0g10"]
 [ext_resource type="PackedScene" uid="uid://e0lxhfs5ep2m" path="res://scenes/books/page.tscn" id="4_inffp"]
 
-[node name="BookBoard" instance=ExtResource("1_vet2w")]
+[node name="BookBoard" unique_id=1884707107 instance=ExtResource("1_vet2w")]
 
-[node name="ZoomedContent" parent="." index="0"]
+[node name="ZoomedContent" parent="." index="0" unique_id=421272004]
 visible = false
 
-[node name="TextureRect" parent="ZoomedContent/1" index="0"]
+[node name="TextureRect" parent="ZoomedContent/1" parent_id_path=PackedInt32Array(131191938) index="0"]
 texture = ExtResource("2_4qose")
 
-[node name="RichTextLabel" parent="ZoomedContent/1" index="1"]
+[node name="RichTextLabel" parent="ZoomedContent/1" parent_id_path=PackedInt32Array(131191938) index="1"]
 offset_left = -150.0
 offset_top = -135.0
 offset_right = -13.0
@@ -31,7 +31,7 @@ PAGES 5373-5375
 
 8442.2 In conformity with the Interfactional "
 
-[node name="RichTextLabel2" parent="ZoomedContent/1" index="2"]
+[node name="RichTextLabel2" parent="ZoomedContent/1" parent_id_path=PackedInt32Array(131191938) index="2"]
 offset_left = 8.33
 offset_top = -135.0
 offset_right = 145.33
@@ -42,7 +42,7 @@ text = "Treaty of Ballindor (page 344), Blood offers matching the following crit
 
 - 8442.2a Volumes exceeding clients’ own physical reservoirs, divided by client’s offer payment timeline;"
 
-[node name="2" parent="ZoomedContent" index="1" instance=ExtResource("4_inffp")]
+[node name="2" parent="ZoomedContent" index="1" unique_id=1442483472 instance=ExtResource("4_inffp")]
 
 [node name="TextureRect" parent="ZoomedContent/2" index="0"]
 texture = ExtResource("2_4qose")
@@ -71,7 +71,7 @@ text = "- 8442.2d Tainted by undeceased practitioners of deity communion;
 
 8442.3 Monetary Sigils of Trade, commonly known as credits, may also be offered as payment in Bargain Sacrifices™, either directly or indirectly. In accordance to the Laws of the Nebadenesh, offers are to be made in one of the following forms of transfer:"
 
-[node name="3" parent="ZoomedContent" index="2" instance=ExtResource("4_inffp")]
+[node name="3" parent="ZoomedContent" index="2" unique_id=2053137284 instance=ExtResource("4_inffp")]
 
 [node name="TextureRect" parent="ZoomedContent/3" index="0"]
 texture = ExtResource("2_4qose")
@@ -100,7 +100,7 @@ text = "- 8442.3c Hands of labor, in representation of future generation of valu
 
 - 8442.3e Souls."
 
-[node name="4" parent="ZoomedContent" index="3" instance=ExtResource("4_inffp")]
+[node name="4" parent="ZoomedContent" index="3" unique_id=32449471 instance=ExtResource("4_inffp")]
 
 [node name="TextureRect" parent="ZoomedContent/4" index="0"]
 texture = ExtResource("2_4qose")
@@ -131,7 +131,7 @@ text = "8444.2 For the purposes of improved clarity in regards to the Cimmerian 
 - 8444.2a Any action or chain of actions that shifts or carries the possibility of shifting the Global Vector of Economic Progress by a gradient higher than 0.05
 "
 
-[node name="5" parent="ZoomedContent" index="4" instance=ExtResource("4_inffp")]
+[node name="5" parent="ZoomedContent" index="4" unique_id=129238579 instance=ExtResource("4_inffp")]
 
 [node name="TextureRect" parent="ZoomedContent/5" index="0"]
 texture = ExtResource("2_4qose")
@@ -164,7 +164,7 @@ text = "8445. Philosophical Logistics
 
 - 8445.1a Offers that may be characterized with a single action or object must obligatorily causally and chronologically precede"
 
-[node name="6" parent="ZoomedContent" index="5" instance=ExtResource("4_inffp")]
+[node name="6" parent="ZoomedContent" index="5" unique_id=1342687163 instance=ExtResource("4_inffp")]
 
 [node name="TextureRect" parent="ZoomedContent/6" index="0"]
 texture = ExtResource("2_4qose")
@@ -189,12 +189,15 @@ theme_override_fonts/normal_font = ExtResource("3_x0g10")
 theme_override_font_sizes/normal_font_size = 13
 text = "moment of their Bargain Sacrifice™’s approval, so that their personal identity becomes ontologically linked to the completion of their sacrificial offer."
 
-[node name="BookBoard" type="Sprite2D" parent="Content" index="0"]
+[node name="BookBoard" type="Sprite2D" parent="Content" parent_id_path=PackedInt32Array(1622079522) index="0" unique_id=2044362282]
 texture = ExtResource("2_i4itc")
 
-[node name="ZoomedCollisionShape2D" parent="." index="2"]
+[node name="ZoomedCollisionShape2D" parent="." index="2" unique_id=477615235]
 visible = false
 position = Vector2(-1, -0.5)
+
+[node name="CollisionShape2D" parent="." index="3" unique_id=810442876]
+position = Vector2(-39, -1)
 
 [editable path="ZoomedContent/1"]
 [editable path="ZoomedContent/2"]

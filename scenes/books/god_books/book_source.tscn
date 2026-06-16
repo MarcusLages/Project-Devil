@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://6166iel22ead"]
+[gd_scene format=3 uid="uid://6166iel22ead"]
 
 [ext_resource type="PackedScene" uid="uid://bqt842joqbmsr" path="res://scenes/books/book.tscn" id="1_fb8m7"]
 [ext_resource type="Texture2D" uid="uid://oghrceeogavy" path="res://assets/img/book_source_open.png" id="2_ia1vg"]
@@ -6,15 +6,15 @@
 [ext_resource type="FontFile" uid="uid://cqgd3eu8y70d6" path="res://assets/font/Courier New.ttf" id="3_7af8p"]
 [ext_resource type="PackedScene" uid="uid://e0lxhfs5ep2m" path="res://scenes/books/page.tscn" id="4_rpeps"]
 
-[node name="BookSource" instance=ExtResource("1_fb8m7")]
+[node name="BookSource" unique_id=1522745057 instance=ExtResource("1_fb8m7")]
 
-[node name="ZoomedContent" parent="." index="0"]
+[node name="ZoomedContent" parent="." index="0" unique_id=421272004]
 visible = false
 
-[node name="TextureRect" parent="ZoomedContent/1" index="0"]
+[node name="TextureRect" parent="ZoomedContent/1" parent_id_path=PackedInt32Array(131191938) index="0"]
 texture = ExtResource("2_ia1vg")
 
-[node name="RichTextLabel" parent="ZoomedContent/1" index="1"]
+[node name="RichTextLabel" parent="ZoomedContent/1" parent_id_path=PackedInt32Array(131191938) index="1"]
 offset_left = -150.0
 offset_top = -137.0
 offset_right = 149.0
@@ -28,28 +28,26 @@ The Eden Project v6.1 - lich_king at GitHub
 Development Logs
 "
 
-[node name="RichTextLabel2" parent="ZoomedContent/1" index="2"]
+[node name="RichTextLabel2" parent="ZoomedContent/1" parent_id_path=PackedInt32Array(131191938) index="2"]
 visible = false
 offset_left = 0.0
 offset_top = -137.0
 offset_right = 150.0
 offset_bottom = 37.0
 
-[node name="NextButton" parent="ZoomedContent/1" index="3"]
-modulate = Color(1, 1, 1, 1)
+[node name="NextButton" parent="ZoomedContent/1" parent_id_path=PackedInt32Array(131191938) index="3"]
 offset_left = -140.0
 offset_right = -117.0
 offset_bottom = 156.0
 text = " >"
 
-[node name="PrevButton" parent="ZoomedContent/1" index="4"]
-modulate = Color(1, 1, 1, 1)
+[node name="PrevButton" parent="ZoomedContent/1" parent_id_path=PackedInt32Array(131191938) index="4"]
 offset_left = -165.0
 offset_right = -144.0
 offset_bottom = 155.0
 text = "<"
 
-[node name="2" parent="ZoomedContent" index="1" instance=ExtResource("4_rpeps")]
+[node name="2" parent="ZoomedContent" index="1" unique_id=387278644 instance=ExtResource("4_rpeps")]
 
 [node name="TextureRect" parent="ZoomedContent/2" index="0"]
 texture = ExtResource("2_ia1vg")
@@ -76,20 +74,18 @@ offset_bottom = 37.0
 text = "Page 2"
 
 [node name="NextButton" parent="ZoomedContent/2" index="3"]
-modulate = Color(1, 1, 1, 1)
 offset_left = -140.0
 offset_right = -117.0
 offset_bottom = 156.0
 text = " >"
 
 [node name="PrevButton" parent="ZoomedContent/2" index="4"]
-modulate = Color(1, 1, 1, 1)
 offset_left = -165.0
 offset_right = -144.0
 offset_bottom = 155.0
 text = "<"
 
-[node name="3" parent="ZoomedContent" index="2" instance=ExtResource("4_rpeps")]
+[node name="3" parent="ZoomedContent" index="2" unique_id=1356485494 instance=ExtResource("4_rpeps")]
 
 [node name="TextureRect" parent="ZoomedContent/3" index="0"]
 texture = ExtResource("2_ia1vg")
@@ -115,20 +111,18 @@ offset_bottom = 37.0
 text = "Page 2"
 
 [node name="NextButton" parent="ZoomedContent/3" index="3"]
-modulate = Color(1, 1, 1, 1)
 offset_left = -140.0
 offset_right = -117.0
 offset_bottom = 156.0
 text = " >"
 
 [node name="PrevButton" parent="ZoomedContent/3" index="4"]
-modulate = Color(1, 1, 1, 1)
 offset_left = -165.0
 offset_right = -144.0
 offset_bottom = 155.0
 text = "<"
 
-[node name="4" parent="ZoomedContent" index="3" instance=ExtResource("4_rpeps")]
+[node name="4" parent="ZoomedContent" index="3" unique_id=566098588 instance=ExtResource("4_rpeps")]
 
 [node name="TextureRect" parent="ZoomedContent/4" index="0"]
 texture = ExtResource("2_ia1vg")
@@ -154,20 +148,18 @@ offset_bottom = 37.0
 text = "Page 2"
 
 [node name="NextButton" parent="ZoomedContent/4" index="3"]
-modulate = Color(1, 1, 1, 1)
 offset_left = -140.0
 offset_right = -117.0
 offset_bottom = 156.0
 text = " >"
 
 [node name="PrevButton" parent="ZoomedContent/4" index="4"]
-modulate = Color(1, 1, 1, 1)
 offset_left = -165.0
 offset_right = -144.0
 offset_bottom = 155.0
 text = "<"
 
-[node name="5" parent="ZoomedContent" index="4" instance=ExtResource("4_rpeps")]
+[node name="5" parent="ZoomedContent" index="4" unique_id=1428305119 instance=ExtResource("4_rpeps")]
 
 [node name="TextureRect" parent="ZoomedContent/5" index="0"]
 texture = ExtResource("2_ia1vg")
@@ -193,20 +185,18 @@ offset_bottom = 37.0
 text = "Page 2"
 
 [node name="NextButton" parent="ZoomedContent/5" index="3"]
-modulate = Color(1, 1, 1, 1)
 offset_left = -140.0
 offset_right = -117.0
 offset_bottom = 156.0
 text = " >"
 
 [node name="PrevButton" parent="ZoomedContent/5" index="4"]
-modulate = Color(1, 1, 1, 1)
 offset_left = -165.0
 offset_right = -144.0
 offset_bottom = 155.0
 text = "<"
 
-[node name="6" parent="ZoomedContent" index="5" instance=ExtResource("4_rpeps")]
+[node name="6" parent="ZoomedContent" index="5" unique_id=941687395 instance=ExtResource("4_rpeps")]
 
 [node name="TextureRect" parent="ZoomedContent/6" index="0"]
 texture = ExtResource("2_ia1vg")
@@ -232,20 +222,18 @@ offset_bottom = 37.0
 text = "Page 2"
 
 [node name="NextButton" parent="ZoomedContent/6" index="3"]
-modulate = Color(1, 1, 1, 1)
 offset_left = -140.0
 offset_right = -117.0
 offset_bottom = 156.0
 text = " >"
 
 [node name="PrevButton" parent="ZoomedContent/6" index="4"]
-modulate = Color(1, 1, 1, 1)
 offset_left = -165.0
 offset_right = -144.0
 offset_bottom = 155.0
 text = "<"
 
-[node name="7" parent="ZoomedContent" index="6" instance=ExtResource("4_rpeps")]
+[node name="7" parent="ZoomedContent" index="6" unique_id=1152084295 instance=ExtResource("4_rpeps")]
 
 [node name="TextureRect" parent="ZoomedContent/7" index="0"]
 texture = ExtResource("2_ia1vg")
@@ -271,20 +259,18 @@ offset_bottom = 37.0
 text = "Page 2"
 
 [node name="NextButton" parent="ZoomedContent/7" index="3"]
-modulate = Color(1, 1, 1, 1)
 offset_left = -140.0
 offset_right = -117.0
 offset_bottom = 156.0
 text = " >"
 
 [node name="PrevButton" parent="ZoomedContent/7" index="4"]
-modulate = Color(1, 1, 1, 1)
 offset_left = -165.0
 offset_right = -144.0
 offset_bottom = 155.0
 text = "<"
 
-[node name="8" parent="ZoomedContent" index="7" instance=ExtResource("4_rpeps")]
+[node name="8" parent="ZoomedContent" index="7" unique_id=1931540843 instance=ExtResource("4_rpeps")]
 
 [node name="TextureRect" parent="ZoomedContent/8" index="0"]
 texture = ExtResource("2_ia1vg")
@@ -310,20 +296,18 @@ offset_bottom = 37.0
 text = "Page 2"
 
 [node name="NextButton" parent="ZoomedContent/8" index="3"]
-modulate = Color(1, 1, 1, 1)
 offset_left = -140.0
 offset_right = -117.0
 offset_bottom = 156.0
 text = " >"
 
 [node name="PrevButton" parent="ZoomedContent/8" index="4"]
-modulate = Color(1, 1, 1, 1)
 offset_left = -165.0
 offset_right = -144.0
 offset_bottom = 155.0
 text = "<"
 
-[node name="9" parent="ZoomedContent" index="8" instance=ExtResource("4_rpeps")]
+[node name="9" parent="ZoomedContent" index="8" unique_id=1639036673 instance=ExtResource("4_rpeps")]
 
 [node name="TextureRect" parent="ZoomedContent/9" index="0"]
 texture = ExtResource("2_ia1vg")
@@ -350,20 +334,18 @@ offset_bottom = 37.0
 text = "Page 2"
 
 [node name="NextButton" parent="ZoomedContent/9" index="3"]
-modulate = Color(1, 1, 1, 1)
 offset_left = -140.0
 offset_right = -117.0
 offset_bottom = 156.0
 text = " >"
 
 [node name="PrevButton" parent="ZoomedContent/9" index="4"]
-modulate = Color(1, 1, 1, 1)
 offset_left = -165.0
 offset_right = -144.0
 offset_bottom = 155.0
 text = "<"
 
-[node name="10" parent="ZoomedContent" index="9" instance=ExtResource("4_rpeps")]
+[node name="10" parent="ZoomedContent" index="9" unique_id=209637579 instance=ExtResource("4_rpeps")]
 
 [node name="TextureRect" parent="ZoomedContent/10" index="0"]
 texture = ExtResource("2_ia1vg")
@@ -391,20 +373,18 @@ offset_bottom = 37.0
 text = "Page 2"
 
 [node name="NextButton" parent="ZoomedContent/10" index="3"]
-modulate = Color(1, 1, 1, 1)
 offset_left = -140.0
 offset_right = -117.0
 offset_bottom = 156.0
 text = " >"
 
 [node name="PrevButton" parent="ZoomedContent/10" index="4"]
-modulate = Color(1, 1, 1, 1)
 offset_left = -165.0
 offset_right = -144.0
 offset_bottom = 155.0
 text = "<"
 
-[node name="11" parent="ZoomedContent" index="10" instance=ExtResource("4_rpeps")]
+[node name="11" parent="ZoomedContent" index="10" unique_id=1620175427 instance=ExtResource("4_rpeps")]
 
 [node name="TextureRect" parent="ZoomedContent/11" index="0"]
 texture = ExtResource("2_ia1vg")
@@ -433,27 +413,25 @@ offset_bottom = 37.0
 text = "Page 2"
 
 [node name="NextButton" parent="ZoomedContent/11" index="3"]
-modulate = Color(1, 1, 1, 1)
 offset_left = -140.0
 offset_right = -117.0
 offset_bottom = 156.0
 text = " >"
 
 [node name="PrevButton" parent="ZoomedContent/11" index="4"]
-modulate = Color(1, 1, 1, 1)
 offset_left = -165.0
 offset_right = -144.0
 offset_bottom = 155.0
 text = "<"
 
-[node name="BookSource" type="Sprite2D" parent="Content" index="0"]
+[node name="BookSource" type="Sprite2D" parent="Content" parent_id_path=PackedInt32Array(1622079522) index="0" unique_id=29958608]
 texture = ExtResource("2_klhvm")
 
-[node name="ZoomedCollisionShape2D" parent="." index="2"]
+[node name="ZoomedCollisionShape2D" parent="." index="2" unique_id=477615235]
 visible = false
 
-[node name="Interactable" parent="." index="4"]
-hover_zoom_scale = Vector2(1.1, 1.1)
+[node name="CollisionShape2D" parent="." index="3" unique_id=810442876]
+position = Vector2(-39, 0)
 
 [editable path="ZoomedContent/1"]
 [editable path="ZoomedContent/2"]
